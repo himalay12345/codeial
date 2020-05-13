@@ -1,6 +1,8 @@
 module.exports.home = function(req,res)
 {
-    return res.end('<h2>Express server is running.....</h2>');
+    return res.render('home',{
+        title:"Home Page"
+    });
 };
 
 module,exports.contact = function(req,res)
