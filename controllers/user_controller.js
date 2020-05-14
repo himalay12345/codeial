@@ -1,9 +1,13 @@
 module.exports.profile = function(req,res)
 {
-    res.end('Profile Section');
+    res.render('profile',{
+        title:"Profile"
+    });
 }
 
 module.exports.post = function(req,res)
 {
-    res.end('Post Section');
+    res.render('post',{
+        title:"Posts"
+    });
 }

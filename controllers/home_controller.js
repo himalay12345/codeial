@@ -5,7 +5,9 @@ module.exports.home = function(req,res)
     });
 };
 
-module,exports.contact = function(req,res)
+module.exports.contact = function(req,res)
 {
-    return res.end('Contact page loaded...');
+    return res.render('contact',{
+        title:"Contact Us"
+    });
 }
