@@ -2,3 +2,20 @@ body{
     background-color: blueviolet;
     text-align: center;
 }
+
+
+
+#btn{
+    margin-bottom: 10px;
+    padding: 8px;
+    height:40px;
+    width: 100px;
+    font-size: medium;
+    font-family: 'Courier New', Courier, monospace;
+    color: grey;
+    background-color:yellow;
+    border: 0;
+    border-radius: 5px;
+    cursor: pointer;
+
+}

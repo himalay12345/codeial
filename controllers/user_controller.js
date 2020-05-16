@@ -2,10 +2,32 @@ const User = require('../models/users');
 
 module.exports.profile = function(req,res)
 {
-    res.render('profile',{
-        title:"Profile"
+    if(req.cookies.user_id==undefined)
+    {
+        return res.redirect('/user/sign-in');
+    }
+   
+    User.findOne({_id:req.cookies.user_id},function(err,user)
+    {
+         if(err)
+        {
+            console.log('Error in finding id for profile');
+            return;
+        }
+        if(user)
+        {
+            res.render('profile',{
+            title:"Profile",
+            name:user.email
+            });
+        }
+
+        else{
+            return res.redirect('back');
+        }
     });
-}
+        
+    }
 
 module.exports.post = function(req,res)
 {
@@ -24,16 +46,30 @@ module.exports.signUp = function(req,res)
 
 module.exports.signIn = function(req,res)
 {
-    return res.render('sign_in_page',
+    User.findOne({_id:req.cookies.user_id},function(err,user)
     {
-        title:'Codeial | Sign-In'
-    })
+
+        if(!user)
+        {
+             return res.render('sign_in_page',
+                        {
+                            title:'Codeial | Sign-In'
+                        });
+        }
+
+        else{
+            return res.redirect('/user/profile');
+        }
+    });
+    
+   
 } 
 
 module.exports.create = function(req,res)
 {
     User.findOne({email : req.body.email},function(err,user)
     {
+        
         if(err)
         {
             console.log('Error in finding user in signup');
@@ -58,5 +94,39 @@ module.exports.create = function(req,res)
 }
 module.exports.createSession = function(req,res)
 {
-    //Todo Later
+    User.findOne({email:req.body.email},function(err,user)
+    {
+        if(err)
+        {
+            console.log('Error in finding user in signin');
+            return;
+        }
+
+        if(user)
+        {
+            if(user.password!=req.body.password)
+            {
+                return res.redirect('back');  
+            }
+            
+            res.cookie('user_id',user.id);
+            return res.redirect('/user/profile');
+         }
+
+        else{
+            return res.redirect('back');
+        }
+    });
+}
+
+
+module.exports.signOut = function(req,res)
+{
+    if(req.cookies.user_id)
+    {
+        res.cookie('user_id',null);
+        return res.redirect('/user/sign-in');
+    }
+
+    return res.redirect('back');
 }
