@@ -2,12 +2,12 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 <main>
  <div id="signup_container">
- <form id="signup">
+ <form id="signup" method="POST" action="/user/create">
  <h2>Create account</h2>
  <div id="form_input">
  <input type="email" name="email" placeholder="Email" required autofocus="" class="form-control">
  <!-- <label for="password">Password</label></br> -->
- <input type="password" name="passw" placeholder="Password" autofocus class="form-control" required="">
+ <input type="password" name="password" placeholder="Password" autofocus class="form-control" required="">
  <div id="divider">
  <hr class="one"><span>OR</span>
  </div>

@@ -1,3 +1,5 @@
+const User = require('../models/users');
+
 module.exports.profile = function(req,res)
 {
     res.render('profile',{
@@ -27,3 +29,34 @@ module.exports.signIn = function(req,res)
         title:'Codeial | Sign-In'
     })
 } 
+
+module.exports.create = function(req,res)
+{
+    User.findOne({email : req.body.email},function(err,user)
+    {
+        if(err)
+        {
+            console.log('Error in finding user in signup');
+            return;
+        }
+        if(!user)
+        {
+            User.create(req.body,function(err,user){
+                if(err)
+                {
+                    console.log('Error in creating account in signup');
+                    return;
+                }
+                return res.redirect('/user/sign-in');
+            });
+        }
+
+        else{
+            return res.redirect('back');
+        }
+    });
+}
+module.exports.createSession = function(req,res)
+{
+    //Todo Later
+}
