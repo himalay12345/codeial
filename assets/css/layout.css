@@ -1,15 +1,2 @@
-header h3 {
-  font-size: 1.7rem;
-  font-family: "Arial Black", Gadget, sans-serif;
-  margin-top: 8px;
-  margin-bottom: 15px;
-  border-bottom: 4px solid #EB7100;
-  line-height: 2.5rem;
-  padding-left: 5%;
-  color: #EB7100;
-  padding-bottom: 10px; }
-
 body {
   margin: 0; }
-  body main {
-    height: 100%; }

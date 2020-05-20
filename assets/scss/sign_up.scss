@@ -2,7 +2,8 @@ main{
     margin-top: -14px;
     height: 110vh;
     width: 100%;
-    background-image: url("/images/image.jpg");
+    background-color: #5C5C5C;
+    // background-image: url("/images/image.jpg");
     /* background-position: center; */
     background-size: cover;
     background-repeat: no-repeat;
@@ -12,8 +13,8 @@ main{
 #signup_container
 {   
     padding-top: 20px;
-    height: 500px;
-    margin-left: 7%;
+    height: 520px;
+    margin-left: 65%;
     margin-top: 4%;
     position: absolute;
     width: 400px;
@@ -149,6 +150,14 @@ hr.one{
     /*border-radius: 5px;*/
 
 }
+#signup input[type="Email"]
+{
+    margin-top: -1px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    /*border-radius: 5px;*/
+
+}
 #signin input[type="Email"]
 {
      border-bottom-left-radius: 0;
@@ -161,6 +170,13 @@ hr.one{
     border-bottom-right-radius: 0;
 
 }
+#signup input[type="text"]
+{
+     border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+
+}
+
 #signin input[type="submit"]
 {
     padding: 10px!important;

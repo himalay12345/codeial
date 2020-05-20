@@ -73,3 +73,10 @@ module.exports.destroySession = function(req,res)
 
     return res.redirect('/');
 }
+
+module.exports.answer = function(req,res)
+{
+    res.render('answer',{
+        title:"Codeial | Answer"
+    });
+}

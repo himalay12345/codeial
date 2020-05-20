@@ -1,2 +1,153 @@
-body {
-  background-color: aqua; }
+#home-container {
+  background-color: #acadd2;
+  margin: 0;
+  height: 500px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding-top: 30px; }
+  #home-container #feed {
+    width: 24%;
+    height: 500px; }
+    #home-container #feed .card {
+      width: 100%;
+      background-color: #39304f;
+      padding: 8px;
+      box-sizing: border-box;
+      height: 450px;
+      border: 1px solid white;
+      border-radius: 3px; }
+      #home-container #feed .card a {
+        text-decoration: none; }
+    #home-container #feed .card-img-top {
+      height: 200px;
+      width: 90%;
+      margin: 5px 12px;
+      border: 1px solid grey; }
+    #home-container #feed .card-title {
+      text-align: center;
+      font-size: 1.5rem;
+      font-family: sans-serif;
+      background-color: #9c90bb;
+      color: white;
+      height: 40px;
+      border-radius: 3px;
+      padding-top: 7px;
+      margin: -1px 12px;
+      width: 90%; }
+    #home-container #feed .card-text {
+      font-size: 1.2rem;
+      font-family: sans-serif;
+      background-color: transparent;
+      color: white;
+      height: 40px;
+      border-radius: 3px;
+      padding-top: 7px;
+      margin: -1px 12px;
+      width: 90%; }
+  #home-container #main {
+    width: 45%;
+    height: 500px; }
+    #home-container #main #question {
+      min-height: 90px;
+      height: auto;
+      border-radius: 3px;
+      background-color: white;
+      padding-top: 10px;
+      padding-left: 20px;
+      padding-bottom: 8px;
+      border-bottom: 10px; }
+      #home-container #main #question h3 {
+        font-family: Arial, Helvetica, sans-serif;
+        color: grey;
+        margin-left: 7px;
+        font-size: 0.9rem; }
+      #home-container #main #question textarea {
+        margin-top: 6px;
+        width: 100%;
+        padding: 8px;
+        border: 0;
+        font-size: 1.18rem;
+        height: auto;
+        font-weight: 600;
+        font-family: Arial, Helvetica, sans-serif;
+        color: grey;
+        margin-top: -12px;
+        outline: 0;
+        resize: none; }
+      #home-container #main #question textarea:focus {
+        font-size: 1.3rem; }
+      #home-container #main #question #btn select {
+        width: 30%;
+        padding: 7px;
+        outline: 0;
+        font-family: sans-serif;
+        font-size: 1rem;
+        margin-bottom: 10px; }
+      #home-container #main #question #btn button {
+        padding: 8px;
+        font-family: sans-serif;
+        margin-left: 20px;
+        border-radius: 3px;
+        border: 1px solid white;
+        background-color: #5B5EA6;
+        color: white; }
+  #home-container #aside {
+    width: 24%;
+    height: 500px; }
+    #home-container #aside #our_blogs {
+      box-sizing: border-box;
+      color: white;
+      height: 90px;
+      width: 100%;
+      border-radius: 3px;
+      margin-top: -21px;
+      margin-bottom: 3px; }
+      #home-container #aside #our_blogs ul {
+        margin-left: -8px;
+        border-bottom: 3px solid #5B5EA6;
+        padding-bottom: 7px;
+        width: 86%;
+        margin-left: 5px; }
+        #home-container #aside #our_blogs ul div {
+          margin-left: -10px;
+          height: auto;
+          font-size: 1rem;
+          font-family: sans-serif;
+          margin-bottom: 5px; }
+          #home-container #aside #our_blogs ul div a {
+            text-decoration: none;
+            color: black;
+            line-height: 1.5rem;
+            font-weight: 700; }
+          #home-container #aside #our_blogs ul div a:hover {
+            color: #5B5EA6;
+            text-decoration: underline; }
+      #home-container #aside #our_blogs h2 {
+        padding-top: 7px;
+        background-color: #5B5EA6;
+        text-align: center;
+        border-radius: 3px;
+        padding: 7px;
+        font-size: 1.6rem;
+        font-family: Arial, Helvetica, sans-serif; }
+
+#top_header {
+  position: absolute;
+  height: 200px;
+  width: 40%;
+  left: 10%;
+  top: 30%; }
+  #top_header h1 {
+    color: white;
+    font-size: 3.5rem;
+    line-height: 3.5rem; }
+
+#content {
+  position: absolute;
+  width: 40%;
+  left: 10%;
+  top: 55%; }
+  #content p {
+    color: #D6D6D6;
+    font-size: 1.4rem; }
