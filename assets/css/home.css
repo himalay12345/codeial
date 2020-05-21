@@ -91,7 +91,8 @@
         border-radius: 3px;
         border: 1px solid white;
         background-color: #5B5EA6;
-        color: white; }
+        color: white;
+        cursor: pointer; }
   #home-container #aside {
     width: 24%;
     height: 500px; }

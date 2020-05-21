@@ -58,9 +58,10 @@
    <div id="main">
        <div id="question">
            <h3>Hii <%=user.name%></h3>
-           <textarea autofocus placeholder="What is your question or link?"></textarea>
+           <form method="POST" action="/post/create">
+           <textarea autofocus placeholder="What is your question or link?" name="content"></textarea>
            <div id="btn">
-               <select>
+               <select required name="topic">
                    <option disabled selected>Topic</option>
                    <option>Physics</option>
                    <option>Chemistry</option>
@@ -68,6 +69,7 @@
                    <option>History</option>
                </select>
                <button type="submit">Add Question</button>
+            </form>
            </div>
         </div>
    </div>

@@ -1,4 +1,5 @@
 const User = require('../models/users');
+const Post = require('../models/posts');
 
 module.exports.profile = function(req,res)
 {
@@ -76,7 +77,22 @@ module.exports.destroySession = function(req,res)
 
 module.exports.answer = function(req,res)
 {
-    res.render('answer',{
-        title:"Codeial | Answer"
+    Post.find({}).populate('user').exec(function(err,posts)
+    {
+        if(err)
+        {
+            console.log('Error in finding post database');
+            return;
+        }
+
+        return res.render('answer',{
+            title:"Codeial | Answer",
+            posts:posts
+        });
+        
     });
+
+    // res.render('answer',{
+    //     title:"Codeial | Answer"
+    // });
 }

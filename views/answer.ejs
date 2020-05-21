@@ -1,6 +1,6 @@
 <link rel="stylesheet" type="text/css" href="/css/answer.css">
 <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
-
+<script type="text/javascript" src="/ckeditor/ckeditor.js"></script>
 <div id="home-container">
     <div id="Leaderboard">
         <div id="leaderboard_header">
@@ -89,62 +89,37 @@
         <div id="question">
             <span><i class="fas fa-question"></i></span><span>Questions For You</span>         
          </div>
-
-         <div id="unanswered">
-             <div id="header"><span>Question added</span><a href="#"><span>-Topic</span></a></div>
+            
+            <%for(let post of posts){
+                if(post.user._id !=locals.user._id){%>
+                    <%console.log(locals.user._id);%>
+                    <%console.log(post.user._id);%>
+             <div id="unanswered">
+             <div id="header"><span>Question added</span><a href="#"><span>-<%=post.topic%></span></a></div>
              <div id="unanswered_content">
-                 </a><div id="content"><a href="#">Which is better platform for Question & Answer?</a></div>
+                 </a><div id="content"><a href="#"><%=post.content%></a></div>
                  <div id="content_key"><a></a><span><b>1 Answer</b></span></a><span>-Last followed 20m ago</span></div>
              </div>
              <div id="interact">
-                 <a href="#"><span id="ans" class="margin"><span><i class="fas fa-edit"></i></span><span>Answer</span></span></a>
-                 <a href="#"><span id="pass"class="margin"><i class="fas fa-sync"></i><span></span><span>Pass</span></span></a>
-                 <a href="#"><span id="req"class="margin"><i class="fas fa-users"></i><span></span><span>Request Answer</span></span></a>
-                 <a href="#"><span id="follow"class="margin"><i class="fas fa-rss"></i><span></span><span>Follow</span><span>3</span></span></a>
+                 <a href="#" id="ans"><span  class="margin"><span><i class="fas fa-edit"></i></span><span>Answer</span></span></a>
+                 <a href="#" id="pass"><span class="margin"><i class="fas fa-sync"></i><span></span><span>Pass</span></span></a>
+                 <a href="#" id="req"><span class="margin"><i class="fas fa-users"></i><span></span><span>Request Answer</span></span></a>
+                 <a href="#" id="follow"><span class="margin"><i class="fas fa-rss"></i><span></span><span>Follow</span><span>3</span></span></a>
               </div>
          </div>
+         <div id="editor" class="display">
+             <form>
+             <textarea id="text"></textarea></br>
+             <button type="submit" id="editor_submit">Sumbit</button>
+             <a href="#" id="editor_cancel" class="cancel">Cancel</a>
+             </form>
+         </div>
+            <%}else{%>
+                Hello
+                <%}%>
+        <%}%>            
 
-         <div id="unanswered">
-            <div id="header"><span>Question added</span><a href="#"><span>-Topic</span></a></div>
-            <div id="unanswered_content">
-                </a><div id="content"><a href="#">Which is better platform for Question & Answer?</a></div>
-                <div id="content_key"><a></a><span><b>1 Answer</b></span></a><span>-Last followed 20m ago</span></div>
-            </div>
-            <div id="interact">
-                <a href="#"><span id="ans" class="margin"><span><i class="fas fa-edit"></i></span><span>Answer</span></span></a>
-                <a href="#"><span id="pass"class="margin"><i class="fas fa-sync"></i><span></span><span>Pass</span></span></a>
-                <a href="#"><span id="req"class="margin"><i class="fas fa-users"></i><span></span><span>Request Answer</span></span></a>
-                <a href="#"><span id="follow"class="margin"><i class="fas fa-rss"></i><span></span><span>Follow</span><span>3</span></span></a>
-             </div>
-        </div>
-
-        <div id="unanswered">
-            <div id="header"><span>Question added</span><a href="#"><span>-Topic</span></a></div>
-            <div id="unanswered_content">
-                </a><div id="content"><a href="#">Which is better platform for Question & Answer?</a></div>
-                <div id="content_key"><a></a><span><b>1 Answer</b></span></a><span>-Last followed 20m ago</span></div>
-            </div>
-            <div id="interact">
-                <a href="#"><span id="ans" class="margin"><span><i class="fas fa-edit"></i></span><span>Answer</span></span></a>
-                <a href="#"><span id="pass"class="margin"><i class="fas fa-sync"></i><span></span><span>Pass</span></span></a>
-                <a href="#"><span id="req"class="margin"><i class="fas fa-users"></i><span></span><span>Request Answer</span></span></a>
-                <a href="#"><span id="follow"class="margin"><i class="fas fa-rss"></i><span></span><span>Follow</span><span>3</span></span></a>
-             </div>
-        </div>
-
-        <div id="unanswered">
-            <div id="header"><span>Question added</span><a href="#"><span>-Topic</span></a></div>
-            <div id="unanswered_content">
-                </a><div id="content"><a href="#">Which is better platform for Question & Answer?</a></div>
-                <div id="content_key"><a></a><span><b>1 Answer</b></span></a><span>-Last followed 20m ago</span></div>
-            </div>
-            <div id="interact">
-                <a href="#"><span id="ans" class="margin"><span><i class="fas fa-edit"></i></span><span>Answer</span></span></a>
-                <a href="#"><span id="pass"class="margin"><i class="fas fa-sync"></i><span></span><span>Pass</span></span></a>
-                <a href="#"><span id="req"class="margin"><i class="fas fa-users"></i><span></span><span>Request Answer</span></span></a>
-                <a href="#"><span id="follow"class="margin"><i class="fas fa-rss"></i><span></span><span>Follow</span><span>3</span></span></a>
-             </div>
-        </div>
+         
     </div>
     <div id="aside">
         <div id="stat-box">
@@ -190,4 +165,5 @@
     </div>
     </div>
     </div>
+    <script type="text/javascript" src="/js/answer.js"></script>
  
