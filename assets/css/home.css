@@ -1,14 +1,15 @@
 #home-container {
   background-color: #acadd2;
   margin: 0;
-  height: 500px;
+  height: 563px;
+  overflow: auto;
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
   padding-top: 30px; }
   #home-container #feed {
     width: 24%;
-    height: 500px; }
+    height: auto; }
     #home-container #feed .card {
       width: 100%;
       background-color: #39304f;
@@ -47,10 +48,9 @@
       width: 90%; }
   #home-container #main {
     width: 45%;
-    height: 500px; }
+    height: auto; }
     #home-container #main #question {
-      min-height: 90px;
-      height: auto;
+      height: 140px;
       border-radius: 3px;
       background-color: white;
       padding-top: 10px;
@@ -93,9 +93,86 @@
         background-color: #5B5EA6;
         color: white;
         cursor: pointer; }
+    #home-container #main #topic_answered {
+      position: relative;
+      height: auto;
+      width: 102%;
+      background-color: white;
+      padding: 5px;
+      margin-left: -20px;
+      margin-top: 5px;
+      border-radius: 3px;
+      display: flex;
+      border: 1px solid #39304f; }
+      #home-container #main #topic_answered #author_image {
+        width: 20%;
+        height: auto;
+        padding-top: 50px;
+        box-sizing: border-box; }
+        #home-container #main #topic_answered #author_image img {
+          height: 140px;
+          width: 110px;
+          border: 1px solid grey;
+          margin-bottom: 25px; }
+        #home-container #main #topic_answered #author_image a {
+          text-decoration: none;
+          padding: 3px; }
+        #home-container #main #topic_answered #author_image span {
+          margin-right: 7px;
+          margin-left: 8px;
+          font-size: 0.9rem;
+          font-family: Arial, Helvetica, sans-serif;
+          font-weight: 600; }
+      #home-container #main #topic_answered #topic_content {
+        width: 78%;
+        display: flex;
+        flex-direction: column; }
+        #home-container #main #topic_answered #topic_content #author_header {
+          height: 20%;
+          padding-bottom: 5px;
+          padding-top: 7px; }
+          #home-container #main #topic_answered #topic_content #author_header span {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 1.1rem;
+            margin-left: 10px;
+            margin-right: 10px;
+            font-weight: 550; }
+          #home-container #main #topic_answered #topic_content #author_header b {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 0.8rem; }
+        #home-container #main #topic_answered #topic_content #author_content {
+          height: auto;
+          border: 1px solid grey;
+          padding: 5px;
+          margin-bottom: 5px; }
+          #home-container #main #topic_answered #topic_content #author_content p {
+            font-size: 1rem;
+            font-family: Arial, Helvetica, sans-serif; }
+          #home-container #main #topic_answered #topic_content #author_content #ques {
+            height: 30%;
+            font-weight: bold; }
+          #home-container #main #topic_answered #topic_content #author_content #ans {
+            height: 70%; }
+        #home-container #main #topic_answered #topic_content #author_interact {
+          height: 30px;
+          font-weight: normal;
+          padding: 3px;
+          font-family: Arial, Helvetica, sans-serif;
+          display: flex;
+          justify-content: space-around;
+          margin-bottom: 5px; }
+          #home-container #main #topic_answered #topic_content #author_interact a {
+            text-decoration: none;
+            padding: 3px;
+            border-radius: 3px;
+            background-color: #5B5EA6;
+            border: 1px solid grey;
+            color: white; }
+          #home-container #main #topic_answered #topic_content #author_interact i {
+            margin-right: 7px; }
   #home-container #aside {
     width: 24%;
-    height: 500px; }
+    height: auto; }
     #home-container #aside #our_blogs {
       box-sizing: border-box;
       color: white;

@@ -2,6 +2,7 @@
   background-color: #acadd2;
   margin: 0;
   min-height: 600px;
+  height: auto;
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
@@ -102,7 +103,7 @@
       border-bottom-right-radius: 3px; }
   #home-container #main {
     width: 45%;
-    height: 500px; }
+    height: auto; }
     #home-container #main #question {
       height: auto;
       border-radius: 3px;

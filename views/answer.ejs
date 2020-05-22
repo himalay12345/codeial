@@ -108,8 +108,11 @@
               </div>
          </div>
          <div id="editor" class="display">
-             <form>
-             <textarea id="text"></textarea></br>
+             <form method="POST" action="/post/answer">
+             <textarea id="text" name="content"></textarea>
+             <input name="topic" value="<%=post.topic%>" type="hidden">
+             <input name="question" value="<%=post.content%>" type="hidden">
+             </br>
              <button type="submit" id="editor_submit">Sumbit</button>
              <a href="#" id="editor_cancel" class="cancel">Cancel</a>
              </form>

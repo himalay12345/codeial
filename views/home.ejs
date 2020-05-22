@@ -41,6 +41,7 @@
 <script type="text/javascript" src="/js/sign_up.js"></script> 
 
 <%}else{%>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <link rel="stylesheet" type="text/css" href="/css/home.css">
    <div id="home-container">
    <div id="Feed">
@@ -71,7 +72,29 @@
                <button type="submit">Add Question</button>
             </form>
            </div>
-        </div>
+
+           <%for(ans of answers){%>
+           <div id="topic_answered">
+                 <div id="author_image">
+                     <img src="/images/logo.jpg">
+                     <a href="#"><span  class="margin"><span><i class="fas fa-rss"></i></span><span>Follow</span></span></a>
+                 </div>
+                <div id="topic_content">
+                    <div id="author_header"><span><%=ans.user.name%></span><b>Answered this question</b></div>
+                    <div id="author_content">
+                        <div id="ques"><p><%=ans.question%></p></div>
+                        <div id="ans"><p><%=ans.content%></p></div>
+                    </div>
+                    <div id="author_interact">
+                        <a href="#"><span><i class="fas fa-chevron-circle-up"></i>Upvote</span></a>
+                        <a href="#"><span><i class="fas fa-sync"></i>Share</span></a>
+                        <a href="#"><span><i class="fas fa-comment"></i>Comment</span></a>
+                        <a href="#"><span><i class="fas fa-eye"></i>500</span></a>
+                    </div>
+                </div>
+           </div>
+           <%}%>
+    </div>
    </div>
    <div id="aside">
        <div id="our_blogs">

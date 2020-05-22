@@ -12,6 +12,7 @@ answer[i].addEventListener('click',function()
     button[i].addEventListener('click',function()
     {
         editor[i].classList.add('display');
+        CKEDITOR.config.autoParagraph = false;
     });
 
     cancel[i].addEventListener('click',function()
@@ -21,9 +22,11 @@ answer[i].addEventListener('click',function()
 });
 }
 
+
 var text = document.querySelectorAll('#text');
 for(let i=0;i<text.length;i++){
 CKEDITOR.replace( text[i],{height: 200 ,width:595});
+// CKEDITOR.config.enterMode = CKEDITOR.ENTER_BR;
 }
 
 
