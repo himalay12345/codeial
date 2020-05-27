@@ -5,6 +5,8 @@ const router = express.Router();
 console.log('Router loaded');
 router.use('/user',require('./user'));
 router.use('/post',require('./post'));
+router.use('/answer',require('./answer'));
+router.use('/comment',require('./comment'));
 
 
 

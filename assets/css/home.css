@@ -7,6 +7,8 @@
   justify-content: space-around;
   flex-wrap: wrap;
   padding-top: 30px; }
+  #home-container .display {
+    display: none !important; }
   #home-container #feed {
     width: 24%;
     height: auto; }
@@ -93,17 +95,185 @@
         background-color: #5B5EA6;
         color: white;
         cursor: pointer; }
+    #home-container #main #answer_container {
+      padding: 8px;
+      min-height: 0;
+      box-sizing: border-box;
+      background-color: grey;
+      width: 102%;
+      height: auto;
+      border-radius: 3px;
+      margin-left: -20px;
+      margin-bottom: 10px; }
+      #home-container #main #answer_container #question_asked {
+        background-color: white;
+        border: 1px solid black;
+        padding: 5px;
+        height: 100px;
+        border-radius: 3px; }
+        #home-container #main #answer_container #question_asked h3 {
+          color: black; }
+        #home-container #main #answer_container #question_asked h2 {
+          margin: 0;
+          padding: 0; }
     #home-container #main #topic_answered {
       position: relative;
       height: auto;
-      width: 102%;
+      width: 98%;
       background-color: white;
       padding: 5px;
-      margin-left: -20px;
+      overflow: auto;
       margin-top: 5px;
       border-radius: 3px;
       display: flex;
       border: 1px solid #39304f; }
+      #home-container #main #topic_answered #comment_section {
+        height: auto;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        background-color: #39304f;
+        border-radius: 3px;
+        border: 1px solid grey;
+        margin-bottom: 10px; }
+        #home-container #main #topic_answered #comment_section #comment_card {
+          height: 80%;
+          display: flex;
+          border: 2px solid grey;
+          flex-direction: column;
+          padding: 8px;
+          background-color: white; }
+          #home-container #main #topic_answered #comment_section #comment_card #comment_header {
+            height: 30%;
+            display: inline-flex;
+            margin-bottom: 8px; }
+            #home-container #main #topic_answered #comment_section #comment_card #comment_header img {
+              height: 25px;
+              width: 25px;
+              border-radius: 50%;
+              border: 1px solid grey;
+              padding: 5px; }
+            #home-container #main #topic_answered #comment_section #comment_card #comment_header div {
+              margin-left: 15px; }
+              #home-container #main #topic_answered #comment_section #comment_card #comment_header div h2 {
+                margin: 0;
+                color: black;
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 1.1rem; }
+              #home-container #main #topic_answered #comment_section #comment_card #comment_header div h3 {
+                margin: 0;
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 0.8rem; }
+          #home-container #main #topic_answered #comment_section #comment_card #comment_content {
+            height: 50%;
+            border: 1px solid grey;
+            padding: 5px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 1.1rem;
+            margin-bottom: 5px; }
+          #home-container #main #topic_answered #comment_section #comment_card #comment_interact {
+            height: 25%;
+            padding: 3px;
+            position: relative; }
+            #home-container #main #topic_answered #comment_section #comment_card #comment_interact a {
+              text-decoration: none;
+              margin-right: 8px;
+              color: black; }
+              #home-container #main #topic_answered #comment_section #comment_card #comment_interact a span {
+                margin-left: 5px;
+                margin-right: 5px;
+                font-size: small; }
+            #home-container #main #topic_answered #comment_section #comment_card #comment_interact .showLeft {
+              background-color: white !important;
+              text-shadow: none !important;
+              color: #fff !important;
+              padding-top: 5px; }
+            #home-container #main #topic_answered #comment_section #comment_card #comment_interact .icons li {
+              background: none repeat scroll 0 0 black;
+              height: 4px;
+              width: 4px;
+              line-height: 0;
+              list-style: none outside none;
+              margin-right: 15px;
+              margin-top: 2px;
+              vertical-align: top;
+              border-radius: 50%;
+              pointer-events: none; }
+            #home-container #main #topic_answered #comment_section #comment_card #comment_interact .btn-left {
+              left: 0.4em; }
+            #home-container #main #topic_answered #comment_section #comment_card #comment_interact .btn-right {
+              right: 0; }
+            #home-container #main #topic_answered #comment_section #comment_card #comment_interact .btn-left, #home-container #main #topic_answered #comment_section #comment_card #comment_interact .btn-right {
+              position: absolute;
+              top: -20px; }
+            #home-container #main #topic_answered #comment_section #comment_card #comment_interact .c_dropbtn {
+              background-color: #4CAF50;
+              position: absolute;
+              color: white;
+              font-size: 16px;
+              border: none;
+              cursor: pointer; }
+            #home-container #main #topic_answered #comment_section #comment_card #comment_interact .c_dropbtn:hover, #home-container #main #topic_answered #comment_section #comment_card #comment_interact .c_dropbtn:focus {
+              background-color: #3e8e41; }
+            #home-container #main #topic_answered #comment_section #comment_card #comment_interact .dropdown {
+              position: absolute;
+              display: inline-block;
+              right: 0; }
+            #home-container #main #topic_answered #comment_section #comment_card #comment_interact .dropdown-content {
+              display: none;
+              position: relative;
+              margin-top: 35px;
+              background-color: #f9f9f9;
+              min-width: 160px;
+              overflow: auto;
+              box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+              z-index: 1; }
+            #home-container #main #topic_answered #comment_section #comment_card #comment_interact .dropdown-content a {
+              color: black;
+              padding: 12px 16px;
+              text-decoration: none;
+              display: block; }
+            #home-container #main #topic_answered #comment_section #comment_card #comment_interact .dropdown a:hover {
+              background-color: #f1f1f1; }
+            #home-container #main #topic_answered #comment_section #comment_card #comment_interact .c_show {
+              display: block; }
+        #home-container #main #topic_answered #comment_section #comment_option {
+          height: 20%;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-around;
+          padding: 10px; }
+          #home-container #main #topic_answered #comment_section #comment_option img {
+            height: 30px;
+            width: 30px;
+            border-radius: 50%; }
+          #home-container #main #topic_answered #comment_section #comment_option input {
+            width: 60%;
+            height: 30px;
+            margin-top: 0px;
+            padding: 5px;
+            border: 0;
+            font-size: 1rem;
+            margin-left: 5px;
+            font-weight: 600;
+            font-family: Arial, Helvetica, sans-serif;
+            color: grey;
+            outline: 0;
+            resize: none;
+            border-radius: 10px; }
+          #home-container #main #topic_answered #comment_section #comment_option input:focus {
+            font-size: 1rem;
+            font-weight: normal; }
+          #home-container #main #topic_answered #comment_section #comment_option a {
+            width: 20%;
+            font-weight: 100px;
+            cursor: pointer; }
+            #home-container #main #topic_answered #comment_section #comment_option a button {
+              padding: 7px;
+              width: 100px;
+              border-radius: 5px;
+              border: 0;
+              font-family: Arial, Helvetica, sans-serif; }
       #home-container #main #topic_answered #author_image {
         width: 20%;
         height: auto;
@@ -111,7 +281,8 @@
         box-sizing: border-box; }
         #home-container #main #topic_answered #author_image img {
           height: 140px;
-          width: 110px;
+          width: 100px;
+          padding-left: 10px;
           border: 1px solid grey;
           margin-bottom: 25px; }
         #home-container #main #topic_answered #author_image a {
@@ -140,7 +311,62 @@
           #home-container #main #topic_answered #topic_content #author_header b {
             font-family: Arial, Helvetica, sans-serif;
             font-size: 0.8rem; }
+          #home-container #main #topic_answered #topic_content #author_header .showLeft {
+            background-color: white !important;
+            text-shadow: none !important;
+            color: #fff !important;
+            padding-top: 5px; }
+          #home-container #main #topic_answered #topic_content #author_header .icons li {
+            background: none repeat scroll 0 0 black;
+            height: 4px;
+            width: 4px;
+            line-height: 0;
+            list-style: none outside none;
+            margin-right: 15px;
+            margin-top: 2px;
+            vertical-align: top;
+            border-radius: 50%;
+            pointer-events: none; }
+          #home-container #main #topic_answered #topic_content #author_header .btn-left {
+            left: 0.4em; }
+          #home-container #main #topic_answered #topic_content #author_header .btn-right {
+            right: 0; }
+          #home-container #main #topic_answered #topic_content #author_header .btn-left, #home-container #main #topic_answered #topic_content #author_header .btn-right {
+            position: absolute;
+            top: -20px; }
+          #home-container #main #topic_answered #topic_content #author_header .dropbtn {
+            background-color: #4CAF50;
+            position: absolute;
+            color: white;
+            font-size: 16px;
+            border: none;
+            cursor: pointer; }
+          #home-container #main #topic_answered #topic_content #author_header .dropbtn:hover, #home-container #main #topic_answered #topic_content #author_header .dropbtn:focus {
+            background-color: #3e8e41; }
+          #home-container #main #topic_answered #topic_content #author_header .dropdown {
+            position: absolute;
+            display: inline-block;
+            right: 0; }
+          #home-container #main #topic_answered #topic_content #author_header .dropdown-content {
+            display: none;
+            position: relative;
+            margin-top: 35px;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            overflow: auto;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1; }
+          #home-container #main #topic_answered #topic_content #author_header .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block; }
+          #home-container #main #topic_answered #topic_content #author_header .show {
+            display: block; }
+          #home-container #main #topic_answered #topic_content #author_header .dropdown a:hover {
+            background-color: #f1f1f1; }
         #home-container #main #topic_answered #topic_content #author_content {
+          min-height: 180px;
           height: auto;
           border: 1px solid grey;
           padding: 5px;
@@ -148,11 +374,8 @@
           #home-container #main #topic_answered #topic_content #author_content p {
             font-size: 1rem;
             font-family: Arial, Helvetica, sans-serif; }
-          #home-container #main #topic_answered #topic_content #author_content #ques {
-            height: 30%;
-            font-weight: bold; }
           #home-container #main #topic_answered #topic_content #author_content #ans {
-            height: 70%; }
+            height: 100%; }
         #home-container #main #topic_answered #topic_content #author_interact {
           height: 30px;
           font-weight: normal;

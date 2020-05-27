@@ -10,13 +10,20 @@ const answerSchema = new mongoose.Schema({
         required:true
     },
     question:{
-        type:String,
-        required:true
-    },
+        type:mongoose.Schema.Types.ObjectId,
+        ref:'Post'
+    }
+    ,
     user: {
         type : mongoose.Schema.Types.ObjectId,
         ref:'User'
-    }
+    },
+    comments: [
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'Comment'
+        }
+    ]
 },
     {
         timestamps : true

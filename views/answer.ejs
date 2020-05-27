@@ -90,10 +90,9 @@
             <span><i class="fas fa-question"></i></span><span>Questions For You</span>         
          </div>
             
-            <%for(let post of posts){
-                if(post.user._id !=locals.user._id){%>
-                    <%console.log(locals.user._id);%>
-                    <%console.log(post.user._id);%>
+            <%for(let post of posts){%>
+                <%if(post.user.id != locals.user.id){%>
+                   
              <div id="unanswered">
              <div id="header"><span>Question added</span><a href="#"><span>-<%=post.topic%></span></a></div>
              <div id="unanswered_content">
@@ -108,17 +107,17 @@
               </div>
          </div>
          <div id="editor" class="display">
-             <form method="POST" action="/post/answer">
+             <form method="POST" action="/answer/create">
              <textarea id="text" name="content"></textarea>
              <input name="topic" value="<%=post.topic%>" type="hidden">
-             <input name="question" value="<%=post.content%>" type="hidden">
+             <input name="question" value="<%=post._id%>" type="hidden">
              </br>
              <button type="submit" id="editor_submit">Sumbit</button>
              <a href="#" id="editor_cancel" class="cancel">Cancel</a>
              </form>
          </div>
             <%}else{%>
-                Hello
+               
                 <%}%>
         <%}%>            
 

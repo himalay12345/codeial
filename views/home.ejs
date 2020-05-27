@@ -41,6 +41,7 @@
 <script type="text/javascript" src="/js/sign_up.js"></script> 
 
 <%}else{%>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <link rel="stylesheet" type="text/css" href="/css/home.css">
    <div id="home-container">
@@ -72,28 +73,108 @@
                <button type="submit">Add Question</button>
             </form>
            </div>
-
-           <%for(ans of answers){%>
+           <%for(post of posts){%><%if(!(post.answers && post.answers.length)){%>
+           <%}else{%>
+           <div id="answer_container"> 
+                <div id="question_asked">
+                    <h3>Question asked by <%=post.user.name%></h3>
+                    <h1><%=post.content%></h1>
+                </div>
+            <%for(ans of post.answers){%>
            <div id="topic_answered">
                  <div id="author_image">
                      <img src="/images/logo.jpg">
                      <a href="#"><span  class="margin"><span><i class="fas fa-rss"></i></span><span>Follow</span></span></a>
                  </div>
                 <div id="topic_content">
-                    <div id="author_header"><span><%=ans.user.name%></span><b>Answered this question</b></div>
+                    <div id="author_header"><span><%=ans.user.name%></span><b>Answered this question</b>
+                        <span style="font-size:small">
+                            <%if(locals.user && user.id==ans.user.id){%>
+                                <div class="dropdown">
+                                    <!-- three dots -->
+                                    <ul class="dropbtn icons btn-right showLeft">
+                                        <li></li>
+                                        <li></li>
+                                        <li></li>
+                                    </ul>
+                                    <!-- menu -->
+                                    <div id="myDropdown" class="dropdown-content">
+                                        <a href="/answer/destroy/<%=ans.id%>">Delete Answer</a>
+                                        <a href="#about">Edit Answer</a>
+                                    </div>
+                                </div>
+                                <%}%>
+                
+                        </span>
+                    </div>
                     <div id="author_content">
-                        <div id="ques"><p><%=ans.question%></p></div>
                         <div id="ans"><p><%=ans.content%></p></div>
                     </div>
                     <div id="author_interact">
                         <a href="#"><span><i class="fas fa-chevron-circle-up"></i>Upvote</span></a>
                         <a href="#"><span><i class="fas fa-sync"></i>Share</span></a>
-                        <a href="#"><span><i class="fas fa-comment"></i>Comment</span></a>
+                        <a href="#" id="comment"><span><i class="fas fa-comment"></i>Comment</span></a>
                         <a href="#"><span><i class="fas fa-eye"></i>500</span></a>
                     </div>
+                   
+                    <div id="comment_section" class="display">
+                        <form action="/comment/create" method="POST">
+                        <div id="comment_option">
+                            <img src="/images/logo.jpg">
+                            <input type="text" name="content" placeholder="Add a comment">
+                            <input type="hidden" name="post" value="<%=post._id%>">
+                            <input type="hidden" name="answer" value="<%=ans._id%>">
+                            <input type="hidden" name="user" value="<%=user._id%>">
+                           
+                            <a href="#" id="comment_add"><button type="submit">Add Comment</button></a>
+                        </div>
+                    </form>
+                    <%for(comment of ans.comments){%>
+                        <div id="comment_card">
+                            <div id="comment_header">
+                                <img src="/images/logo.jpg">
+                                <div>
+                                    <h2><%=comment.user.name%></h2>
+                                    <h3>May 25</h3>
+                                </div>
+                               
+                            </div>
+                            <div id="comment_content">
+                               <%=comment.content%>
+                            </div>
+                            <div id="comment_interact">
+                                <a href="#"><span><i class="fas fa-reply"></i></span>Reply</a>
+                                <a href="#"><span><i class="fas fa-heart"></i></span>Like</a>
+                                <%if(locals.user && user.id==comment.user.id){%>
+                                <div class="dropdown">
+                                    <!-- three dots -->
+                                    <ul class="c_dropbtn icons btn-right showLeft">
+                                        <li></li>
+                                        <li></li>
+                                        <li></li>
+                                    </ul>
+                                    <!-- menu -->
+                                    <div id="c_myDropdown" class="dropdown-content">
+                                        <a href="/comment/destroy/<%=comment.id%>">Delete comment</a>
+                                        <a href="#about">Edit</a>
+                                    </div>
+                                </div>
+                                <%}%>
+                
+                            </div>
+                        </div>
+                        <%}%>
+                    </div>
+               
+
                 </div>
            </div>
            <%}%>
+        </div>  
+        <%}%>
+        <%}%>
+           
+         
     </div>
    </div>
    <div id="aside">
@@ -122,4 +203,5 @@
    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+   <script src="/js/home.js"></script>
     <%}%>

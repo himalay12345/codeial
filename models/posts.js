@@ -13,10 +13,10 @@ const postSchema = new mongoose.Schema({
         type : mongoose.Schema.Types.ObjectId,
         ref:'User'
     },
-    comments: [
+    answers: [
         {
             type: mongoose.Schema.Types.ObjectId,
-            ref: 'Comment'
+            ref: 'Answer'
         }
     ]
 },
