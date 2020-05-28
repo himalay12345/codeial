@@ -1,62 +1,13 @@
 
 <% if(!locals.user){%>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-<link rel="stylesheet" type="text/css" href="/css/sign_up.css">
-<link rel="stylesheet" type="text/css" href="/css/home.css">
-
-<div id="top_header">
-    <h1>A Place to Share & Grow Knowledge</h1>
-</div>
-
-<div id="content">
-    <p>GuruShisya is a educational platform to share & get knowledge.It is a symbol of the pure relationship of the Guru & Shishya followed by the traditional vedic culture. </p>
-</div>
-<main>
- <div id="signup_container">
- <form id="signup" method="POST" action="/user/create">
- <h2>Create account</h2>
- <div id="form_input">
- <input type="text" name="name" placeholder="Your Name" required autofocus class="form-control">
- <input type="email" name="email" placeholder="Email" required autofocus="" class="form-control">
- <!-- <label for="password">Password</label></br> -->
- <input type="password" name="password" placeholder="Password" autofocus class="form-control" required="">
- <div id="divider">
- <hr class="one"><span>OR</span>
- </div>
- <div id="social_container">
- <a href="#"><div id="facebook" class="form-control"><span><img src="/images/fb.png"></span><span>Facebook</span></div></a>
- <a href="#"><div id="google" class="form-control"><span><img src="/images/google1.png"></span><span>Google</span></div></a>
- </div>
- <input type="submit" value="Create account"class="form-control">
- <div class="footer"><span>By clicking"Create account"you agree to the </span><span><a href="#" class="link_bottom">Terms & Privacy Policy</a></span></div>
- <div class="footer"><span>Already have an account? </span><span><a href="#" class="link_bottom">Sign in</a></span></div>
- </div>
-</form>
-</div>
-</main>
-
-<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script> 
-<script type="text/javascript" src="/js/sign_up.js"></script> 
+    <%-include('_home-signin');%>
 
 <%}else{%>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <link rel="stylesheet" type="text/css" href="/css/home.css">
    <div id="home-container">
-   <div id="Feed">
-   <div id="journey">
-    <div class="card">
-        <img src="images/logo.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-          <a href=""><h5 class="card-title">Share Your Journey</h5></a>
-          <p class="card-text">Sharing your journey with us is the best way to inspire and motivate our community. You can also add images, videos, text, etc. to give a good visualization of your journey to success. </p>
-        </div>
-      </div>
-   </div>
-
-   </div>
+    <%-include('_home-feed');%>
    <div id="main">
        <div id="question">
            <h3>Hii <%=user.name%></h3>
@@ -77,7 +28,7 @@
            <%}else{%>
            <div id="answer_container"> 
                 <div id="question_asked">
-                    <h3>Question asked by <%=post.user.name%></h3>
+                    <p>Question asked by <b><%=post.user.name%></b></p>
                     <h1><%=post.content%></h1>
                 </div>
             <%for(ans of post.answers){%>
@@ -103,7 +54,9 @@
                                         <a href="#about">Edit Answer</a>
                                     </div>
                                 </div>
-                                <%}%>
+                                <%}%></br>
+                                <h3><%=ans.createdAt.toString().slice(4,10)%></h3>
+                                
                 
                         </span>
                     </div>
@@ -177,26 +130,7 @@
          
     </div>
    </div>
-   <div id="aside">
-       <div id="our_blogs">
-           <div id="blogs_header"><h2>Our Blogs</h2></div>
-           <div id="blogs_content">
-               <ul>
-                   <div><a href="#"><li>This is my First Blog in this website</li></a></div>
-                   <div><a href="#"><li>This is my Second Blog in this website</li></a></div>
-                   <div><a href="#"><li>This is my First Blog in this website</li></a></div>
-                   <div><a href="#"><li>This is my Second Blog in this website</li></a></div>
-                   <div><a href="#"><li>This is my First Blog in this website</li></a></div>
-                   <div><a href="#"><li>This is my Second Blog in this website</li></a></div>
-                   <div><a href="#"><li>This is my First Blog in this website</li></a></div>
-                   <div><a href="#"><li>This is my Second Blog in this website</li></a></div>
-                   <div><a href="#"><li>This is my First Blog in this website</li></a></div>
-                   <div><a href="#"><li>This is my Second Blog in this website</li></a></div>
-
-               </ul>
-           </div>
-       </div>
-   </div>
+    <%-include('_home-aside');%>
    </div>
    </div>
 

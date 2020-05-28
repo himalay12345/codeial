@@ -1,15 +1,20 @@
 <link rel="stylesheet" type="text/css" href="/css/profile.css">
 <script type="text/javascript" src="/ckeditor/ckeditor.js"></script>
 <main>
-<h2>This is a profile page</h2>
-<h1>Hiii <%=user.name%></h1>
-<a href="/user/sign-out">Sign out</a>
-<form>
-<div id="edit"><textarea name="text" cols="4">Enter Your text Here</textarea></div>
-<script type="text/javascript">
-    CKEDITOR.replace( 'text',{height: 400 ,width:400});
-    
-  </script>
+
+  <%if(user.id == profile_user.id){%>
+    <h2>This is a profile page</h2>
+    <h1>Hiii <%=profile_user.name%></h1>
+    <a href="/user/sign-out">Sign out</a>
+ <%}else{%>
+  <h2>This is a profile page</h2>
+  <h1>Hiii <%=profile_user.name%></h1>
+  <%}%>
+
+
+
+
+
 <input type="submit" value="Submit"/>
 </form>
 </main>

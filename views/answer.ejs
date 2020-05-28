@@ -97,7 +97,7 @@
              <div id="header"><span>Question added</span><a href="#"><span>-<%=post.topic%></span></a></div>
              <div id="unanswered_content">
                  </a><div id="content"><a href="#"><%=post.content%></a></div>
-                 <div id="content_key"><a></a><span><b>1 Answer</b></span></a><span>-Last followed 20m ago</span></div>
+                 <div id="content_key"><a></a><span><b><%=post.answers.length%> Answer</b></span></a><span>-Last followed 20m ago</span></div>
              </div>
              <div id="interact">
                  <a href="#" id="ans"><span  class="margin"><span><i class="fas fa-edit"></i></span><span>Answer</span></span></a>
@@ -111,6 +111,7 @@
              <textarea id="text" name="content"></textarea>
              <input name="topic" value="<%=post.topic%>" type="hidden">
              <input name="question" value="<%=post._id%>" type="hidden">
+             <!-- <input name="user" value="<%=user._id%>" type="hidden"> -->
              </br>
              <button type="submit" id="editor_submit">Sumbit</button>
              <a href="#" id="editor_cancel" class="cancel">Cancel</a>
@@ -135,7 +136,7 @@
             <div id="table_content">
                 <div id="content">
                     <div>Today</div>
-                    <div>15</div>
+                    <div><%=user.answers.length%></div>
                     <div>1.3K</div>
                     <div>500</div>
                 </div>

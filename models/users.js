@@ -13,7 +13,13 @@ const userSchema = new mongoose.Schema({
     name :{
         type:String,
         required: true
-    }
+    },
+    answers: [
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'Answer'
+        }
+    ]
 },
     {
         timestamps : true
