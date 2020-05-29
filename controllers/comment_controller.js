@@ -28,6 +28,7 @@ module.exports.create = function(req,res)
                 
                 answer.comments.push(comment);
                 answer.save();
+                req.flash('success','Comment added successfully');
                 return(res.redirect('back'));
             });
         }
@@ -51,7 +52,7 @@ module.exports.destroy = function(req,res)
             {
                 console.log('error in deleting answer database');
             }
-            
+                req.flash('success','Comment removed successfully');
                 return res.redirect('back');
             });
         }

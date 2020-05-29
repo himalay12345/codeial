@@ -2,7 +2,7 @@
 <script type="text/javascript" src="/ckeditor/ckeditor.js"></script>
 <main>
 
-  <%if(user.id == profile_user.id){%>
+  <%if(locals.user.id == profile_user.id){%>
     <h2>This is a profile page</h2>
     <h1>Hiii <%=profile_user.name%></h1>
     <a href="/user/sign-out">Sign out</a>

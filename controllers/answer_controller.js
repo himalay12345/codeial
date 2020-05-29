@@ -3,30 +3,20 @@ const Post = require('../models/posts');
 const Comment = require('../models/comments');
 const User = require('../models/users');
 
-module.exports.create = function(req,res)
+module.exports.create =async function(req,res)
 {
-    Post.findById(req.body.question,function(err,post)
-    {
-        if(err)
-        {
-            console.log('Error in finding question');
-            return;
-        }
+    let post = await Post.findById(req.body.question);
+
             if(post)
             {
-                    Answer.create({
+                   let answer = await Answer.create({
                     content:req.body.content,
                     topic:req.body.topic,
                     question:req.body.question,
                     user:req.user._id
-                },function(err,answer)
-                {
-                    if(err)
-                    {
-                        console.log('Error in creating answer database');
-                        return;
-                    }
-                    User.findById(req.user._id,function(err,user)
+                });
+
+                 User.findById(req.user._id,function(err,user)
                     {
                         if(err)
                         {
@@ -38,11 +28,11 @@ module.exports.create = function(req,res)
                     });
                     post.answers.push(answer);
                     post.save();
+                    req.flash('success','Answer added successfully');
                     return res.redirect('back');
-                });
+                
         }
-    });
-    
+
 }
 
 module.exports.destroy = function(req,res)
@@ -78,6 +68,7 @@ module.exports.destroy = function(req,res)
                 return;
             }
             });
+            req.flash('success','Answer removed successfully');
             return res.redirect('back');
             
         }

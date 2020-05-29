@@ -34,7 +34,7 @@ module.exports.signUp = function(req,res)
 module.exports.signIn = function(req,res)
 {
     if(req.isAuthenticated()){
-        return res.redirect('/user/profile');
+        return res.redirect('/');
     }
     return res.render('sign_in_page',
     {
@@ -70,34 +70,31 @@ module.exports.create = function(req,res)
 }
 module.exports.createSession = function(req,res)
 {
+    req.flash('success','Logged in successfully');
    return res.redirect('/');
 }
 
 module.exports.destroySession = function(req,res)
 {
     req.logout();
-
-    return res.redirect('/');
+    req.flash('success','Logged out successfully');
+    return res.redirect('/user/sign-in');
 }
 
-module.exports.answer = function(req,res)
+module.exports.answer =async function(req,res)
 {
-    Post.find({}).populate('user').exec(function(err,posts)
-    {
-        if(err)
-        {
-            console.log('Error in finding post database');
-            return;
-        }
+    try{
+    let posts = await Post.find({}).populate('user');
 
         return res.render('answer',{
             title:"Codeial | Answer",
             posts:posts
         });
-        
-    });
-
-    // res.render('answer',{
-    //     title:"Codeial | Answer"
-    // });
+    }
+    
+    catch(err)
+    {
+        console.log('Error',err);
+        return;
+    }
 }
