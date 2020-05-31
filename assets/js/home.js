@@ -39,6 +39,7 @@ for(let i=0;i<c_dropbtn.length;i++)
     
 }
 
+
 var dropbtn = document.querySelectorAll('.dropbtn');
 for(let i=0;i<dropbtn.length;i++)
 {
@@ -50,7 +51,13 @@ for(let i=0;i<dropbtn.length;i++)
     
 }
 
-
+function boo(answerId){
+        
+    var dropdown = document.querySelector(answerId);
+    dropdown.classList.add('c_show');
+            
+             
+ }
 
 // Close the dropdown if the user clicks outside of it
 window.onclick = function(event) {

@@ -10,6 +10,60 @@
   padding-left: 10px; }
   #home-container .display {
     display: none !important; }
+  #home-container .showLeft {
+    background-color: white !important;
+    text-shadow: none !important;
+    color: #fff !important;
+    padding-top: 5px; }
+  #home-container .icons li {
+    background: none repeat scroll 0 0 black;
+    height: 4px;
+    width: 4px;
+    line-height: 0;
+    list-style: none outside none;
+    margin-right: 15px;
+    margin-top: 2px;
+    vertical-align: top;
+    border-radius: 50%;
+    pointer-events: none; }
+  #home-container .btn-left {
+    left: 0.4em; }
+  #home-container .btn-right {
+    right: 0; }
+  #home-container .btn-left, #home-container .btn-right {
+    position: absolute;
+    top: -20px; }
+  #home-container .c_dropbtn {
+    background-color: #4CAF50;
+    position: absolute;
+    color: white;
+    font-size: 16px;
+    border: none;
+    cursor: pointer; }
+  #home-container .c_dropbtn:hover, #home-container .c_dropbtn:focus {
+    background-color: #3e8e41; }
+  #home-container .dropdown {
+    position: absolute;
+    display: inline-block;
+    right: 0; }
+  #home-container .dropdown-content {
+    display: none;
+    position: relative;
+    margin-top: 35px;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1; }
+  #home-container .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block; }
+  #home-container .dropdown a:hover {
+    background-color: #f1f1f1; }
+  #home-container .c_show {
+    display: block; }
   #home-container #feed {
     width: 24%;
     position: fixed;
@@ -126,7 +180,7 @@
           color: black;
           font-size: 1.5rem;
           font-family: Arial, Helvetica, sans-serif; }
-    #home-container #main #topic_answered {
+    #home-container #main .topic_answered {
       position: relative;
       height: auto;
       width: 98%;
@@ -137,7 +191,7 @@
       border-radius: 3px;
       display: flex;
       border: 1px solid #39304f; }
-      #home-container #main #topic_answered #comment_section {
+      #home-container #main .topic_answered #comment_section {
         height: auto;
         width: 100%;
         display: flex;
@@ -146,118 +200,64 @@
         border-radius: 3px;
         border: 1px solid grey;
         margin-bottom: 10px; }
-        #home-container #main #topic_answered #comment_section #comment_card {
+        #home-container #main .topic_answered #comment_section .comment_card {
           height: 80%;
           display: flex;
           border: 2px solid grey;
           flex-direction: column;
           padding: 8px;
           background-color: white; }
-          #home-container #main #topic_answered #comment_section #comment_card #comment_header {
+          #home-container #main .topic_answered #comment_section .comment_card #comment_header {
             height: 30%;
             display: inline-flex;
             margin-bottom: 8px; }
-            #home-container #main #topic_answered #comment_section #comment_card #comment_header img {
+            #home-container #main .topic_answered #comment_section .comment_card #comment_header img {
               height: 25px;
               width: 25px;
               border-radius: 50%;
               border: 1px solid grey;
               padding: 5px; }
-            #home-container #main #topic_answered #comment_section #comment_card #comment_header div {
+            #home-container #main .topic_answered #comment_section .comment_card #comment_header div {
               margin-left: 15px; }
-              #home-container #main #topic_answered #comment_section #comment_card #comment_header div h2 {
+              #home-container #main .topic_answered #comment_section .comment_card #comment_header div h2 {
                 margin: 0;
                 color: black;
                 font-family: Arial, Helvetica, sans-serif;
                 font-size: 1.1rem; }
-              #home-container #main #topic_answered #comment_section #comment_card #comment_header div h3 {
+              #home-container #main .topic_answered #comment_section .comment_card #comment_header div h3 {
                 margin: 0;
                 font-family: Arial, Helvetica, sans-serif;
                 font-size: 0.8rem; }
-          #home-container #main #topic_answered #comment_section #comment_card #comment_content {
+          #home-container #main .topic_answered #comment_section .comment_card #comment_content {
             height: 50%;
             border: 1px solid grey;
             padding: 5px;
             font-family: Arial, Helvetica, sans-serif;
             font-size: 1.1rem;
             margin-bottom: 5px; }
-          #home-container #main #topic_answered #comment_section #comment_card #comment_interact {
+          #home-container #main .topic_answered #comment_section .comment_card #comment_interact {
             height: 25%;
             padding: 3px;
             position: relative; }
-            #home-container #main #topic_answered #comment_section #comment_card #comment_interact a {
+            #home-container #main .topic_answered #comment_section .comment_card #comment_interact a {
               text-decoration: none;
               margin-right: 8px;
               color: black; }
-              #home-container #main #topic_answered #comment_section #comment_card #comment_interact a span {
+              #home-container #main .topic_answered #comment_section .comment_card #comment_interact a span {
                 margin-left: 5px;
                 margin-right: 5px;
                 font-size: small; }
-            #home-container #main #topic_answered #comment_section #comment_card #comment_interact .showLeft {
-              background-color: white !important;
-              text-shadow: none !important;
-              color: #fff !important;
-              padding-top: 5px; }
-            #home-container #main #topic_answered #comment_section #comment_card #comment_interact .icons li {
-              background: none repeat scroll 0 0 black;
-              height: 4px;
-              width: 4px;
-              line-height: 0;
-              list-style: none outside none;
-              margin-right: 15px;
-              margin-top: 2px;
-              vertical-align: top;
-              border-radius: 50%;
-              pointer-events: none; }
-            #home-container #main #topic_answered #comment_section #comment_card #comment_interact .btn-left {
-              left: 0.4em; }
-            #home-container #main #topic_answered #comment_section #comment_card #comment_interact .btn-right {
-              right: 0; }
-            #home-container #main #topic_answered #comment_section #comment_card #comment_interact .btn-left, #home-container #main #topic_answered #comment_section #comment_card #comment_interact .btn-right {
-              position: absolute;
-              top: -20px; }
-            #home-container #main #topic_answered #comment_section #comment_card #comment_interact .c_dropbtn {
-              background-color: #4CAF50;
-              position: absolute;
-              color: white;
-              font-size: 16px;
-              border: none;
-              cursor: pointer; }
-            #home-container #main #topic_answered #comment_section #comment_card #comment_interact .c_dropbtn:hover, #home-container #main #topic_answered #comment_section #comment_card #comment_interact .c_dropbtn:focus {
-              background-color: #3e8e41; }
-            #home-container #main #topic_answered #comment_section #comment_card #comment_interact .dropdown {
-              position: absolute;
-              display: inline-block;
-              right: 0; }
-            #home-container #main #topic_answered #comment_section #comment_card #comment_interact .dropdown-content {
-              display: none;
-              position: relative;
-              margin-top: 35px;
-              background-color: #f9f9f9;
-              min-width: 160px;
-              overflow: auto;
-              box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-              z-index: 1; }
-            #home-container #main #topic_answered #comment_section #comment_card #comment_interact .dropdown-content a {
-              color: black;
-              padding: 12px 16px;
-              text-decoration: none;
-              display: block; }
-            #home-container #main #topic_answered #comment_section #comment_card #comment_interact .dropdown a:hover {
-              background-color: #f1f1f1; }
-            #home-container #main #topic_answered #comment_section #comment_card #comment_interact .c_show {
-              display: block; }
-        #home-container #main #topic_answered #comment_section #comment_option {
+        #home-container #main .topic_answered #comment_section #comment_option {
           height: 20%;
           display: flex;
           flex-wrap: wrap;
           justify-content: space-around;
           padding: 10px; }
-          #home-container #main #topic_answered #comment_section #comment_option img {
+          #home-container #main .topic_answered #comment_section #comment_option img {
             height: 30px;
             width: 30px;
             border-radius: 50%; }
-          #home-container #main #topic_answered #comment_section #comment_option input {
+          #home-container #main .topic_answered #comment_section #comment_option input {
             width: 60%;
             height: 30px;
             margin-top: 0px;
@@ -271,65 +271,66 @@
             outline: 0;
             resize: none;
             border-radius: 10px; }
-          #home-container #main #topic_answered #comment_section #comment_option input:focus {
+          #home-container #main .topic_answered #comment_section #comment_option input:focus {
             font-size: 1rem;
             font-weight: normal; }
-          #home-container #main #topic_answered #comment_section #comment_option a {
+          #home-container #main .topic_answered #comment_section #comment_option a {
             width: 20%;
             font-weight: 100px;
             cursor: pointer; }
-            #home-container #main #topic_answered #comment_section #comment_option a button {
+            #home-container #main .topic_answered #comment_section #comment_option a button {
               padding: 7px;
               width: 100px;
               border-radius: 5px;
               border: 0;
+              cursor: pointer;
               font-family: Arial, Helvetica, sans-serif; }
-      #home-container #main #topic_answered #author_image {
+      #home-container #main .topic_answered #author_image {
         width: 20%;
         height: auto;
         padding-top: 50px;
         box-sizing: border-box; }
-        #home-container #main #topic_answered #author_image img {
+        #home-container #main .topic_answered #author_image img {
           height: 140px;
           width: 100px;
           padding-left: 10px;
           border: 1px solid grey;
           margin-bottom: 25px; }
-        #home-container #main #topic_answered #author_image a {
+        #home-container #main .topic_answered #author_image a {
           text-decoration: none;
           padding: 3px; }
-        #home-container #main #topic_answered #author_image span {
+        #home-container #main .topic_answered #author_image span {
           margin-right: 7px;
           margin-left: 8px;
           font-size: 0.9rem;
           font-family: Arial, Helvetica, sans-serif;
           font-weight: 600; }
-      #home-container #main #topic_answered #topic_content {
+      #home-container #main .topic_answered #topic_content {
         width: 78%;
         display: flex;
         flex-direction: column; }
-        #home-container #main #topic_answered #topic_content #author_header {
+        #home-container #main .topic_answered #topic_content #author_header {
           height: 20%;
           padding-bottom: 5px;
           padding-top: 7px; }
-          #home-container #main #topic_answered #topic_content #author_header h3 {
+          #home-container #main .topic_answered #topic_content #author_header h3 {
             margin-top: 5px;
             margin-left: 10px; }
-          #home-container #main #topic_answered #topic_content #author_header span {
+          #home-container #main .topic_answered #topic_content #author_header span {
             font-family: Arial, Helvetica, sans-serif;
             font-size: 1.1rem;
             margin-left: 10px;
             margin-right: 10px;
             font-weight: 550; }
-          #home-container #main #topic_answered #topic_content #author_header b {
+          #home-container #main .topic_answered #topic_content #author_header b {
             font-family: Arial, Helvetica, sans-serif;
             font-size: 0.8rem; }
-          #home-container #main #topic_answered #topic_content #author_header .showLeft {
+          #home-container #main .topic_answered #topic_content #author_header .showLeft {
             background-color: white !important;
             text-shadow: none !important;
             color: #fff !important;
             padding-top: 5px; }
-          #home-container #main #topic_answered #topic_content #author_header .icons li {
+          #home-container #main .topic_answered #topic_content #author_header .icons li {
             background: none repeat scroll 0 0 black;
             height: 4px;
             width: 4px;
@@ -340,27 +341,27 @@
             vertical-align: top;
             border-radius: 50%;
             pointer-events: none; }
-          #home-container #main #topic_answered #topic_content #author_header .btn-left {
+          #home-container #main .topic_answered #topic_content #author_header .btn-left {
             left: 0.4em; }
-          #home-container #main #topic_answered #topic_content #author_header .btn-right {
+          #home-container #main .topic_answered #topic_content #author_header .btn-right {
             right: 0; }
-          #home-container #main #topic_answered #topic_content #author_header .btn-left, #home-container #main #topic_answered #topic_content #author_header .btn-right {
+          #home-container #main .topic_answered #topic_content #author_header .btn-left, #home-container #main .topic_answered #topic_content #author_header .btn-right {
             position: absolute;
             top: -20px; }
-          #home-container #main #topic_answered #topic_content #author_header .dropbtn {
+          #home-container #main .topic_answered #topic_content #author_header .dropbtn {
             background-color: #4CAF50;
             position: absolute;
             color: white;
             font-size: 16px;
             border: none;
             cursor: pointer; }
-          #home-container #main #topic_answered #topic_content #author_header .dropbtn:hover, #home-container #main #topic_answered #topic_content #author_header .dropbtn:focus {
+          #home-container #main .topic_answered #topic_content #author_header .dropbtn:hover, #home-container #main .topic_answered #topic_content #author_header .dropbtn:focus {
             background-color: #3e8e41; }
-          #home-container #main #topic_answered #topic_content #author_header .dropdown {
+          #home-container #main .topic_answered #topic_content #author_header .dropdown {
             position: absolute;
             display: inline-block;
             right: 0; }
-          #home-container #main #topic_answered #topic_content #author_header .dropdown-content {
+          #home-container #main .topic_answered #topic_content #author_header .dropdown-content {
             display: none;
             position: relative;
             margin-top: 35px;
@@ -369,27 +370,27 @@
             overflow: auto;
             box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
             z-index: 1; }
-          #home-container #main #topic_answered #topic_content #author_header .dropdown-content a {
+          #home-container #main .topic_answered #topic_content #author_header .dropdown-content a {
             color: black;
             padding: 12px 16px;
             text-decoration: none;
             display: block; }
-          #home-container #main #topic_answered #topic_content #author_header .show {
+          #home-container #main .topic_answered #topic_content #author_header .show {
             display: block; }
-          #home-container #main #topic_answered #topic_content #author_header .dropdown a:hover {
+          #home-container #main .topic_answered #topic_content #author_header .dropdown a:hover {
             background-color: #f1f1f1; }
-        #home-container #main #topic_answered #topic_content #author_content {
+        #home-container #main .topic_answered #topic_content #author_content {
           min-height: 180px;
           height: auto;
           border: 1px solid grey;
           padding: 5px;
           margin-bottom: 5px; }
-          #home-container #main #topic_answered #topic_content #author_content p {
+          #home-container #main .topic_answered #topic_content #author_content p {
             font-size: 1rem;
             font-family: Arial, Helvetica, sans-serif; }
-          #home-container #main #topic_answered #topic_content #author_content #ans {
+          #home-container #main .topic_answered #topic_content #author_content #ans {
             height: 100%; }
-        #home-container #main #topic_answered #topic_content #author_interact {
+        #home-container #main .topic_answered #topic_content #author_interact {
           height: 30px;
           font-weight: normal;
           padding: 3px;
@@ -397,14 +398,14 @@
           display: flex;
           justify-content: space-around;
           margin-bottom: 5px; }
-          #home-container #main #topic_answered #topic_content #author_interact a {
+          #home-container #main .topic_answered #topic_content #author_interact a {
             text-decoration: none;
             padding: 3px;
             border-radius: 3px;
             background-color: #5B5EA6;
             border: 1px solid grey;
             color: white; }
-          #home-container #main #topic_answered #topic_content #author_interact i {
+          #home-container #main .topic_answered #topic_content #author_interact i {
             margin-right: 7px; }
   #home-container #aside {
     width: 24%;

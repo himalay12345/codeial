@@ -15,6 +15,82 @@
     .display{
         display: none !important;
     }
+    
+    .showLeft{
+        background-color: white !important;
+        // border:1px solid black !important;
+        text-shadow: none !important;
+        color:#fff !important;
+        padding-top: 5px;
+       
+    }
+
+    .icons li {
+        background: none repeat scroll 0 0 black;
+        height: 4px;
+        width: 4px;
+        line-height: 0;
+        list-style: none outside none;
+        margin-right: 15px;
+        margin-top: 2px;
+        vertical-align: top;
+        border-radius:50%;
+        pointer-events: none;
+    }
+
+    .btn-left {
+        left: 0.4em;
+    }
+
+    .btn-right {
+        right: 0;
+    }
+
+    .btn-left, .btn-right {
+        position: absolute;
+        top: -20px;
+    }
+
+    .c_dropbtn {
+        background-color: #4CAF50;
+        position: absolute;
+        color: white;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+    }
+
+    .c_dropbtn:hover, .c_dropbtn:focus {
+        background-color: #3e8e41;
+    }
+
+    .dropdown {
+        position: absolute;
+        display: inline-block;
+        right: 0;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: relative;
+        margin-top: 35px;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        overflow: auto;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+    }
+
+    .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+
+    .dropdown a:hover {background-color: #f1f1f1}
+
+    .c_show {display:block;}
 
 
     #feed{
@@ -175,7 +251,7 @@
             }
         }
 
-        #topic_answered{
+        .topic_answered{
             position:relative;
             // min-height: 200px;
             height: auto;
@@ -198,7 +274,7 @@
                 border:1px solid grey;
                 margin-bottom: 10px;
 
-                #comment_card{
+                .comment_card{
                     height:80%;
                     // border:1px solid red;
                     display: flex;
@@ -268,81 +344,6 @@
                             }
                         }
 
-                        .showLeft{
-                            background-color: white !important;
-                            // border:1px solid black !important;
-                            text-shadow: none !important;
-                            color:#fff !important;
-                            padding-top: 5px;
-                           
-                        }
-        
-                        .icons li {
-                            background: none repeat scroll 0 0 black;
-                            height: 4px;
-                            width: 4px;
-                            line-height: 0;
-                            list-style: none outside none;
-                            margin-right: 15px;
-                            margin-top: 2px;
-                            vertical-align: top;
-                            border-radius:50%;
-                            pointer-events: none;
-                        }
-        
-                        .btn-left {
-                            left: 0.4em;
-                        }
-        
-                        .btn-right {
-                            right: 0;
-                        }
-        
-                        .btn-left, .btn-right {
-                            position: absolute;
-                            top: -20px;
-                        }
-        
-                        .c_dropbtn {
-                            background-color: #4CAF50;
-                            position: absolute;
-                            color: white;
-                            font-size: 16px;
-                            border: none;
-                            cursor: pointer;
-                        }
-        
-                        .c_dropbtn:hover, .c_dropbtn:focus {
-                            background-color: #3e8e41;
-                        }
-        
-                        .dropdown {
-                            position: absolute;
-                            display: inline-block;
-                            right: 0;
-                        }
-        
-                        .dropdown-content {
-                            display: none;
-                            position: relative;
-                            margin-top: 35px;
-                            background-color: #f9f9f9;
-                            min-width: 160px;
-                            overflow: auto;
-                            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-                            z-index: 1;
-                        }
-        
-                        .dropdown-content a {
-                            color: black;
-                            padding: 12px 16px;
-                            text-decoration: none;
-                            display: block;
-                        }
-        
-                        .dropdown a:hover {background-color: #f1f1f1}
-        
-                        .c_show {display:block;}
                     }
 
                 }
@@ -394,6 +395,7 @@
                             width: 100px;
                             border-radius: 5px;
                             border: 0;
+                            cursor: pointer;
                             font-family: Arial, Helvetica, sans-serif;
                         }
                     }
