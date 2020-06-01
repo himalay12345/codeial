@@ -1,8 +1,202 @@
-main{
-    background-color: blueviolet;
-    text-align: center;
-}
 
-#edit{
-    margin-left: 20px;
+#profile_container{
+    margin:0;
+    display: flex;
+    flex-direction:row;
+    color:#100c08;
+    justify-content: space-around;
+
+    .display{
+        display: none;
+    }
+
+    #profile_info{
+        height:100vh;
+        width:25%;
+        // border:1px solid black;
+
+        #profile_credential{
+            min-height:100px;
+            height:auto;
+            // border:1px solid black;
+
+            button{
+                width:270px;
+                padding: 10px;
+                color:black;
+                background-color: grey;
+                font-size: medium;
+                border:none;
+                border-radius: 3px;
+                font-weight: 700;
+                margin-left:30px;
+                cursor: pointer;
+            }
+
+            #credential_input{
+                padding-left: 30px;
+                transition: 0.5 all;
+                    textarea{
+                        width:90%;
+                        height:70px;
+                        // margin-left: 20px;
+                        font-size: 1rem;
+                        outline: none;
+                        margin-bottom: 10px;
+                        box-shadow: 
+                        inset 0 0 5px rgba(0,0,0,0.1),
+                        inset 0 3px 2px rgba(0,0,0,0.1);
+                    }
+                    a{
+                        text-decoration: none;
+                        background-color: #F7F9FA;
+                        color: black;
+                        font-weight: bold;
+                        font-family: Arial, Helvetica, sans-serif;
+                        padding: 6px;
+                        border:1px solid black;
+                        margin-left: 5px;
+                        border-radius: 3px;
+                        font-size: 0.9rem;
+                        outline: none;
+
+                    }
+
+                   button{
+                       width:50px;
+                       font-size: 0.9rem;
+                       padding: 7px;
+                       background-color: #30C553;
+                       color: white;
+                       border-radius: 3px;
+                       outline: none;
+                   }
+
+                    span{
+                        margin-right: 15px;
+                    }
+                    input{
+                        padding: 7px;
+                        width: 80%;
+                        font-size: 0.9rem;
+                        margin-bottom: 8px;
+                        border:0.5px solid grey;
+                        box-shadow: 
+                        inset 0 0 5px rgba(0,0,0,0.1),
+                        inset 0 3px 2px rgba(0,0,0,0.1);
+                        border-radius: 3px;
+                        outline: none;
+                    }
+            }
+
+        }
+
+        #profile_header{
+            height:400px;
+            width: 100%;
+            // border:1px solid red;
+            padding-top:20px;
+            padding-left: 30px;
+            box-sizing: border-box;
+            box-sizing: border-box;
+            display: inline-block;
+            position: relative;
+
+            #image{
+                a{
+                    text-decoration: none;
+                    color: white;
+                    padding: 5px;
+                    width: 70px;
+                    background-color: black;
+                    border-radius: 3px;
+                    position:absolute;
+                    bottom:27.5%;
+                    right: 9%;
+                }
+    
+                img{
+                    height:270px;
+                    width:90%;
+                    border-radius: 3px;
+                    // border:1px solid cyan;
+                }
+    
+            }
+
+            #profile_name{
+                // border:1px solid red;
+                // padding-left: 20px;
+                padding-top: 30px;
+                display: block;
+
+                div{
+                    margin-top: -20px;
+                    width: 100%;
+                    // border:1px solid red;
+                    h1{
+                        font-size: 1.7rem;
+                        margin-top: 5px;
+                        margin-bottom: 20px;
+                        font-family: Arial, Helvetica, sans-serif;
+                        // border:1px solid red;
+                    }
+                }
+
+                span{
+                    margin-left: 20px;
+                    margin-right: 10px;
+
+                    a{
+                        text-decoration: none;
+                        border:1px solid black;
+                        border-radius: 3px;
+                        padding:7px;
+                        color:#100c08;
+                        // background-color: cyan;
+                        padding-right: 10px;
+                        padding-left: 10px;
+                    }
+                }
+            }
+        }
+    }
+    #profile_space{
+        height:100vh;
+        width:75%;
+        padding-right: 25px;
+        // border:1px solid black;
+        
+        #profile_nav{
+            margin-top: 10px;
+            height:60px;
+            border-bottom:1px solid grey;
+            display: inline-flex;
+            width: 100%;
+            // justify-content: space-between;
+            padding-top: 20px;
+            box-sizing: border-box;
+            
+            #overview{
+                border-bottom:2px solid orangered;
+                font-weight: bold;
+            }
+
+            a{
+                text-decoration:none;
+                color:#100c08;
+                font-size: 0.97rem;
+                font-family:sans-serif;
+                margin-right: 40px;
+            }
+
+            a:hover{
+                transform: 0.5 all;
+                border-bottom:2px solid grey;
+                color: #110f0d;;
+                width: auto;
+            }
+
+        }
+    }
 }
