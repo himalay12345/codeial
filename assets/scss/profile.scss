@@ -13,6 +13,7 @@
     #profile_info{
         height:100vh;
         width:25%;
+        border-right: 1px solid grey;
         // border:1px solid black;
 
         #profile_credential{
@@ -20,18 +21,32 @@
             height:auto;
             // border:1px solid black;
 
-            button{
-                width:270px;
-                padding: 10px;
-                color:black;
-                background-color: grey;
-                font-size: medium;
-                border:none;
-                border-radius: 3px;
-                font-weight: 700;
-                margin-left:30px;
-                cursor: pointer;
+        #edit_profile{
+                    button{
+                        width:270px;
+                        padding: 10px;
+                        color:black;
+                        background-color: grey;
+                        font-size: medium;
+                        border:none;
+                        border-radius: 3px;
+                        font-weight: 700;
+                        margin-left:30px;
+                        cursor: pointer;
             }
+
+            p{
+                font-size: 1rem;
+                font-family: Arial, Helvetica, sans-serif;
+                color:#100c08;
+                margin-left: 30px;
+                margin-bottom: -5px;
+
+                span{
+                    margin-right: 12px;
+                }
+            }
+        }
 
             #credential_input{
                 padding-left: 30px;
@@ -68,6 +83,8 @@
                        padding: 7px;
                        background-color: #30C553;
                        color: white;
+                       border: none;
+                       cursor: pointer;
                        border-radius: 3px;
                        outline: none;
                    }
@@ -92,7 +109,8 @@
         }
 
         #profile_header{
-            height:400px;
+            min-height:400px;
+            height: auto;
             width: 100%;
             // border:1px solid red;
             padding-top:20px;
@@ -128,6 +146,7 @@
                 // border:1px solid red;
                 // padding-left: 20px;
                 padding-top: 30px;
+                padding-bottom: 20px;
                 display: block;
 
                 div{
@@ -165,6 +184,7 @@
         height:100vh;
         width:75%;
         padding-right: 25px;
+        padding-left: 10px;
         // border:1px solid black;
         
         #profile_nav{
@@ -188,6 +208,14 @@
                 font-size: 0.97rem;
                 font-family:sans-serif;
                 margin-right: 40px;
+
+                span{
+                    margin-left: 10px;
+                    border-radius: 30%;
+                    background-color: gray;
+                    color: white;
+                    padding: 3px;
+                }
             }
 
             a:hover{
@@ -197,6 +225,93 @@
                 width: auto;
             }
 
+        }
+    }
+}
+// -----------------------------------------------
+
+#unanswered{
+    height: 130px;
+    width: 100%;
+    border:1px solid grey;
+    background-color: white;
+    border-radius: 3px;
+    margin-bottom: 5px;
+    a{
+        text-decoration: none;
+    }
+    
+
+    #header{
+        height: 25%;
+        // border:1px solid red;
+        padding: 10px;
+        box-sizing: border-box;
+        span{
+            margin-right:25px;
+            font-size: 1rem;
+            color: grey;
+            // font-family: Arial, Helvetica, sans-serif;
+        }
+    }
+
+    #interact{
+        height: 25%;
+        // border:1px solid red;
+        padding: 10px;
+        padding-top: 0;
+        box-sizing: border-box;
+
+        a:hover{
+            background-color: rgb(255, 255, 255);
+            color: black;
+            transition: 0.2s all;
+        }
+
+        .margin{
+            margin-right: 20px;
+            color:grey;
+            border-radius: 20px;
+
+            i{
+                color:#5B5EA6;
+            }
+            
+            span{
+                margin-right: 5px;
+            }
+        }
+    }
+
+   
+
+    #unanswered_content{
+        padding: 10px;
+        box-sizing: border-box;
+        height: 50%;
+        // border:1px solid red;
+        padding-top: 5px;
+
+        #content{
+            font-size: 1.1rem;
+            font-weight: 600;
+            font-family:Verdana, Geneva, sans-serif;
+            margin-bottom:5px;
+            a{
+                color: #100c08;
+            }
+        }
+
+        #content_key{
+            span{
+                font-size:0.9rem;
+                color: grey;
+                margin-right:6px;
+
+                b{
+                    font-weight: 1000;
+                }
+            }
         }
     }
 }

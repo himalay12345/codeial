@@ -1,17 +1,7 @@
 const User = require('../models/users');
 const Post = require('../models/posts');
-
-module.exports.profile = function(req,res)
-{
-    User.findById(req.params.id,function(err,user)
-    {
-        return res.render('profile',{
-            title:"Profile",
-            profile_user:user
-        });
-    })
-    
-}
+const fs = require('fs');
+const path = require('path');
 
 module.exports.post = function(req,res)
 {
@@ -67,6 +57,55 @@ module.exports.create = function(req,res)
             return res.redirect('back');
         }
     });
+}
+
+module.exports.update = async function(req,res){
+  
+    try{
+        if(req.user.id == req.params.id)
+        {
+            let user = await User.findById(req.params.id);
+            User.uploadedAvatar(req,res,function(err){
+                if(err){console.log('*******Multer Error',err);return;}
+                
+                user.name = req.body.name;
+                user.office = req.body.office;
+                user.education = req.body.education;
+                user.location = req.body.location;
+                user.website = req.body.website;
+                user.description = req.body.description;
+                console.log(user.avatar);
+
+                if(req.file)
+                {
+                    if(!user.avatar)   {
+                        user.avatar = User.avatarPath +'/'+ req.file.filename;
+                    }
+
+                    else{
+
+                        fs.unlinkSync(path.join(__dirname,'..',user.avatar));
+                        user.avatar = User.avatarPath +'/'+ req.file.filename;
+                    }
+                }
+
+                user.save();
+
+
+            });
+            req.flash('success','Profile updated successfully');
+            return res.redirect('back');
+        }
+    
+        else{
+            return res.status(401).send('Unauthorized Access');
+        }
+    }
+    catch(err){
+        console.log('Error',err);
+        return;
+    }
+   
 }
 module.exports.createSession = function(req,res)
 {

@@ -8,11 +8,12 @@
     display: none; }
   #profile_container #profile_info {
     height: 100vh;
-    width: 25%; }
+    width: 25%;
+    border-right: 1px solid grey; }
     #profile_container #profile_info #profile_credential {
       min-height: 100px;
       height: auto; }
-      #profile_container #profile_info #profile_credential button {
+      #profile_container #profile_info #profile_credential #edit_profile button {
         width: 270px;
         padding: 10px;
         color: black;
@@ -23,6 +24,14 @@
         font-weight: 700;
         margin-left: 30px;
         cursor: pointer; }
+      #profile_container #profile_info #profile_credential #edit_profile p {
+        font-size: 1rem;
+        font-family: Arial, Helvetica, sans-serif;
+        color: #100c08;
+        margin-left: 30px;
+        margin-bottom: -5px; }
+        #profile_container #profile_info #profile_credential #edit_profile p span {
+          margin-right: 12px; }
       #profile_container #profile_info #profile_credential #credential_input {
         padding-left: 30px;
         transition: 0.5 all; }
@@ -51,6 +60,8 @@
           padding: 7px;
           background-color: #30C553;
           color: white;
+          border: none;
+          cursor: pointer;
           border-radius: 3px;
           outline: none; }
         #profile_container #profile_info #profile_credential #credential_input span {
@@ -65,7 +76,8 @@
           border-radius: 3px;
           outline: none; }
     #profile_container #profile_info #profile_header {
-      height: 400px;
+      min-height: 400px;
+      height: auto;
       width: 100%;
       padding-top: 20px;
       padding-left: 30px;
@@ -89,6 +101,7 @@
         border-radius: 3px; }
       #profile_container #profile_info #profile_header #profile_name {
         padding-top: 30px;
+        padding-bottom: 20px;
         display: block; }
         #profile_container #profile_info #profile_header #profile_name div {
           margin-top: -20px;
@@ -112,7 +125,8 @@
   #profile_container #profile_space {
     height: 100vh;
     width: 75%;
-    padding-right: 25px; }
+    padding-right: 25px;
+    padding-left: 10px; }
     #profile_container #profile_space #profile_nav {
       margin-top: 10px;
       height: 60px;
@@ -130,8 +144,67 @@
         font-size: 0.97rem;
         font-family: sans-serif;
         margin-right: 40px; }
+        #profile_container #profile_space #profile_nav a span {
+          margin-left: 10px;
+          border-radius: 30%;
+          background-color: gray;
+          color: white;
+          padding: 3px; }
       #profile_container #profile_space #profile_nav a:hover {
         transform: 0.5 all;
         border-bottom: 2px solid grey;
         color: #110f0d;
         width: auto; }
+
+#unanswered {
+  height: 130px;
+  width: 100%;
+  border: 1px solid grey;
+  background-color: white;
+  border-radius: 3px;
+  margin-bottom: 5px; }
+  #unanswered a {
+    text-decoration: none; }
+  #unanswered #header {
+    height: 25%;
+    padding: 10px;
+    box-sizing: border-box; }
+    #unanswered #header span {
+      margin-right: 25px;
+      font-size: 1rem;
+      color: grey; }
+  #unanswered #interact {
+    height: 25%;
+    padding: 10px;
+    padding-top: 0;
+    box-sizing: border-box; }
+    #unanswered #interact a:hover {
+      background-color: white;
+      color: black;
+      transition: 0.2s all; }
+    #unanswered #interact .margin {
+      margin-right: 20px;
+      color: grey;
+      border-radius: 20px; }
+      #unanswered #interact .margin i {
+        color: #5B5EA6; }
+      #unanswered #interact .margin span {
+        margin-right: 5px; }
+  #unanswered #unanswered_content {
+    padding: 10px;
+    box-sizing: border-box;
+    height: 50%;
+    padding-top: 5px; }
+    #unanswered #unanswered_content #content {
+      font-size: 1.1rem;
+      font-weight: 600;
+      font-family: Verdana, Geneva, sans-serif;
+      margin-bottom: 5px; }
+      #unanswered #unanswered_content #content a {
+        color: #100c08; }
+    #unanswered #unanswered_content #content_key span {
+      font-size: 0.9rem;
+      color: grey;
+      margin-right: 6px; }
+      #unanswered #unanswered_content #content_key span b {
+        font-weight: 1000; }

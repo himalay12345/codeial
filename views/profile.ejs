@@ -3,35 +3,65 @@
 <script type="text/javascript" src="/ckeditor/ckeditor.js"></script>
 <main>
 
-  <%if(locals.user.id == profile_user.id){%>
+  
     <div id="profile_container">
     <div id="profile_info">
       <div id="profile_header">
         <div id="image">
-          <img src="/images/myimage.jpg">
-          <a href="#" id="edit_photo">Edit Photo</a>
+          <img src="<%=profile_user.avatar%>" onerror=this.src="/images/user.png" >
+          <%if(locals.user.id == profile_user.id){%>
+            <a href="#" id="edit_photo">Edit Photo</a>
+            <%}%>
         </div>
+        
         <div id="profile_name">
-          <div><h1>Himalay Shankar</h1></div>
+          <div><h1><%=profile_user.name%></h1></div>
           <span><a href="#">Follower</a></span>
           <span><a href="#">Following</a></span>
         </div>
+
       </div>
       <div id="profile_credential">
-        <div id="Edit Profile">
+        <div id="edit_profile">
+          <%if(locals.user.id == profile_user.id){%>
           <button id="edit_btn">Edit Profile</button>
+          <%}else{%>
+            <button id="follow_btn">Follow</button>
+            <%}%>
+          <%if(profile_user.description){%>
+            <p><%=profile_user.description%></p>
+          <%}%>
+          <%if(profile_user.email){%>
+            <p><span><i class="fas fa-edit"></i></span><span><%=profile_user.email%></span></p>
+          <%}%>
+          <%if(profile_user.office){%>
+            <p><span><i class="fas fa-building"></i></span><span><%=profile_user.office%></span></p>
+          <%}%>
+          <%if(profile_user.education){%>
+            <p><span><i class="fas fa-user-graduate"></i></span><span><%=profile_user.education%></span></p>
+          <%}%>
+          <%if(profile_user.location){%>
+            <p><span><i class="fas fa-map-marker-alt"></i></span><span><%=profile_user.location%></span></p>
+          <%}%>
+          <%if(profile_user.website){%>
+            <p><span><i class="fas fa-paperclip"></i></span><span><%=profile_user.website%></span></p>
+          <%}%>
+
         </div>
 
         <div id="credential_input" class="display">
-          <form>
-            <input class="display" id="imageUpload" type="file" name="profile_photo" placeholder="Photo" required="" capture>
-            <textarea>Add a bio</textarea></br>
-            <span><i class="fas fa-building"></i></span><span><input type="text" name="office" placeholder="Office"></span></br>
-            <span><i class="fas fa-user-graduate"></i></span><span><input type="text" name="education" placeholder="College"></span></br>
-            <span><i class="fas fa-map-marker-alt"></i></span><span><input type="text" name="location" placeholder="Location"></span></br>
-            <span><i class="fas fa-paperclip"></i></span><span><input type="text" name="website" placeholder="Website"></span></br>
+          <form action="/user/update/<%=profile_user._id%>" method="POST" enctype="multipart/form-data" id="edit_form">
+            <input class="display" id="imageUpload" type="file" name="avatar" placeholder="Photo">
+            <!-- <input type="file" name="avatar" placeholder="Photo"> -->
+            <textarea name="description" placeholder="Add a bio"><%=user.description%></textarea></br>
+            <span><i class="fas fa-edit"></i></span><span><input type="text" name="name" placeholder="Update Name" value="<%=user.name%>"></span></br>
+            <span><i class="fas fa-building"></i></span><span><input type="text" name="office" placeholder="Office" value="<%=user.office%>"></span></br>
+            <span><i class="fas fa-user-graduate"></i></span><span><input type="text" name="education" placeholder="College" value="<%=user.education%>"></span></br>
+            <span><i class="fas fa-map-marker-alt"></i></span><span><input type="text" name="location" placeholder="Location" value="<%=user.location%>"></span></br>
+            <span><i class="fas fa-paperclip"></i></span><span><input type="text" name="website" placeholder="Website" value="<%=user.website%>"></span></br>
             <!-- <span><i class="fas fa-sync"></i></span><span><input type="text" name="office" placeholder="Office"></span></br> -->
             <button id="form_save" type="submit">Save</button>
+            <!-- <input type="submit" value="Save"> -->
             <a href="#" id="form_cancel">Cancel</a>
           </form>
         </div>
@@ -41,28 +71,30 @@
     <div id="profile_space">
       <div id="profile_nav">
         <a href="#" id="overview">Overview</a>
-        <a href="#">Questions</a>
-        <a href="#">Answers</a>
+        <a href="/profile/question">Questions<span><%=profile_user.questions.length%></span></a>
+        <a href="#">Answers<span><%=profile_user.answers.length%></span></a>
         <a href="#">Shares</a>
         <a href="#">Followers</a>
         <a href="#">Following</a>
         <a href="#">More</a>
+        <%if(locals.user.id == profile_user.id){%>
+        <a href="/user/sign-out"><b>Sign out</b></a>
+        <%}%>
       </div>
-      <div id="profile_space_content"></div>
+      <div id="profile_space_content">
+     
+      </div>
     </div>
     </div>
-  <!-- <a href="/user/sign-out">Sign out</a> -->
- <%}else{%>
-  <h2>This is a profile page</h2>
-  <h1>Hiii <%=profile_user.name%></h1>
-  <%}%>
+  
+ 
 
 
 
 
 
-<!-- <input type="submit" value="Submit"/> -->
-</form>
+
+
 </main>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 <script src="/js/profile.js"></script>
