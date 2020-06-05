@@ -7,9 +7,22 @@ passsport.use(new googleStrategy({
     clientID:"955668639561-35acsgkuf98blda89neud115jvhgqs90.apps.googleusercontent.com",
     clientSecret:"H6-oQf-gnFblL4wLdTawRebK",
     callbackURL:"http://localhost:8000/user/auth/google/callback",
+    profileFields: [
+        "id",
+        "email",
+        "emails",
+        "gender",
+        "link",
+        "locale",
+        "name",
+        "timezone",
+        "updated_time",
+        "verified"
+        ],
+        enableProof: true,
     scope: 'openid profile email'
 },
-    function(accessToken, refreshToken,profile,done){
+    function(req,accessToken, refreshToken,profile,done){
         User.findOne({email:profile.emails[0].value}).exec(function(err,user){
             if(err)
             {
@@ -27,7 +40,8 @@ passsport.use(new googleStrategy({
                 User.create({
                     name:profile.displayName,
                     email:profile.emails[0].value,
-                    password:crypto.randomBytes(20).toString('hex')
+                    password:crypto.randomBytes(20).toString('hex'),
+                    avatar:profile.photos[0].value
                 }),function(err,user)
                 {
                     if(err)
@@ -40,4 +54,4 @@ passsport.use(new googleStrategy({
             }
         });
     }
-))
+));
