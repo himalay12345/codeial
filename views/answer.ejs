@@ -20,66 +20,15 @@
            <div id="answers">Answers</div>
         </div>
         <div id="ranking">
+            <%var i=1;%>
+            <%for(user of users){%>
             <div id="rank-box">
-                <div id="rank"><span>1</span><span><img src="/images/logo.jpg"</span></div>
-                <div id="name">Himalay Shankar</div>
-                <div   id="answers">5k Answers</div>
+
+                <div id="rank"><span><%=i++%></span><span><img src="<%=user.avatar%>"</span></div>
+                <div id="name"><%=user.name%></div>
+                <div   id="answers"><%=user.answers.length%></div>
            </div>
-
-           <div id="rank-box">
-                <div id="rank"><span>1</span><span><img src="/images/logo.jpg"</span></div>
-                <div id="name">Himalay Shankar</div>
-                <div   id="answers">5k Answers</div>
-            </div>
-
-            <div id="rank-box">
-                <div id="rank"><span>1</span><span><img src="/images/logo.jpg"</span></div>
-                <div id="name">Himalay Shankar</div>
-                <div   id="answers">5k Answers</div>
-            </div>
-
-            <div id="rank-box">
-                <div id="rank"><span>1</span><span><img src="/images/logo.jpg"</span></div>
-                <div id="name">Himalay Shankar</div>
-                <div   id="answers">5k Answers</div>
-            </div>
-
-            <div id="rank-box">
-                <div id="rank"><span>1</span><span><img src="/images/logo.jpg"</span></div>
-                <div id="name">Himalay Shankar</div>
-                <div   id="answers">5k Answers</div>
-            </div>
-
-            <div id="rank-box">
-                <div id="rank"><span>1</span><span><img src="/images/logo.jpg"</span></div>
-                <div id="name">Himalay Shankar</div>
-                <div   id="answers">5k Answers</div>
-            </div>
-
-            <div id="rank-box">
-                <div id="rank"><span>1</span><span><img src="/images/logo.jpg"</span></div>
-                <div id="name">Himalay Shankar</div>
-                <div   id="answers">5k Answers</div>
-            </div>
-
-            <div id="rank-box">
-                <div id="rank"><span>1</span><span><img src="/images/logo.jpg"</span></div>
-                <div id="name">Himalay Shankar</div>
-                <div   id="answers">5k Answers</div>
-            </div>
-
-            <div id="rank-box">
-                <div id="rank"><span>1</span><span><img src="/images/logo.jpg"</span></div>
-                <div id="name">Himalay Shankar</div>
-                <div   id="answers">5k Answers</div>
-            </div>
-
-            <div id="rank-box">
-                <div id="rank"><span>1</span><span><img src="/images/logo.jpg"</span></div>
-                <div id="name">Himalay Shankar</div>
-                <div   id="answers">5k Answers</div>
-            </div>
-
+           <%}%>
             
 
         </div>
@@ -136,28 +85,28 @@
             <div id="table_content">
                 <div id="content">
                     <div>Today</div>
-                    <div><%=user.answers.length%></div>
+                    <div><%=temp.answers.length%></div>
                     <div>1.3K</div>
                     <div>500</div>
                 </div>
 
                 <div id="content">
                     <div>This Week</div>
-                    <div>15</div>
+                    <div><%=temp.answers.length%></div>
                     <div>1.3K</div>
                     <div>500</div>
                 </div>
 
                 <div id="content">
                     <div>This Month</div>
-                    <div>15</div>
+                    <div><%=temp.answers.length%></div>
                     <div>1.3K</div>
                     <div>500</div>
                 </div>
 
                 <div id="content">
                     <div>This Year</div>
-                    <div>15</div>
+                    <div><%=temp.answers.length%></div>
                     <div>1.3K</div>
                     <div>500</div>
                 </div>

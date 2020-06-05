@@ -1,5 +1,5 @@
 #home-container{
-    background-color: #acadd2;
+    background-color: white;
     margin: 0;
     min-height: 600px;
     height: auto;
@@ -23,7 +23,7 @@
             height:90px;
             width:100%;
             border-radius: 3px;
-            background-color:#5B5EA6;
+            background-color:#373737;
             margin-top: -21px;
             margin-bottom: 3px;
 
@@ -57,7 +57,7 @@
         #ranking_title{
             height: 40px;
             width: 100%;
-            background-color:  #5B5EA6;
+            background-color:  #373737;
             display: inline-flex;
 
             div{
@@ -70,13 +70,13 @@
             }
 
             #rank{
-                width:25%;
+                width:20%;
                
                 // border:1px solid red;
             }
 
             #name{
-                width: 45%;
+                width: 50%;
                 // border:1px solid red;
             }
 
@@ -102,7 +102,7 @@
                 div{
                     padding:14px 0px;
                     font-family: Arial, Helvetica, sans-serif;
-                    background-color:#B565A7;
+                    background-color:#373737;
                     color: white;
                     border: 0.5px solid #acadd2;
                 }
@@ -112,15 +112,16 @@
            
 
             #rank{
-                width:25%;
+                width:20%;
                 position: relative;
                 font-size: 1.4rem;
                 padding-bottom: 5px;
                
                
                 span{
-                    display: inline;
+                    // display: inline;
                     padding-left: 8px;
+                    
                     // padding-right: 15px;
                     img{
                         position: absolute;
@@ -136,8 +137,9 @@
             }
 
             #name{
-                width: 45%;
-                text-align: center;
+                width: 50%;
+                // text-align: center;
+                padding-left: 10px;
                 font-size: 1.1rem;
                 
             }
@@ -153,7 +155,7 @@
             height:40px;
             margin-top: 3px;
             margin-bottom:10px;
-            background-color:#5B5EA6;
+            background-color:#373737;
             width: 100%;
             border-bottom-left-radius: 3px;
             border-bottom-right-radius: 3px;
@@ -168,7 +170,7 @@
         #question{
             height:auto;
             border-radius: 3px;
-            background-color: #5B5EA6;
+            background-color: #373737;
             color: white;
             padding: 10px;
             margin-bottom: 10px;
@@ -331,7 +333,7 @@
             height:90px;
             width:100%;
             border-radius: 3px;
-            background-color:#5B5EA6;
+            background-color:#373737;
             margin-top: -21px;
             margin-bottom: 3px;
 
@@ -347,7 +349,7 @@
         #table{
             height: 40px;
             width: 100%;
-            background-color:  #5B5EA6;
+            background-color:  #373737;
             display: inline-flex;
 
             div{
@@ -372,7 +374,7 @@
                 text-align: center;
                 width: 25%;
                 font-size: 1rem;
-                background-color: #FF6F61;
+                background-color: #373737;
                 font-family: Arial, Helvetica, sans-serif;
                 color: white;
                 border: 0.5px solid #acadd2;
@@ -383,7 +385,7 @@
         #stat_footer{
             height:40px;
             margin-top: 3px;
-            background-color:#5B5EA6;
+            background-color:#373737;
             width: 100%;
             border-bottom-left-radius: 3px;
             border-bottom-right-radius: 3px;

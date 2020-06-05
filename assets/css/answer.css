@@ -1,5 +1,5 @@
 #home-container {
-  background-color: #acadd2;
+  background-color: white;
   margin: 0;
   min-height: 600px;
   height: auto;
@@ -17,7 +17,7 @@
       height: 90px;
       width: 100%;
       border-radius: 3px;
-      background-color: #5B5EA6;
+      background-color: #373737;
       margin-top: -21px;
       margin-bottom: 3px; }
       #home-container #leaderboard #leaderboard_header h2 {
@@ -41,7 +41,7 @@
     #home-container #leaderboard #ranking_title {
       height: 40px;
       width: 100%;
-      background-color: #5B5EA6;
+      background-color: #373737;
       display: inline-flex; }
       #home-container #leaderboard #ranking_title div {
         padding: 9px 0px;
@@ -51,9 +51,9 @@
         color: white;
         border: 0.5px solid #acadd2; }
       #home-container #leaderboard #ranking_title #rank {
-        width: 25%; }
+        width: 20%; }
       #home-container #leaderboard #ranking_title #name {
-        width: 45%; }
+        width: 50%; }
       #home-container #leaderboard #ranking_title #answers {
         width: 30%; }
     #home-container #leaderboard #ranking {
@@ -67,16 +67,15 @@
         #home-container #leaderboard #ranking #rank-box div {
           padding: 14px 0px;
           font-family: Arial, Helvetica, sans-serif;
-          background-color: #B565A7;
+          background-color: #373737;
           color: white;
           border: 0.5px solid #acadd2; }
       #home-container #leaderboard #ranking #rank {
-        width: 25%;
+        width: 20%;
         position: relative;
         font-size: 1.4rem;
         padding-bottom: 5px; }
         #home-container #leaderboard #ranking #rank span {
-          display: inline;
           padding-left: 8px; }
           #home-container #leaderboard #ranking #rank span img {
             position: absolute;
@@ -86,8 +85,8 @@
             width: 25px;
             margin: 16px 40px 0px 50px; }
       #home-container #leaderboard #ranking #name {
-        width: 45%;
-        text-align: center;
+        width: 50%;
+        padding-left: 10px;
         font-size: 1.1rem; }
       #home-container #leaderboard #ranking #answers {
         width: 30%;
@@ -97,7 +96,7 @@
       height: 40px;
       margin-top: 3px;
       margin-bottom: 10px;
-      background-color: #5B5EA6;
+      background-color: #373737;
       width: 100%;
       border-bottom-left-radius: 3px;
       border-bottom-right-radius: 3px; }
@@ -107,7 +106,7 @@
     #home-container #main #question {
       height: auto;
       border-radius: 3px;
-      background-color: #5B5EA6;
+      background-color: #373737;
       color: white;
       padding: 10px;
       margin-bottom: 10px;
@@ -212,7 +211,7 @@
       height: 90px;
       width: 100%;
       border-radius: 3px;
-      background-color: #5B5EA6;
+      background-color: #373737;
       margin-top: -21px;
       margin-bottom: 3px; }
       #home-container #aside #stat-box #stat_header h2 {
@@ -223,7 +222,7 @@
     #home-container #aside #stat-box #table {
       height: 40px;
       width: 100%;
-      background-color: #5B5EA6;
+      background-color: #373737;
       display: inline-flex; }
       #home-container #aside #stat-box #table div {
         padding: 9px 0px;
@@ -243,14 +242,14 @@
         text-align: center;
         width: 25%;
         font-size: 1rem;
-        background-color: #FF6F61;
+        background-color: #373737;
         font-family: Arial, Helvetica, sans-serif;
         color: white;
         border: 0.5px solid #acadd2; }
     #home-container #aside #stat-box #stat_footer {
       height: 40px;
       margin-top: 3px;
-      background-color: #5B5EA6;
+      background-color: #373737;
       width: 100%;
       border-bottom-left-radius: 3px;
       border-bottom-right-radius: 3px; }

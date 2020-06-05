@@ -10,6 +10,11 @@ module.exports.post = function(req,res)
     });
 }
 
+// module.exports.reset = function(req,res)
+// {
+
+// }
+
 module.exports.signUp = function(req,res)
 {
     if(req.isAuthenticated()){
@@ -124,10 +129,14 @@ module.exports.answer =async function(req,res)
 {
     try{
     let posts = await Post.find({}).populate('user');
+    let users = await User.find({});
+    let user = await User.findById(req.user._id);
 
         return res.render('answer',{
             title:"Codeial | Answer",
-            posts:posts
+            posts:posts,
+            users:users,
+            temp:user
         });
     }
     

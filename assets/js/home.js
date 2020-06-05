@@ -110,6 +110,16 @@ $(document).click(function(event){
         }
     }
 
-    
+    // if (!$(event.target).hasClass('dropdown')) {
+    //     var dropSection = document.querySelectorAll('.dropdown-content');
+    //     for(let i=0;i<dropSection.length;i++)
+    //     {
+    //         dropSection[i].classList.remove("c_show");
+    //     }
+    // }
 });
+
+   
+
+
 
