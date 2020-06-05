@@ -2,18 +2,33 @@ var comment = document.querySelectorAll('#comment');
 var flag=false;
 
 
+var c_section = document.querySelectorAll('#comment_container');
+for(let i=0;i<c_section.length;i++)
+{
+    c_section[i].addEventListener('click',function(event)
+    {
+        event.stopPropagation();
+    })
+}
+
+
 for(let i=0;i<comment.length;i++)
 {
-    comment[i].addEventListener('click',function()
-        {   
+    comment[i].addEventListener('click',function(event)
+        { 
+             
             var comment_section = document.querySelectorAll('#comment_section');
             if(!flag){
+               
             comment_section[i].classList.remove('display');
+            event.stopPropagation();
+            
             flag=true;
             }
 
             else{
                 comment_section[i].classList.add('display'); 
+                event.stopPropagation();
                 flag=false;
             }
         }
@@ -71,6 +86,30 @@ window.onclick = function(event) {
             }
         }
     }
+
+    // if(!event.target.matches('.comment_option'))
+    // {
+    //     var commentSection = document.querySelectorAll('#comment_section');
+    //     var i;
+    //     for (i = 0; i < commentSection.length; i++) {
+    //         var comment = commentSection[i];
+    //         if (comment.classList.contains('comments')) {
+    //             comment.classList.add('display');
+    //         }
+    //     }
+    // }
 }
 
+$(document).click(function(event){
+    if (!$(event.target).hasClass('comments')) {
+        var commentSection = document.querySelectorAll('#comment_section');
+        for(let i=0;i<commentSection.length;i++)
+        {
+            commentSection[i].classList.add("display");
+            flag=false;
+        }
+    }
+
+    
+});
 

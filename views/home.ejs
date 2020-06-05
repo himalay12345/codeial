@@ -34,7 +34,7 @@
             <%for(ans of post.answers){%>
            <div class="topic_answered" id="post-<%= ans._id %>" data="<%= ans._id %>">
                  <div id="author_image">
-                     <img src="/images/logo.jpg">
+                     <img src="<%=ans.user.avatar%>">
                      <a href="#"><span  class="margin"><span><i class="fas fa-rss"></i></span><span>Follow</span></span></a>
                  </div>
                 <div id="topic_content">
@@ -69,11 +69,11 @@
                         <a href="#" id="comment"><span><i class="fas fa-comment"></i>Comment</span></a>
                         <a href="#"><span><i class="fas fa-eye"></i>500</span></a>
                     </div>
-                   
-                    <div id="comment_section" class="display">
+                   <div id="comment_container">
+                    <div id="comment_section" class="display comments">
                         <form id="post-<%= ans._id %>-comments-form" action="/comment/create" method="POST">
                         <div id="comment_option">
-                            <img src="/images/logo.jpg">
+                            <img src="<%=user.avatar%>">
                             <input type="text" name="content" placeholder="Add a comment">
                             <input type="hidden" name="post" value="<%=post._id%>">
                             <input type="hidden" name="answer" value="<%=ans._id%>">
@@ -86,7 +86,7 @@
                     <%for(comment of ans.comments){%>
                         <div id="comment-<%= comment._id %>"class="comment_card">
                             <div id="comment_header">
-                                <img src="/images/logo.jpg">
+                                <img src="<%=comment.user.avatar%>">
                                 <div>
                                     <h2><%=comment.user.name%></h2>
                                     <h3>May 25</h3>
@@ -109,7 +109,7 @@
                                         <li></li>
                                     </ul>
                                     <!-- menu -->
-                                    <div id="c_myDropdown" class="dropdown-content">
+                                    <div id="c_myDropdown" class="c_dropdown-content">
                                         <a class="delete-comment-button" href="/comment/destroy/<%=comment.id%>">Delete comment</a>
                                         <a href="#about">Edit</a>
                                     </div>
@@ -121,6 +121,7 @@
                         <%}%>
                     </div>
                     </div>
+                </div>
                
 
                 </div>

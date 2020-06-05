@@ -69,7 +69,7 @@ class PostComments{
         // I've added a class 'delete-comment-button' to the delete comment link and also id to the comment's li
         return $(` <div id="comment-${ comment._id }"class="comment_card">
         <div id="comment_header">
-            <img src="/images/logo.jpg">
+            <img src="${comment.user.avatar}">
             <div>
                 <h2>${comment.user.name}</h2>
                 <h3>May 25</h3>

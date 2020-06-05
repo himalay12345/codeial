@@ -46,7 +46,7 @@
     position: absolute;
     display: inline-block;
     right: 0; }
-  #home-container .dropdown-content {
+  #home-container .c_dropdown-content {
     display: none;
     position: relative;
     margin-top: 35px;
@@ -55,12 +55,12 @@
     overflow: auto;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1; }
-  #home-container .dropdown-content a {
+  #home-container .c_dropdown-content a {
     color: black;
     padding: 12px 16px;
     text-decoration: none;
     display: block; }
-  #home-container .dropdown a:hover {
+  #home-container .c_dropdown a:hover {
     background-color: #f1f1f1; }
   #home-container .c_show {
     display: block; }
@@ -293,7 +293,6 @@
         #home-container #main .topic_answered #author_image img {
           height: 140px;
           width: 100px;
-          padding-left: 10px;
           border: 1px solid grey;
           margin-bottom: 25px; }
         #home-container #main .topic_answered #author_image a {

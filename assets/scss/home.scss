@@ -70,7 +70,7 @@
         right: 0;
     }
 
-    .dropdown-content {
+    .c_dropdown-content {
         display: none;
         position: relative;
         margin-top: 35px;
@@ -81,14 +81,14 @@
         z-index: 1;
     }
 
-    .dropdown-content a {
+    .c_dropdown-content a {
         color: black;
         padding: 12px 16px;
         text-decoration: none;
         display: block;
     }
 
-    .dropdown a:hover {background-color: #f1f1f1}
+    .c_dropdown a:hover {background-color: #f1f1f1}
 
     .c_show {display:block;}
 
@@ -413,7 +413,6 @@
                 img{
                     height:140px;
                     width: 100px;
-                    padding-left: 10px;
                     border:1px solid grey;
                     margin-bottom: 25px;
                 }
