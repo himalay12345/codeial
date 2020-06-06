@@ -13,7 +13,7 @@ const MongoStore = require('connect-mongo')(session);
 const sassMiddleware = require('node-sass-middleware');
 const flash = require('connect-flash');
 const customMiddleware = require('./config/middleware');
-
+require('dotenv').config();
 app.use(sassMiddleware({
     src:'./assets/scss',
     dest:'./assets/css',
