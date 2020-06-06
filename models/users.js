@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 const multer = require('multer');
 const path = require('path');
 const AVATAR_PATH = path.join('/uploads/users/avatars');
+var passportLocalMongoose=require("passport-local-mongoose");
 
 const userSchema = new mongoose.Schema({
     email:{
@@ -16,6 +17,8 @@ const userSchema = new mongoose.Schema({
     name :{
         type:String
     },
+    resetPasswordToken: String,
+    resetPasswordExpires: Date,
     description:{
         type:String
     },
@@ -66,5 +69,6 @@ let storage = multer.diskStorage({
   userSchema .statics.uploadedAvatar = multer({ storage: storage }).single('avatar');
   userSchema.statics.avatarPath = AVATAR_PATH;
 
+userSchema.plugin(passportLocalMongoose);
 const User = mongoose.model('User',userSchema);
 module.exports = User;

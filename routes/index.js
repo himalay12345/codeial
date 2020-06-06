@@ -15,6 +15,8 @@ router.use('/comment',require('./comment'));
 
 const setController = require('../controllers/home_controller');
 router.get('/',passport.checkAuthentication,setController.home);
+router.get('/reset/:token',setController.resetPage);
+router.post('/reset/:token',setController.resetPassword);
 router.get('/contact_us',setController.contact);
 
 module.exports = router;
