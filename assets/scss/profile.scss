@@ -1,8 +1,317 @@
-main{
-    background-color: blueviolet;
-    text-align: center;
-}
 
-#edit{
-    margin-left: 20px;
+#profile_container{
+    margin:0;
+    display: flex;
+    flex-direction:row;
+    color:#100c08;
+    justify-content: space-around;
+
+    .display{
+        display: none;
+    }
+
+    #profile_info{
+        height:100vh;
+        width:25%;
+        border-right: 1px solid grey;
+        // border:1px solid black;
+
+        #profile_credential{
+            min-height:100px;
+            height:auto;
+            // border:1px solid black;
+
+        #edit_profile{
+                    button{
+                        width:270px;
+                        padding: 10px;
+                        color:black;
+                        background-color: grey;
+                        font-size: medium;
+                        border:none;
+                        border-radius: 3px;
+                        font-weight: 700;
+                        margin-left:30px;
+                        cursor: pointer;
+            }
+
+            p{
+                font-size: 1rem;
+                font-family: Arial, Helvetica, sans-serif;
+                color:#100c08;
+                margin-left: 30px;
+                margin-bottom: -5px;
+
+                span{
+                    margin-right: 12px;
+                }
+            }
+        }
+
+            #credential_input{
+                padding-left: 30px;
+                transition: 0.5 all;
+                    textarea{
+                        width:90%;
+                        height:70px;
+                        // margin-left: 20px;
+                        font-size: 1rem;
+                        outline: none;
+                        margin-bottom: 10px;
+                        box-shadow: 
+                        inset 0 0 5px rgba(0,0,0,0.1),
+                        inset 0 3px 2px rgba(0,0,0,0.1);
+                    }
+                    a{
+                        text-decoration: none;
+                        background-color: #F7F9FA;
+                        color: black;
+                        font-weight: bold;
+                        font-family: Arial, Helvetica, sans-serif;
+                        padding: 6px;
+                        border:1px solid black;
+                        margin-left: 5px;
+                        border-radius: 3px;
+                        font-size: 0.9rem;
+                        outline: none;
+
+                    }
+
+                   button{
+                       width:50px;
+                       font-size: 0.9rem;
+                       padding: 7px;
+                       background-color: #30C553;
+                       color: white;
+                       border: none;
+                       cursor: pointer;
+                       border-radius: 3px;
+                       outline: none;
+                   }
+
+                    span{
+                        margin-right: 15px;
+                    }
+                    input{
+                        padding: 7px;
+                        width: 80%;
+                        font-size: 0.9rem;
+                        margin-bottom: 8px;
+                        border:0.5px solid grey;
+                        box-shadow: 
+                        inset 0 0 5px rgba(0,0,0,0.1),
+                        inset 0 3px 2px rgba(0,0,0,0.1);
+                        border-radius: 3px;
+                        outline: none;
+                    }
+            }
+
+        }
+
+        #profile_header{
+            min-height:400px;
+            height: auto;
+            width: 100%;
+            // border:1px solid red;
+            padding-top:20px;
+            padding-left: 30px;
+            box-sizing: border-box;
+            box-sizing: border-box;
+            display: inline-block;
+            position: relative;
+
+            #image{
+                a{
+                    text-decoration: none;
+                    color: white;
+                    padding: 5px;
+                    width: 70px;
+                    background-color: black;
+                    border-radius: 3px;
+                    position:absolute;
+                    bottom:27.5%;
+                    right: 9%;
+                }
+    
+                img{
+                    height:270px;
+                    width:90%;
+                    border-radius: 3px;
+                    // border:1px solid cyan;
+                }
+    
+            }
+
+            #profile_name{
+                // border:1px solid red;
+                // padding-left: 20px;
+                padding-top: 30px;
+                padding-bottom: 20px;
+                display: block;
+
+                div{
+                    margin-top: -20px;
+                    width: 100%;
+                    // border:1px solid red;
+                    h1{
+                        font-size: 1.7rem;
+                        margin-top: 5px;
+                        margin-bottom: 20px;
+                        font-family: Arial, Helvetica, sans-serif;
+                        // border:1px solid red;
+                    }
+                }
+
+                span{
+                    margin-left: 20px;
+                    margin-right: 10px;
+
+                    a{
+                        text-decoration: none;
+                        border:1px solid black;
+                        border-radius: 3px;
+                        padding:7px;
+                        color:#100c08;
+                        // background-color: cyan;
+                        padding-right: 10px;
+                        padding-left: 10px;
+                    }
+                }
+            }
+        }
+    }
+    #profile_space{
+        height:100vh;
+        width:75%;
+        padding-right: 25px;
+        padding-left: 10px;
+        // border:1px solid black;
+        
+        #profile_nav{
+            margin-top: 10px;
+            height:60px;
+            border-bottom:1px solid grey;
+            display: inline-flex;
+            width: 100%;
+            // justify-content: space-between;
+            padding-top: 20px;
+            box-sizing: border-box;
+            
+            #overview{
+                border-bottom:2px solid orangered;
+                font-weight: bold;
+            }
+
+            a{
+                text-decoration:none;
+                color:#100c08;
+                font-size: 0.97rem;
+                font-family:sans-serif;
+                margin-right: 40px;
+
+                span{
+                    margin-left: 10px;
+                    border-radius: 30%;
+                    background-color: gray;
+                    color: white;
+                    padding: 3px;
+                }
+            }
+
+            a:hover{
+                transform: 0.5 all;
+                border-bottom:2px solid grey;
+                color: #110f0d;;
+                width: auto;
+            }
+
+        }
+    }
+}
+// -----------------------------------------------
+
+#unanswered{
+    height: 130px;
+    width: 100%;
+    border:1px solid grey;
+    background-color: white;
+    border-radius: 3px;
+    margin-bottom: 5px;
+    a{
+        text-decoration: none;
+    }
+    
+
+    #header{
+        height: 25%;
+        // border:1px solid red;
+        padding: 10px;
+        box-sizing: border-box;
+        span{
+            margin-right:25px;
+            font-size: 1rem;
+            color: grey;
+            // font-family: Arial, Helvetica, sans-serif;
+        }
+    }
+
+    #interact{
+        height: 25%;
+        // border:1px solid red;
+        padding: 10px;
+        padding-top: 0;
+        box-sizing: border-box;
+
+        a:hover{
+            background-color: rgb(255, 255, 255);
+            color: black;
+            transition: 0.2s all;
+        }
+
+        .margin{
+            margin-right: 20px;
+            color:grey;
+            border-radius: 20px;
+
+            i{
+                color:#5B5EA6;
+            }
+            
+            span{
+                margin-right: 5px;
+            }
+        }
+    }
+
+   
+
+    #unanswered_content{
+        padding: 10px;
+        box-sizing: border-box;
+        height: 50%;
+        // border:1px solid red;
+        padding-top: 5px;
+
+        #content{
+            font-size: 1.1rem;
+            font-weight: 600;
+            font-family:Verdana, Geneva, sans-serif;
+            margin-bottom:5px;
+            a{
+                color: #100c08;
+            }
+        }
+
+        #content_key{
+            span{
+                font-size:0.9rem;
+                color: grey;
+                margin-right:6px;
+
+                b{
+                    font-weight: 1000;
+                }
+            }
+        }
+    }
 }

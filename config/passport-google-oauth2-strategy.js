@@ -1,16 +1,29 @@
 const passsport = require('passport');
-const googleStrategy = require('passport-google-oauth20').Strategy;
+const googleStrategy = require('passport-google-oauth').OAuth2Strategy;
 const crypto = require('crypto');
 const User = require('../models/users');
-require('dotenv').config();
 
 passsport.use(new googleStrategy({
-    clientID: process.env.G_CLIENTID,
-    clientSecret: process.env.G_SECRET,
+    clientID:"955668639561-35acsgkuf98blda89neud115jvhgqs90.apps.googleusercontent.com",
+    clientSecret:"H6-oQf-gnFblL4wLdTawRebK",
     callbackURL:"http://localhost:8000/user/auth/google/callback",
-    proxy: true
+    profileFields: [
+        "id",
+        "email",
+        "emails",
+        "gender",
+        "link",
+        "locale",
+        "name",
+        "timezone",
+        "updated_time",
+        "verified"
+        ],
+        enableProof: true,
+    scope: 'openid profile email'
 },
-    function(accessToken, refreshToken,profile,done){
+    function(req,accessToken, refreshToken,profile,done){
+
         User.findOne({email:profile.emails[0].value}).exec(function(err,user){
             if(err)
             {
@@ -19,8 +32,8 @@ passsport.use(new googleStrategy({
             }
 
             console.log(profile);
-            console.log(accessToken);
-            console.log(refreshToken);
+
+
 
             if(user){
                 return done(null,user);
@@ -32,14 +45,17 @@ passsport.use(new googleStrategy({
                     email:profile.emails[0].value,
                     password:crypto.randomBytes(20).toString('hex'),
                     avatar:profile.photos[0].value
-                }),function(err,new_user)
+
+                }),function(err,user)
+
                 {
                     if(err)
                     {
                         console.log('Error in creating google passport strategy',err);
                         return;
                     }
-                   return done(null,new_user);
+                    return done(null,user);
+
                 }
             }
         });

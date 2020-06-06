@@ -7,12 +7,13 @@ const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const passport = require('passport');
 const passportLocal = require('./config/passport-local-strategy');
-
+const passportGoogle = require('./config/passport-google-oauth2-strategy');
+const passportFacebook = require('./config/passport-facebook-oauth-strategy');
 const MongoStore = require('connect-mongo')(session);
 const sassMiddleware = require('node-sass-middleware');
 const flash = require('connect-flash');
 const customMiddleware = require('./config/middleware');
-
+require('dotenv').config();
 app.use(sassMiddleware({
     src:'./assets/scss',
     dest:'./assets/css',
@@ -24,6 +25,7 @@ app.use(express.urlencoded());
 app.use(cookieParser());
 app.use(expressLayouts);
 app.use(express.static('./assets'));
+app.use('/uploads',express.static(__dirname + '/uploads'));
 app.set('layout extractStyles',true);
 app.set('layout exrtactScripts',true);
 

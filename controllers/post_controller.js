@@ -1,14 +1,19 @@
 const Post = require('../models/posts');
+const User = require('../models/users');
 
 
 module.exports.create = async function(req,res)
 {
     try{
-        await Post.create({
+        let post = await Post.create({
             content:req.body.content,
             topic:req.body.topic,
             user:req.user._id
         });
+        let user = await User.findById(req.user._id);
+            user.questions.push(post);
+            user.save();
+
             req.flash('success','Question added successfully');
             return res.redirect('back');
     }

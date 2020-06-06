@@ -1,17 +1,11 @@
 const User = require('../models/users');
 const Post = require('../models/posts');
-
-module.exports.profile = function(req,res)
-{
-    User.findById(req.params.id,function(err,user)
-    {
-        return res.render('profile',{
-            title:"Profile",
-            profile_user:user
-        });
-    })
-    
-}
+const fs = require('fs');
+const path = require('path');
+var async = require("async");
+// var nodemailer = require("nodemailer");
+const nodeMailer = require('../config/nodemailer');
+var crypto = require("crypto");
 
 module.exports.post = function(req,res)
 {
@@ -19,6 +13,11 @@ module.exports.post = function(req,res)
         title:"Posts"
     });
 }
+
+// module.exports.reset = function(req,res)
+// {
+
+// }
 
 module.exports.signUp = function(req,res)
 {
@@ -42,6 +41,57 @@ module.exports.signIn = function(req,res)
     })
 } 
 
+module.exports.forgot = function(req, res, next) {
+    async.waterfall([
+      function(done) {
+        crypto.randomBytes(20, function(err, buf) {
+          var token = buf.toString('hex');
+          done(err, token);
+        });
+      },
+      function(token, done) {
+        User.findOne({ email: req.body.email }, function(err, user) {
+          if (!user) {
+            req.flash('error', 'No account with that email address exists.');
+            return res.redirect('back');
+          }
+  
+          user.resetPasswordToken = token;
+          user.resetPasswordExpires = Date.now() + 3600000; // 1 hour
+  
+          user.save(function(err) {
+            done(err, token, user);
+          });
+        });
+      },
+      function(token, user, done) {
+        // var smtpTransport = nodemailer.createTransport({
+        //   service: 'Gmail', 
+        //   auth: {
+        //     user: 'learntocodeinfo@gmail.com',
+        //     pass: process.env.GMAILPW
+        //   }
+        // });
+        nodeMailer.transporter.sendMail({
+          to: user.email,
+          from: 'himalayshankar31@gmail.com',
+          subject: 'Node.js Password Reset',
+          text: 'You are receiving this because you (or someone else) have requested the reset of the password for your account.\n\n' +
+            'Please click on the following link, or paste this into your browser to complete the process:\n\n' +
+            'http://' + req.headers.host + '/reset/' + token + '\n\n' +
+            'If you did not request this, please ignore this email and your password will remain unchanged.\n'
+        },function(err) {
+          console.log('mail sent');
+          req.flash('success', 'An e-mail has been sent to ' + user.email + ' with further instructions.');
+          done(err, 'done');
+        });
+      }
+    ], function(err) {
+      if (err) return next(err);
+      res.redirect('back');
+    });
+  }
+
 module.exports.create = function(req,res)
 {
     User.findOne({email : req.body.email},function(err,user)
@@ -64,9 +114,59 @@ module.exports.create = function(req,res)
         }
 
         else{
+            req.flash('error','Email Adress already exists');
             return res.redirect('back');
         }
     });
+}
+
+module.exports.update = async function(req,res){
+  
+    try{
+        if(req.user.id == req.params.id)
+        {
+            let user = await User.findById(req.params.id);
+            User.uploadedAvatar(req,res,function(err){
+                if(err){console.log('*******Multer Error',err);return;}
+                
+                user.name = req.body.name;
+                user.office = req.body.office;
+                user.education = req.body.education;
+                user.location = req.body.location;
+                user.website = req.body.website;
+                user.description = req.body.description;
+                console.log(user.avatar);
+
+                if(req.file)
+                {
+                    if(!user.avatar)   {
+                        user.avatar = User.avatarPath +'/'+ req.file.filename;
+                    }
+
+                    else{
+
+                        fs.unlinkSync(path.join(__dirname,'..',user.avatar));
+                        user.avatar = User.avatarPath +'/'+ req.file.filename;
+                    }
+                }
+
+                user.save();
+
+
+            });
+            req.flash('success','Profile updated successfully');
+            return res.redirect('back');
+        }
+    
+        else{
+            return res.status(401).send('Unauthorized Access');
+        }
+    }
+    catch(err){
+        console.log('Error',err);
+        return;
+    }
+   
 }
 module.exports.createSession = function(req,res)
 {
@@ -85,10 +185,14 @@ module.exports.answer =async function(req,res)
 {
     try{
     let posts = await Post.find({}).populate('user');
+    let users = await User.find({});
+    let user = await User.findById(req.user._id);
 
         return res.render('answer',{
             title:"Codeial | Answer",
-            posts:posts
+            posts:posts,
+            users:users,
+            temp:user
         });
     }
     

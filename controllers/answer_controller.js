@@ -5,7 +5,7 @@ const User = require('../models/users');
 
 module.exports.create =async function(req,res)
 {
-    let post = await Post.findById(req.body.question);
+    let post = await Post.findById(req.body.question).sort('_createdAt');
 
             if(post)
             {

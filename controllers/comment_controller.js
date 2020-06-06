@@ -1,64 +1,99 @@
 const Comment = require('../models/comments');
 const Answer = require('../models/answers');
+const commentMailer = require('../mailers/comment_mailer');
+const queue = require('../config/kue');
+const emailWorkers = require('../workers/comment_email_worker');
 
-module.exports.create = function(req,res)
+module.exports.create = async function(req,res)
 {
-    Answer.findById(req.body.answer,function(err,answer)
-    {
-        if(err)
-        {
-            console.log('Error in finding answer');
-            return;
-        }
+    try{
+        let answer = await Answer.findById(req.body.answer);
 
         if(answer)
         {
-            Comment.create({
+            let comment = await Comment.create({
                 content:req.body.content,
                 post:req.body.post,
                 answer:req.body.answer,
                 user:req.user._id
-            },function(err,comment)
-            {
-                if(err)
-                {
-                    console.log('Error in creating answer database');
-                    return;
-                }
+            });
                 
                 answer.comments.push(comment);
                 answer.save();
+
+                comment = await comment.populate('user', 'name email avatar').execPopulate();
+                // commentMailer.newComment(comment);
+                let job = queue.create('emails',comment).save(function(err)
+                {
+                    if(err)
+                    {
+                        console.log('Error in enqueque comment',err);
+                        return;
+                    }
+
+                    console.log('Job enqueued',job.id);
+                });
+                if (req.xhr){
+                    // Similar for comments to fetch the user's id!
+        
+                    return res.status(200).json({
+                        data: {
+                            comment: comment
+                        },
+                        message: "Post created!"
+                    });
+                }
+    
                 req.flash('success','Comment added successfully');
                 return(res.redirect('back'));
-            });
+          
         }
-    });
-    
+    }
+
+    catch(error)
+    {
+        console.log('Error',error);
+        return;
+    }
+   
 }
 
-module.exports.destroy = function(req,res)
+module.exports.destroy =async function(req,res)
 {
-    Comment.findById(req.params.id,function(err,comment)
-    {
+    try{
+        let comment = await Comment.findById(req.params.id);
+        
         if(comment.user == req.user.id)
-        {
-            let answerId = comment.answer;
-            console.log(answerId);
-            comment.remove();
-
-            Answer.findByIdAndUpdate(answerId, { $pull: {comments:req.params.id}
-            },function(err,post){
-            if(err)
             {
-                console.log('error in deleting answer database');
-            }
+                let answerId = comment.answer;
+                // console.log(answerId);
+                comment.remove();
+
+                Answer.findByIdAndUpdate(answerId, { $pull: {comments:req.params.id}
+                });
+
+                if (req.xhr){
+                    return res.status(200).json({
+                        data: {
+                            comment_id: req.params.id
+                        },
+                        message: "Post deleted"
+                    });
+                }
+                
                 req.flash('success','Comment removed successfully');
                 return res.redirect('back');
-            });
-        }
+               
+            }
 
-        else{
-            return res.redirect('back');
-        }
-    });
+            else{
+                return res.redirect('back');
+            }
+    }
+    catch(error)
+    {
+        console.log('Error',error);
+        return;
+    }
+    
 }
