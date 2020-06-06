@@ -1,0 +1,53 @@
+<div id="comment_container">
+    <div id="comment_section" class="display comments">
+        <form id="post-<%= ans._id %>-comments-form" action="/comment/create" method="POST">
+        <div id="comment_option">
+            <img src="<%=user.avatar%>">
+            <input type="text" name="content" placeholder="Add a comment">
+            <input type="hidden" name="post" value="<%=post._id%>">
+            <input type="hidden" name="answer" value="<%=ans._id%>">
+            <input type="hidden" name="user" value="<%=user._id%>">
+           
+            <a href="#" id="comment_add"><button type="submit">Add Comment</button></a>
+        </div>
+    </form>
+    <div id="post-comments-<%= ans._id %>">
+    <%for(comment of ans.comments){%>
+        <div id="comment-<%= comment._id %>"class="comment_card">
+            <div id="comment_header">
+                <img src="<%=comment.user.avatar%>">
+                <div>
+                    <h2><%=comment.user.name%></h2>
+                    <h3>May 25</h3>
+                </div>
+               
+            </div>
+            <div id="comment_content">
+               <%=comment.content%>
+            </div>
+            <div id="comment_interact">
+                <a href="#"><span><i class="fas fa-reply"></i></span>Reply</a>
+                <a href="#"><span><i class="fas fa-heart"></i></span>Like</a>
+                <%if(locals.user && user.id==comment.user.id){%>
+                    <a class="delete-comment-button" href="/comment/destroy/<%=comment.id%>"><span><i class="fas fa-trash"></i></span>Delete comment</a>
+                <div class="dropdown">
+                    <!-- three dots -->
+                    <ul class="c_dropbtn icons btn-right showLeft">
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                    <!-- menu -->
+                    <div id="c_myDropdown" class="dropdown-content">
+                        <a class="delete-comment-button" href="/comment/destroy/<%=comment.id%>">Delete comment</a>
+                        <a href="#about">Edit</a>
+                    </div>
+                </div>
+                <%}%>
+
+            </div>
+        </div>
+        <%}%>
+    </div>
+    </div>
+</div>

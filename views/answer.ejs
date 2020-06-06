@@ -1,0 +1,121 @@
+<link rel="stylesheet" type="text/css" href="/css/answer.css">
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+<script type="text/javascript" src="/ckeditor/ckeditor.js"></script>
+<div id="home-container">
+    <div id="Leaderboard">
+        <div id="leaderboard_header">
+            <h2>Leaderboards</h2>
+            <div id="view">
+                <div id="view_by">
+                    <a href="#">Answers</a>
+                    <a href="#">Upvotes</a>
+                    <a href="#">Followers</a>
+                </div> 
+                <div id="sort_by"></div>    
+            </div>
+        </div>
+        <div id="ranking_title">
+           <div id="rank">Rank</div>
+           <div id="name">Name</div>
+           <div id="answers">Answers</div>
+        </div>
+        <div id="ranking">
+            <%var i=1;%>
+            <%for(user of users){%>
+            <div id="rank-box">
+
+                <div id="rank"><span><%=i++%></span><span><img src="<%=user.avatar%>"</span></div>
+                <div id="name"><%=user.name%></div>
+                <div   id="answers"><%=user.answers.length%></div>
+           </div>
+           <%}%>
+            
+
+        </div>
+        <div id="leaderboard_footer"></div>
+    </div>
+    <div id="main">
+        <div id="question">
+            <span><i class="fas fa-question"></i></span><span>Questions For You</span>         
+         </div>
+            
+            <%for(let post of posts){%>
+                <%if(post.user.id != locals.user.id){%>
+                   
+             <div id="unanswered">
+             <div id="header"><span>Question added</span><a href="#"><span>-<%=post.topic%></span></a></div>
+             <div id="unanswered_content">
+                 </a><div id="content"><a href="#"><%=post.content%></a></div>
+                 <div id="content_key"><a></a><span><b><%=post.answers.length%> Answer</b></span></a><span>-Last followed 20m ago</span></div>
+             </div>
+             <div id="interact">
+                 <a href="#" id="ans"><span  class="margin"><span><i class="fas fa-edit"></i></span><span>Answer</span></span></a>
+                 <a href="#" id="pass"><span class="margin"><i class="fas fa-sync"></i><span></span><span>Pass</span></span></a>
+                 <a href="#" id="req"><span class="margin"><i class="fas fa-users"></i><span></span><span>Request Answer</span></span></a>
+                 <a href="#" id="follow"><span class="margin"><i class="fas fa-rss"></i><span></span><span>Follow</span><span>3</span></span></a>
+              </div>
+         </div>
+         <div id="editor" class="display">
+             <form method="POST" action="/answer/create">
+             <textarea id="text" name="content"></textarea>
+             <input name="topic" value="<%=post.topic%>" type="hidden">
+             <input name="question" value="<%=post._id%>" type="hidden">
+             <!-- <input name="user" value="<%=user._id%>" type="hidden"> -->
+             </br>
+             <button type="submit" id="editor_submit">Sumbit</button>
+             <a href="#" id="editor_cancel" class="cancel">Cancel</a>
+             </form>
+         </div>
+            <%}else{%>
+               
+                <%}%>
+        <%}%>            
+
+         
+    </div>
+    <div id="aside">
+        <div id="stat-box">
+            <div id="stat_header"><h2>Your Stats</h2></div>
+            <div id="table">
+                <div></div>
+                <div>Answered</div>
+                <div>Upvotes</div>
+                <div>Shares</div>
+            </div>
+            <div id="table_content">
+                <div id="content">
+                    <div>Today</div>
+                    <div><%=temp.answers.length%></div>
+                    <div>1.3K</div>
+                    <div>500</div>
+                </div>
+
+                <div id="content">
+                    <div>This Week</div>
+                    <div><%=temp.answers.length%></div>
+                    <div>1.3K</div>
+                    <div>500</div>
+                </div>
+
+                <div id="content">
+                    <div>This Month</div>
+                    <div><%=temp.answers.length%></div>
+                    <div>1.3K</div>
+                    <div>500</div>
+                </div>
+
+                <div id="content">
+                    <div>This Year</div>
+                    <div><%=temp.answers.length%></div>
+                    <div>1.3K</div>
+                    <div>500</div>
+                </div>
+            </div>
+
+            <div id="stat_footer"></div>
+        </div>
+    </div>
+    </div>
+    </div>
+    <script type="text/javascript" src="/js/answer.js"></script>
+ 

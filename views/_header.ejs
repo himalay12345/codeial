@@ -1,0 +1,29 @@
+<header>
+    <% if(locals.user){%>
+        <div id="login_header">
+        <a href="/"><img src="/images/logo.jpg" id="header_logo"></a>
+        <input id="search" type="search" name="search" placeholder="Search">
+        <ul>
+        <li><a href="/">HOME</a></li>
+        <li><a href="/user/answer">ANSWER</a></li>
+        <li><a href="#">ADD QUESTION</a></li>
+        <li><a href="#">BLOG</a></li>
+        <li><a href="/profile/user/<%=locals.user.id%>" id="profile"> <img src="<%=user.avatar%>" onerror=this.src="/images/user.png" ></a></li>
+        <!-- <li><a href="/user/sign-out" id="signout">Sign Out</a></li> -->
+        </ul>
+        </div>
+    
+        <%}else{%>
+            <div id="logout_header">
+            <a href="/"><img src="/images/logo.jpg" id="header_logo"></a>
+            <a href="#"><p>Why GuruShishya?</p></a>
+            <a href="#"><p>Explore</p></a>
+            <a href="#"><p>Blogs</p></a>
+            <input id="search" type="search" name="search" placeholder="Search">
+            <a href="/user/sign-in" id="_signin">Sign In </a>
+            <a href="/user/sign-up" id="_signup">Sign Up</a>
+            <!-- <a href="/user/sign-in" ></a><button id="signin">Sign In</button></a>
+            <a href="/user/sign-up"><button id ="signup">Sign Up</button></a> -->
+            </div>
+            <%}%>
+</header>

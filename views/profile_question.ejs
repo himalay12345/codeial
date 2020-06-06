@@ -1,0 +1,105 @@
+<link rel="stylesheet" type="text/css" href="/css/profile.css">
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+<script type="text/javascript" src="/ckeditor/ckeditor.js"></script>
+<main>
+
+  <%if(locals.user.id == profile_user.id){%>
+    <div id="profile_container">
+    <div id="profile_info">
+      <div id="profile_header">
+        <div id="image">
+          <img src="/images/myimage.jpg">
+          <a href="#" id="edit_photo">Edit Photo</a>
+        </div>
+        <div id="profile_name">
+          <div><h1><%=user.name%></h1></div>
+          <span><a href="#">Follower</a></span>
+          <span><a href="#">Following</a></span>
+        </div>
+      </div>
+      <div id="profile_credential">
+        <div id="edit_profile">
+          <button id="edit_btn">Edit Profile</button>
+          <%if(user.description){%>
+            <p><%=user.description%></p>
+          <%}%>
+          <%if(user.email){%>
+            <p><span><i class="fas fa-edit"></i></span><span><%=user.email%></span></p>
+          <%}%>
+          <%if(user.office){%>
+            <p><span><i class="fas fa-building"></i></span><span><%=user.office%></span></p>
+          <%}%>
+          <%if(user.education){%>
+            <p><span><i class="fas fa-user-graduate"></i></span><span><%=user.education%></span></p>
+          <%}%>
+          <%if(user.location){%>
+            <p><span><i class="fas fa-map-marker-alt"></i></span><span><%=user.location%></span></p>
+          <%}%>
+          <%if(user.website){%>
+            <p><span><i class="fas fa-paperclip"></i></span><span><%=user.website%></span></p>
+          <%}%>
+
+        </div>
+
+        <div id="credential_input" class="display">
+          <form action="/user/update/<%=profile_user._id%>" method="POST">
+            <input class="display" id="imageUpload" type="file" name="profile_photo" placeholder="Photo" capture>
+            <textarea name="description" placeholder="Add a bio"><%=user.description%></textarea></br>
+            <span><i class="fas fa-edit"></i></span><span><input type="text" name="name" placeholder="Update Name" value="<%=user.name%>"></span></br>
+            <span><i class="fas fa-building"></i></span><span><input type="text" name="office" placeholder="Office" value="<%=user.office%>"></span></br>
+            <span><i class="fas fa-user-graduate"></i></span><span><input type="text" name="education" placeholder="College" value="<%=user.education%>"></span></br>
+            <span><i class="fas fa-map-marker-alt"></i></span><span><input type="text" name="location" placeholder="Location" value="<%=user.location%>"></span></br>
+            <span><i class="fas fa-paperclip"></i></span><span><input type="text" name="website" placeholder="Website" value="<%=user.website%>"></span></br>
+            <!-- <span><i class="fas fa-sync"></i></span><span><input type="text" name="office" placeholder="Office"></span></br> -->
+            <button id="form_save" type="submit">Save</button>
+            <!-- <input type="submit" value="Save"> -->
+            <a href="#" id="form_cancel">Cancel</a>
+          </form>
+        </div>
+      </div>
+      <div id="profile_interests"></div>
+    </div>
+    <div id="profile_space">
+      <div id="profile_nav">
+        <a href="/profile/user/<%=user._id%>" >Overview</a>
+        <a href="/profile/question" id="overview">Questions<span><%=user.questions.length%></span></a>
+        <a href="#">Answers<span><%=user.answers.length%></span></a>
+        <a href="#">Shares</a>
+        <a href="#">Followers</a>
+        <a href="#">Following</a>
+        <a href="#">More</a>
+      </div>
+      <div id="profile_space_content">
+        <%for(let question of user.questions){%>
+            <div id="unanswered">
+                <div id="header"><span>Question added</span><a href="#"><span>-<%=question.topic%></span></a></div>
+                <div id="unanswered_content">
+                    </a><div id="content"><a href="#"><%=question.content%></a></div>
+                    <div id="content_key"><a></a><span><b><%%> Answer</b></span></a><span>-Last followed 20m ago</span></div>
+                </div>
+                <div id="interact">
+                    <a href="#" id="ans"><span  class="margin"><span><i class="fas fa-edit"></i></span><span>Answer</span></span></a>
+                    <a href="#" id="pass"><span class="margin"><i class="fas fa-sync"></i><span></span><span>Pass</span></span></a>
+                    <a href="#" id="req"><span class="margin"><i class="fas fa-users"></i><span></span><span>Request Answer</span></span></a>
+                    <a href="#" id="follow"><span class="margin"><i class="fas fa-rss"></i><span></span><span>Follow</span><span>3</span></span></a>
+                 </div>
+            </div>
+        <%}%>
+      </div>
+    </div>
+    </div>
+  <!-- <a href="/user/sign-out">Sign out</a> -->
+ <%}else{%>
+  <h2>This is a profile page</h2>
+  <h1>Hiii <%=profile_user.name%></h1>
+  <%}%>
+
+
+
+
+
+<!-- <input type="submit" value="Submit"/> -->
+</form>
+</main>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<script src="/js/profile.js"></script>

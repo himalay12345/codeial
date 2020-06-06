@@ -1,0 +1,31 @@
+<div id="aside">
+    <div id="our_blogs">
+        <div id="blogs_header"><h2>Our Blogs</h2></div>
+        <div id="blogs_content">
+            <ul>
+                <div><a href="#"><li>This is my First Blog in this website</li></a></div>
+                <div><a href="#"><li>This is my Second Blog in this website</li></a></div>
+                <div><a href="#"><li>This is my First Blog in this website</li></a></div>
+                <div><a href="#"><li>This is my Second Blog in this website</li></a></div>
+                <div><a href="#"><li>This is my First Blog in this website</li></a></div>
+                <div><a href="#"><li>This is my Second Blog in this website</li></a></div>
+                <div><a href="#"><li>This is my First Blog in this website</li></a></div>
+                <div><a href="#"><li>This is my Second Blog in this website</li></a></div>
+                <div><a href="#"><li>This is my First Blog in this website</li></a></div>
+                <div><a href="#"><li>This is my Second Blog in this website</li></a></div>
+
+            </ul>
+        </div>
+    </div>
+    <div id="friends_container">
+        <div id="friends_header"><h2>Friends</h2></div>
+        <div id="friends_content">
+            
+            <ul>
+                <%for(u of all_users){%>
+                <a href="/profile/user/<%=u.id%>"><li><%=u.name%></li></a>
+                <%}%>
+            </ul>
+        </div>
+    </div>
+</div>

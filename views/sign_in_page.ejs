@@ -1,0 +1,48 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+<link rel="stylesheet" type="text/css" href="/css/sign_in.css">
+<link rel="stylesheet" type="text/css" href="/css/home.css">
+
+<div id="top_header">
+    <h1>A Place to Share & Grow Knowledge</h1>
+</div>
+
+<div id="content">
+    <p>GuruShisya is a educational platform to share & get knowledge.It is a symbol of the pure relationship of the Guru & Shishya followed by the traditional vedic culture. </p>
+</div>
+<main>
+    <div id="signin_container">
+        <form id="signin" method="POST" action="/user/create-session">
+            <h2>Sign in</h2>
+            <h3>to your Guru Shisya account</h3>
+            <div id="form_input">
+            <input type="email" name="email" placeholder="Email" required autofocus="" class="form-control">
+            <input type="password" name="password" placeholder="Password" autofocus class="form-control" required="">
+            <div id="divider">
+            <hr class="one"><span>OR</span>
+            </div>
+            <div id="social_container">
+            <a href="/user/auth/facebook"><div id="facebook" class="form-control"><span><img src="/images/fb.png"></span><span>Facebook</span></div></a>
+            <a href="/user/auth/google"><div id="google" class="form-control"><span><img src="/images/google1.png"></span><span>Google</span></div></a>
+            </div>
+            <input type="submit" value="Sign in"class="form-control">
+            <div class="footer"><span>Don't have an account? </span><span><a href="/user/sign-up" class="link_bottom">Sign Up</a></span></div>
+            <div class="footer"><span>Forgot </span><span><a href="#" id="forgot_btn" class="link_bottom">password?</a></span></div>
+            </div>
+        </form>
+    </div>
+        <div id="reset_container" class="display">
+            <form action="/user/forgot" method="POST" class="form-reset">
+                <h2>Forgot Password</h2>
+                <input type="email" id="resetEmail"name="email" class="form-control" placeholder="Email address" required="" >
+                <button class="btn btn-primary btn-block" type="submit">Reset Password</button>
+                <a href="#" id="cancel_reset"><i class="fas fa-angle-left"></i> Back</a>
+            </form>
+        </div>
+    
+</main>
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script> 
+<script type="text/javascript" src="/js/sign_in.js"></script> 
