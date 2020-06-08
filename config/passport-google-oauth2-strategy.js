@@ -1,28 +1,15 @@
-const passsport = require('passport');
-const googleStrategy = require('passport-google-oauth').OAuth2Strategy;
+const passport = require('passport');
+const googleStrategy = require('passport-google-oauth20').Strategy;
 const crypto = require('crypto');
 const User = require('../models/users');
+require('dotenv').config();
 
-passsport.use(new googleStrategy({
-    clientID:"955668639561-35acsgkuf98blda89neud115jvhgqs90.apps.googleusercontent.com",
-    clientSecret:"H6-oQf-gnFblL4wLdTawRebK",
+passport.use(new googleStrategy({
+    clientID: process.env.G_CLIENTID,
+    clientSecret: process.env.G_SECRET,
     callbackURL:"http://localhost:8000/user/auth/google/callback",
-    profileFields: [
-        "id",
-        "email",
-        "emails",
-        "gender",
-        "link",
-        "locale",
-        "name",
-        "timezone",
-        "updated_time",
-        "verified"
-        ],
-        enableProof: true,
-    scope: 'openid profile email'
 },
-    function(req,accessToken, refreshToken,profile,done){
+    function(accessToken, refreshToken,profile,done){
 
         User.findOne({email:profile.emails[0].value}).exec(function(err,user){
             if(err)
@@ -46,7 +33,7 @@ passsport.use(new googleStrategy({
                     password:crypto.randomBytes(20).toString('hex'),
                     avatar:profile.photos[0].value
 
-                }),function(err,user)
+                },function(err,user)
 
                 {
                     if(err)
@@ -56,7 +43,7 @@ passsport.use(new googleStrategy({
                     }
                     return done(null,user);
 
-                }
+                });
             }
         });
     }
