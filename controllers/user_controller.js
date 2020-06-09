@@ -14,15 +14,12 @@ module.exports.post = function(req,res)
     });
 }
 
-// module.exports.reset = function(req,res)
-// {
 
-// }
 
 module.exports.signUp = function(req,res)
 {
     if(req.isAuthenticated()){
-        return res.redirect('/user/profile');
+        return res.redirect('/');
     }
     return res.render('sign_up_page',
     {
@@ -106,9 +103,10 @@ module.exports.create = function(req,res)
             User.create(req.body,function(err,user){
                 if(err)
                 {
-                    console.log('Error in creating account in signup');
+                    console.log('Error in creating account in signup',err);
                     return;
                 }
+                req.flash('success','Account created successfully');
                 return res.redirect('/user/sign-in');
             });
         }

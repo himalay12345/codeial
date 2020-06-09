@@ -1,6 +1,7 @@
 
 #profile_container{
     margin:0;
+    height: auto;
     display: flex;
     flex-direction:row;
     color:#100c08;
@@ -11,9 +12,9 @@
     }
 
     #profile_info{
-        height:100vh;
+        height:auto;
         width:25%;
-        border-right: 1px solid grey;
+        // border-right: 1px solid grey;
         // border:1px solid black;
 
         #profile_credential{
@@ -315,3 +316,5 @@
         }
     }
 }
+// --------------------------------------Answer-------------------------------------------------------
+

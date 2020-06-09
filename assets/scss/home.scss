@@ -188,18 +188,14 @@
                 // background-color: #DD4124;
                 font-weight: 600;
                 font-family: Arial, Helvetica, sans-serif;
-                color: white;
+                color: black;
                 margin-top: -12px;
                 outline: 0;
                 resize: none;
             }
 
-            textarea:focus{
-                font-size:1.3rem;
-                color:white;
-            }
             ::placeholder { 
-                color:black;
+                color:grey;
             }
 
             #btn{
@@ -423,7 +419,7 @@
             width: 98%;
             background-color: white;
             padding: 5px;
-            overflow: auto;
+            // overflow: auto;
             // margin-top: 5px;
             border-radius: 3px;
             display: flex;
@@ -463,6 +459,7 @@
             }
             #topic_content{
                 width:78%;
+                height:auto;
                 // border:1px solid red;
                 display: flex;
                 flex-direction: column;
@@ -570,6 +567,7 @@
                     min-height:180px;
                     height: auto;
                     border:1px solid grey;
+                    width: 98%;
                     padding: 10px;
                     margin-bottom: 5px;
                     border-radius: 3px;

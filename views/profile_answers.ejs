@@ -1,1 +1,146 @@
-<h2>This is Your questions</h2>
+<link rel="stylesheet" type="text/css" href="/css/home.css">
+<link rel="stylesheet" type="text/css" href="/css/profile.css">
+<link rel="stylesheet" type="text/css" href="/css/_profile-answer.css">
+
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+<script type="text/javascript" src="/ckeditor/ckeditor.js"></script>
+<main>
+
+  <%if(locals.user.id == profile_user.id){%>
+    <div id="profile_container">
+    <div id="profile_info">
+      <div id="profile_header">
+        <div id="image">
+          <img src="<%=profile_user.avatar%>" onerror=this.src="/images/user.png">
+          <a href="#" id="edit_photo">Edit Photo</a>
+        </div>
+        <div id="profile_name">
+          <div><h1><%=profile_user.name%></h1></div>
+          <span><a href="#">Follower</a></span>
+          <span><a href="#">Following</a></span>
+        </div>
+      </div>
+      <div id="profile_credential">
+        <div id="edit_profile">
+          <button id="edit_btn">Edit Profile</button>
+          <%if(profile_user.description){%>
+            <p><%=profile_user.description%></p>
+          <%}%>
+          <%if(profile_user.email){%>
+            <p><span><i class="fas fa-edit"></i></span><span><%=profile_user.email%></span></p>
+          <%}%>
+          <%if(profile_user.office){%>
+            <p><span><i class="fas fa-building"></i></span><span><%=profile_user.office%></span></p>
+          <%}%>
+          <%if(profile_user.education){%>
+            <p><span><i class="fas fa-user-graduate"></i></span><span><%=profile_user.education%></span></p>
+          <%}%>
+          <%if(profile_user.location){%>
+            <p><span><i class="fas fa-map-marker-alt"></i></span><span><%=profile_user.location%></span></p>
+          <%}%>
+          <%if(profile_user.website){%>
+            <p><span><i class="fas fa-paperclip"></i></span><span><%=profile_user.website%></span></p>
+          <%}%>
+
+        </div>
+
+        <div id="credential_input" class="display">
+          <form action="/user/update/<%=profile_user._id%>" method="POST">
+            <input class="display" id="imageUpload" type="file" name="profile_photo" placeholder="Photo" capture>
+            <textarea name="description" placeholder="Add a bio"><%=user.description%></textarea></br>
+            <span><i class="fas fa-edit"></i></span><span><input type="text" name="name" placeholder="Update Name" value="<%=user.name%>"></span></br>
+            <span><i class="fas fa-building"></i></span><span><input type="text" name="office" placeholder="Office" value="<%=user.office%>"></span></br>
+            <span><i class="fas fa-user-graduate"></i></span><span><input type="text" name="education" placeholder="College" value="<%=user.education%>"></span></br>
+            <span><i class="fas fa-map-marker-alt"></i></span><span><input type="text" name="location" placeholder="Location" value="<%=user.location%>"></span></br>
+            <span><i class="fas fa-paperclip"></i></span><span><input type="text" name="website" placeholder="Website" value="<%=user.website%>"></span></br>
+            <!-- <span><i class="fas fa-sync"></i></span><span><input type="text" name="office" placeholder="Office"></span></br> -->
+            <button id="form_save" type="submit">Save</button>
+            <!-- <input type="submit" value="Save"> -->
+            <a href="#" id="form_cancel">Cancel</a>
+          </form>
+        </div>
+      </div>
+      <div id="profile_interests"></div>
+    </div>
+    <div id="profile_space">
+      <div id="profile_nav">
+        <a href="/profile/user/<%=user._id%>" >Overview</a>
+        <a href="/profile/question">Questions<span><%=profile_user.questions.length%></span></a>
+        <a href="/profile/answer" id="overview">Answers<span><%=profile_user.answers.length%></span></a>
+        <a href="#">Shares</a>
+        <a href="#">Followers</a>
+        <a href="#">Following</a>
+        <a href="#">More</a>
+        <%if(locals.user.id == profile_user.id){%>
+          <a href="/user/sign-out"><b>Sign out</b></a>
+          <%}%>
+      </div>
+      <div id="profile_space_content">
+        <%for(post of profile_user.answers){%>
+          <div id="answer_container"> 
+               <div id="question_asked">
+                   <p>Question asked by <b><%=post.question.user.name%></b></p>
+                   <h1><%=post.question.content%></h1>
+               </div>
+
+           <div id="answers">
+          <div class="topic_answered" id="post-<%= post._id %>" data="<%= post._id %>">
+                
+               <div id="topic_content">
+                   <div id="author_header"><b> You Answered this question</b>
+                       <span style="font-size:small">
+                           <%if(locals.user && user.id==post.user.id){%>
+                               <div class="dropdown">
+                                   <!-- three dots -->
+                                   <ul class="dropbtn icons btn-right showLeft">
+                                       <li></li>
+                                       <li></li>
+                                       <li></li>
+                                   </ul>
+                                   <!-- menu -->
+                                   <div id="myDropdown" class="dropdown-content">
+                                       <a href="/answer/destroy/<%=post.id%>">Delete Answer</a>
+                                       <a href="#about">Edit Answer</a>
+                                   </div>
+                               </div>
+                               <%}%></br>
+                               <h3><%=post.createdAt.toString().slice(4,10)%></h3>
+                               
+               
+                       </span>
+                   </div>
+                   <div id="author_content">
+                       <div id="ans"><p><%=post.content%></p></div>
+                   </div>
+                   <div id="author_interact">
+                       <a href="#"><span><i class="fas fa-chevron-circle-up"></i>Upvote</span></a>
+                       <a href="#"><span><i class="fas fa-sync"></i>Share</span></a>
+                       <a href="#" id="comment"><span><i class="fas fa-comment"></i>Comment</span></a>
+                       <a href="#"><span><i class="fas fa-eye"></i>500</span></a>
+                   </div>
+               
+              
+
+               </div>
+          </div>
+          
+       </div>
+       </div>
+       <%}%>
+      </div>
+    </div>
+    </div>
+
+ <%}else{%>
+  
+  <%}%>
+
+
+
+
+
+<!-- <input type="submit" value="Submit"/> -->
+</form>
+</main>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<script src="/js/profile.js"></script>

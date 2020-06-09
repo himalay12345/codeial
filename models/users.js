@@ -16,10 +16,9 @@ const userSchema = new mongoose.Schema({
     },
     name :{
         type:String,
-        required : true
+        required : true,
+        unique:false
     },
-    resetPasswordToken: String,
-    resetPasswordExpires: Date,
     description:{
         type:String
     },
@@ -49,7 +48,9 @@ const userSchema = new mongoose.Schema({
             type: mongoose.Schema.Types.ObjectId,
             ref: 'Answer'
         }
-    ]
+    ],
+    resetPasswordToken: String,
+resetPasswordExpires: Date,
 },
     {
         timestamps : true

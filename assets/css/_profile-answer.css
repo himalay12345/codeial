@@ -1,0 +1,144 @@
+#answers {
+  border-top: 1px solid black;
+  margin-bottom: 5px; }
+
+#answer_container {
+  padding: 8px;
+  min-height: 0;
+  box-sizing: border-box;
+  background-color: white;
+  border: 1px solid black;
+  width: 99%;
+  height: auto;
+  border-radius: 3px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px; }
+  #answer_container #question_asked {
+    padding: 7px;
+    height: 100px;
+    box-sizing: border-box;
+    border-radius: 3px; }
+    #answer_container #question_asked p {
+      color: black;
+      font-size: 0.9rem;
+      font-family: Arial, Helvetica, sans-serif; }
+    #answer_container #question_asked h1 {
+      margin-top: -5px;
+      padding: 0;
+      color: black;
+      font-size: 1.5rem;
+      font-family: Arial, Helvetica, sans-serif; }
+
+.topic_answered {
+  position: relative;
+  height: auto;
+  width: 98%;
+  background-color: white;
+  padding: 5px;
+  overflow: auto;
+  border-radius: 3px;
+  display: flex; }
+  .topic_answered #topic_content {
+    width: 98%;
+    display: flex;
+    flex-direction: column; }
+    .topic_answered #topic_content #author_header {
+      height: 10%;
+      padding-bottom: 5px;
+      padding-top: 7px; }
+      .topic_answered #topic_content #author_header h3 {
+        margin-top: 5px;
+        margin-left: 10px; }
+      .topic_answered #topic_content #author_header span {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1.1rem;
+        margin-left: 10px;
+        margin-right: 10px;
+        font-weight: 550; }
+      .topic_answered #topic_content #author_header b {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 0.8rem; }
+      .topic_answered #topic_content #author_header .showLeft {
+        background-color: white !important;
+        text-shadow: none !important;
+        color: #fff !important;
+        padding-top: 5px; }
+      .topic_answered #topic_content #author_header .icons li {
+        background: none repeat scroll 0 0 black;
+        height: 4px;
+        width: 4px;
+        line-height: 0;
+        list-style: none outside none;
+        margin-right: 15px;
+        margin-top: 2px;
+        vertical-align: top;
+        border-radius: 50%;
+        pointer-events: none; }
+      .topic_answered #topic_content #author_header .btn-left {
+        left: 0.4em; }
+      .topic_answered #topic_content #author_header .btn-right {
+        right: 0; }
+      .topic_answered #topic_content #author_header .btn-left, .topic_answered #topic_content #author_header .btn-right {
+        position: absolute;
+        top: -20px; }
+      .topic_answered #topic_content #author_header .dropbtn {
+        background-color: #4CAF50;
+        position: absolute;
+        color: white;
+        font-size: 16px;
+        border: none;
+        cursor: pointer; }
+      .topic_answered #topic_content #author_header .dropbtn:hover, .topic_answered #topic_content #author_header .dropbtn:focus {
+        background-color: #3e8e41; }
+      .topic_answered #topic_content #author_header .dropdown {
+        position: absolute;
+        display: inline-block;
+        right: 0; }
+      .topic_answered #topic_content #author_header .dropdown-content {
+        display: none;
+        position: relative;
+        margin-top: 35px;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        overflow: auto;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1; }
+      .topic_answered #topic_content #author_header .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block; }
+      .topic_answered #topic_content #author_header .show {
+        display: block; }
+      .topic_answered #topic_content #author_header .dropdown a:hover {
+        background-color: #f1f1f1; }
+    .topic_answered #topic_content #author_content {
+      min-height: 180px;
+      height: auto;
+      width: 100%;
+      border-bottom: 1px solid black;
+      padding: 10px;
+      margin-bottom: 15px; }
+      .topic_answered #topic_content #author_content p {
+        font-size: 1rem;
+        font-family: Arial, Helvetica, sans-serif; }
+      .topic_answered #topic_content #author_content #ans {
+        height: 100%; }
+    .topic_answered #topic_content #author_interact {
+      height: 30px;
+      font-weight: normal;
+      padding: 3px;
+      font-family: Arial, Helvetica, sans-serif;
+      display: flex;
+      justify-content: space-around;
+      margin-bottom: 5px; }
+      .topic_answered #topic_content #author_interact a {
+        text-decoration: none;
+        padding: 3px;
+        border-radius: 3px;
+        background-color: #5B5EA6;
+        border: 1px solid grey;
+        color: white; }
+      .topic_answered #topic_content #author_interact i {
+        margin-right: 7px; }

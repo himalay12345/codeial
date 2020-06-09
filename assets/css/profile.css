@@ -1,5 +1,6 @@
 #profile_container {
   margin: 0;
+  height: auto;
   display: flex;
   flex-direction: row;
   color: #100c08;
@@ -7,9 +8,8 @@
   #profile_container .display {
     display: none; }
   #profile_container #profile_info {
-    height: 100vh;
-    width: 25%;
-    border-right: 1px solid grey; }
+    height: auto;
+    width: 25%; }
     #profile_container #profile_info #profile_credential {
       min-height: 100px;
       height: auto; }

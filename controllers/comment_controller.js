@@ -23,16 +23,16 @@ module.exports.create = async function(req,res)
 
                 comment = await comment.populate('user', 'name email avatar').execPopulate();
                 // commentMailer.newComment(comment);
-                let job = queue.create('emails',comment).save(function(err)
-                {
-                    if(err)
-                    {
-                        console.log('Error in enqueque comment',err);
-                        return;
-                    }
+                // let job = queue.create('emails',comment).save(function(err)
+                // {
+                //     if(err)
+                //     {
+                //         console.log('Error in enqueque comment',err);
+                //         return;
+                //     }
 
-                    console.log('Job enqueued',job.id);
-                });
+                //     console.log('Job enqueued',job.id);
+                // });
                 if (req.xhr){
                     // Similar for comments to fetch the user's id!
         

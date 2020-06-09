@@ -136,15 +136,12 @@
         height: auto;
         font-weight: 600;
         font-family: Arial, Helvetica, sans-serif;
-        color: white;
+        color: black;
         margin-top: -12px;
         outline: 0;
         resize: none; }
-      #home-container #main #question textarea:focus {
-        font-size: 1.3rem;
-        color: white; }
       #home-container #main #question ::placeholder {
-        color: black; }
+        color: grey; }
       #home-container #main #question #btn select {
         width: 30%;
         padding: 7px;
@@ -292,7 +289,6 @@
       width: 98%;
       background-color: white;
       padding: 5px;
-      overflow: auto;
       border-radius: 3px;
       display: flex; }
       #home-container #main .topic_answered #author_image {
@@ -316,6 +312,7 @@
           font-weight: 600; }
       #home-container #main .topic_answered #topic_content {
         width: 78%;
+        height: auto;
         display: flex;
         flex-direction: column; }
         #home-container #main .topic_answered #topic_content #author_header {
@@ -392,7 +389,10 @@
           min-height: 180px;
           height: auto;
           border: 1px solid grey;
+          width: 98%;
           padding: 10px;
+          display: flex;
+          flex-wrap: wrap;
           margin-bottom: 5px;
           border-radius: 3px; }
           #home-container #main .topic_answered #topic_content #author_content p {
