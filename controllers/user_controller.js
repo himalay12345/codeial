@@ -1,5 +1,6 @@
 const User = require('../models/users');
 const Post = require('../models/posts');
+const Temp = require('../models/temp');
 const fs = require('fs');
 const path = require('path');
 var async = require("async");
@@ -12,6 +13,20 @@ module.exports.post = function(req,res)
     res.render('post',{
         title:"Posts"
     });
+}
+
+module.exports.temp = function(req,res)
+{
+    Temp.create({content:req.body.content},function(err)
+    {
+        if(err)
+        {
+            console.log('Error in creating temp data',err);
+            return;
+        }
+
+        // return res.redirect('back');
+    })
 }
 
 

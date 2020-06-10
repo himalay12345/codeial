@@ -391,8 +391,6 @@
           border: 1px solid grey;
           width: 98%;
           padding: 10px;
-          display: flex;
-          flex-wrap: wrap;
           margin-bottom: 5px;
           border-radius: 3px; }
           #home-container #main .topic_answered #topic_content #author_content p {
