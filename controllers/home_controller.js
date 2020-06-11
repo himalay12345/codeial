@@ -15,7 +15,10 @@ module.exports.home = async function(req,res)
         populate: {
             path:'comments',
             populate: {
-                path:'user'
+                path:'user',
+                populate:{
+                  path:'likes'
+                }
             }
         }
     }
@@ -26,7 +29,7 @@ module.exports.home = async function(req,res)
             path:'user'
            }
     }
-    );
+    ).populate('likes');
 
 let users = await User.find({});
 

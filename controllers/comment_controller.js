@@ -3,6 +3,7 @@ const Answer = require('../models/answers');
 const commentMailer = require('../mailers/comment_mailer');
 const queue = require('../config/kue');
 const emailWorkers = require('../workers/comment_email_worker');
+const Like = require('../models/like');
 
 module.exports.create = async function(req,res)
 {
@@ -62,12 +63,17 @@ module.exports.destroy =async function(req,res)
 {
     try{
         let comment = await Comment.findById(req.params.id);
+        // console.log(comment.user);
+        // console.log(req.user.id);
         
         if(comment.user == req.user.id)
             {
+                // console.log(comment.user);
+                // console.log(req.user.id);
                 let answerId = comment.answer;
                 // console.log(answerId);
                 comment.remove();
+                await Like.deleteMany({likeable:comment._id,onModel:'Comment'});
 
                 Answer.findByIdAndUpdate(answerId, { $pull: {comments:req.params.id}
                 });

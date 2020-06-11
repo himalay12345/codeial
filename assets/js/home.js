@@ -119,7 +119,32 @@ $(document).click(function(event){
     // }
 });
 
-   
+// ------------------------------------------------------------------------------------------------------------
+
+let deletePost = function(deleteLink){
+    $(deleteLink).click(function(e){
+        e.preventDefault();
+
+        $.ajax({
+            type:'get',
+            url:$(deleteLink).prop('href'),
+            success:function(data){
+                $(`#post-${data.data.post_id}`).remove();
+                new Noty({
+                    theme: 'relax',
+                    text: "Answer Deleted",
+                    type: 'success',
+                    layout: 'topRight',
+                    timeout: 1500
+                    
+                }).show();
+            },error:function(err)
+            {
+                console.log(err.responseText);
+            }
+        });
+    });
+}
 
 
 

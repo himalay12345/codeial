@@ -2,10 +2,18 @@ $(document).ready( function() {
     $('.topic_answered').each(function(i, d) {
         // console.log('slot found: ' + d.id);
         let postId = $(this).attr('data');
-        new PostComments(postId);
+
+        let del = new PostComments(postId);
+        
+        
+       
+
         
     });
 });
+
+
+
 
 
 // Let's implement this via classes
@@ -46,6 +54,7 @@ class PostComments{
                     $(`#post-comments-${postId}`).prepend(newComment);
                     pSelf.deleteComment($(' .delete-comment-button', newComment));
 
+                    new ToggleLike($('.toggle-like-button',newComment))
                     new Noty({
                         theme: 'relax',
                         text: "Comment published!",
@@ -80,6 +89,7 @@ class PostComments{
         ${comment.content}
         </div>
         <div id="comment_interact">
+        <a class="toggle-like-button" href="/likes/toggle/?id=${comment._id}&type=Comment" data-likes="0"><span><i class="fas fa-chevron-circle-up"></i><span> 0 </span></span>Upvote</span></a>
             <a href="#"><span><i class="fas fa-reply"></i></span>Reply</a>
             <a href="#"><span><i class="fas fa-heart"></i></span>Like</a>
             <a class="delete-comment-button" href="/comment/destroy/${comment._id}"><span><i class="fas fa-trash"></i></span>Delete comment</a>
@@ -129,4 +139,41 @@ class PostComments{
 
         });
     }
+}
+
+var comment_sec = document.querySelectorAll('.comment_card');
+for(let i=0;i<comment_sec.length;i++)
+{
+    $('.delete-comment-button',comment_sec[i]).each(function()
+        {
+            let self= this;
+            DeleteComment(self);
+        });
+}
+
+
+function DeleteComment(deleteLink){
+    $(deleteLink).click(function(e){
+        e.preventDefault();
+
+        $.ajax({
+            type: 'get',
+            url: $(deleteLink).prop('href'),
+            success: function(data){
+                $(`#comment-${data.data.comment_id}`).remove();
+
+                new Noty({
+                    theme: 'relax',
+                    text: "Comment Deleted",
+                    type: 'success',
+                    layout: 'topRight',
+                    timeout: 1500
+                    
+                }).show();
+            },error: function(error){
+                console.log(error.responseText);
+            }
+        });
+
+    });
 }

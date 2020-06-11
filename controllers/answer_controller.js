@@ -2,6 +2,7 @@ const Answer = require('../models/answers');
 const Post = require('../models/posts');
 const Comment = require('../models/comments');
 const User = require('../models/users');
+const Like = require('../models/like');
 
 module.exports.create =async function(req,res)
 {
@@ -44,6 +45,14 @@ module.exports.destroy = function(req,res)
             let postId = answer.question;
             let userId = req.user._id;
             answer.remove();
+
+            
+
+            Like.deleteMany({likeable:answer, onModel:'Answer'});
+            Like.deleteMany({_id: {
+                $in:answer.comments
+            }});
+            
             
             Comment.deleteMany({answer:req.params.id},function(err)
             {
@@ -68,6 +77,16 @@ module.exports.destroy = function(req,res)
                 return;
             }
             });
+
+
+            if(req.xhr){
+                return res.status(200).json({
+                    data:{
+                        post_id :req.params.id
+                    },
+                    message:"Post Deleted"
+                });
+            }
             req.flash('success','Answer removed successfully');
             return res.redirect('back');
             
