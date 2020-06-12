@@ -1,23 +1,48 @@
 const User = require('../models/users');
 const Post = require('../models/posts');
+const Follower = require('../models/follower');
 
 
-module.exports.create = function(req,res)
+module.exports.create = async function(req,res)
 {
-    User.findById(req.params.id,function(err,user)
-    {
+    try{
+        let user1 = await User.find({follower:req.user._id});
+    // let user2 = await User.findOne({follower:req.user._id});
+    
+        let user = await User.findById(req.params.id)
+        .populate({path: 'questions'})
+        .populate({
+            path:'answers'
+    
+        }
+        );
+
+
         return res.render('profile',{
             title:"Profile",
-            profile_user:user
+            profile_user:user,
+            user1:user1
+            // user2:user2
         });
-    });
+ 
     
+}
+    catch(err)
+    {
+        console.log(err);
+        return;
+    }
 }
 
 module.exports.question = async function(req,res)
 {
     let sorted = { createdAt:-1};
-    let user = await User.findById(req.user._id).populate({path: 'questions', options: { sort:(sorted)}});
+    let user = await User.findById(req.user._id).populate({path: 'questions', options: { sort:(sorted)}})
+    .populate({
+        path:'answers'
+        
+    }
+    );
     
 
 
@@ -27,9 +52,12 @@ module.exports.question = async function(req,res)
             profile_user:user
         });
    
+    }
+    
+    
    
 
-}
+
 
 module.exports.answer = async function(req,res)
 {

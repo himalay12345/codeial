@@ -49,6 +49,19 @@ const userSchema = new mongoose.Schema({
             ref: 'Answer'
         }
     ],
+    follower: [
+        { 
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'Follower' 
+        }
+    ]
+,
+following: [
+    { 
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Follower' 
+    }
+],
     resetPasswordToken: String,
 resetPasswordExpires: Date,
 },

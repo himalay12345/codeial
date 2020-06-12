@@ -16,8 +16,8 @@
         
         <div id="profile_name">
           <div><h1><%=profile_user.name%></h1></div>
-          <span><a href="#">Follower</a></span>
-          <span><a href="#">Following</a></span>
+          <span><a href="#"><b><%=profile_user.follower.length%></b> Follower</a></span>
+          <span><a href="#"><b><%=profile_user.following.length%></b> Following</a></span>
         </div>
 
       </div>
@@ -26,7 +26,15 @@
           <%if(locals.user.id == profile_user.id){%>
           <button id="edit_btn">Edit Profile</button>
           <%}else{%>
-            <button id="follow_btn">Follow</button>
+            <%var flag = false;for(u of user1){%>
+            <%if(u.id == profile_user.id){%>
+              <%flag=true}%>
+              <%}%>
+            <%if(!flag){%>
+            <a href="/follow/toggle/<%=profile_user._id%>" class="toggle-follow-button" data-follows="<%=profile_user.follower.length%>"><button id="follow_btn">Follow</button></a>
+            <%}else{%>
+              <a href="/follow/toggle/<%=profile_user._id%>" class="toggle-follow-button" data-follows="<%=profile_user.follower.length%>"><button id="follow_btn"><%=profile_user.follower.length%> Following</button></a>
+              <%}%>
             <%}%>
           <%if(profile_user.description){%>
             <p><%=profile_user.description%></p>
@@ -98,3 +106,14 @@
 </main>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 <script src="/js/profile.js"></script>
+<script src="/js/toggle_follow.js"></script>
+<script>
+  $('.toggle-follow-button').each(function()
+  {
+      let self= this;
+      let togglefollow = new ToggleFollow(self);
+  });
+
+
+ 
+</script>

@@ -198,8 +198,19 @@ module.exports.answer =async function(req,res)
 {
     try{
     let posts = await Post.find({}).populate('user');
-    let users = await User.find({});
-    let user = await User.findById(req.user._id);
+    let users = await User.find({})
+    .populate({
+        path:'answers'
+        
+    }
+    );
+        
+    let user = await User.findById(req.user._id).populate({path: 'questions'})
+    .populate({
+        path:'answers'
+        
+    }
+    );
 
         return res.render('answer',{
             title:"Codeial | Answer",

@@ -9,6 +9,7 @@ router.use('/post',require('./post'));
 router.use('/answer',require('./answer'));
 router.use('/comment',require('./comment'));
 router.use('/likes',require('./like'));
+router.use('/follow',require('./follow'));
 
 
 
