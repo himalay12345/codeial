@@ -8,11 +8,49 @@ var async = require("async");
 const nodeMailer = require('../config/nodemailer');
 var crypto = require("crypto");
 
-module.exports.post = function(req,res)
+module.exports.post = async function(req,res)
 {
-    res.render('post',{
-        title:"Posts"
-    });
+    try{
+        let posts = await Post.find({}).sort('_createdAt').populate('user')
+    .populate({
+        path:'answers',
+        populate: {
+            path:'comments',
+            populate: {
+                path:'user',
+                populate:{
+                  path:'likes'
+                }
+            }
+        }
+    }
+    )
+    .populate({
+        path:'answers',
+        populate: {
+            path:'user'
+           }
+    }
+    ).populate('likes');
+
+let users = await User.find({});
+// let user1 = await User.find({follower:req.user._id});
+
+
+
+    return res.render('post',{
+        title:"Codeial | Post",
+        posts:posts,
+        all_users:users
+    
+    });   
+    
+    }
+
+    catch(err){
+        console.log('Error',err);
+        return;
+    }
 }
 
 module.exports.temp = function(req,res)

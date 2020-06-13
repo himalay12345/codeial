@@ -1,5 +1,5 @@
 #profile_container {
-  margin: 0;
+  margin-top: 70px;
   height: auto;
   display: flex;
   flex-direction: row;
@@ -14,7 +14,7 @@
       min-height: 100px;
       height: auto; }
       #profile_container #profile_info #profile_credential #edit_profile button {
-        width: 270px;
+        width: 300px;
         padding: 10px;
         color: black;
         background-color: grey;
@@ -36,7 +36,7 @@
         padding-left: 30px;
         transition: 0.5 all; }
         #profile_container #profile_info #profile_credential #credential_input textarea {
-          width: 90%;
+          width: 100%;
           height: 70px;
           font-size: 1rem;
           outline: none;
@@ -68,7 +68,7 @@
           margin-right: 15px; }
         #profile_container #profile_info #profile_credential #credential_input input {
           padding: 7px;
-          width: 80%;
+          width: 82%;
           font-size: 0.9rem;
           margin-bottom: 8px;
           border: 0.5px solid grey;
@@ -97,7 +97,7 @@
         right: 9%; }
       #profile_container #profile_info #profile_header #image img {
         height: 270px;
-        width: 90%;
+        width: 100%;
         border-radius: 3px; }
       #profile_container #profile_info #profile_header #profile_name {
         padding-top: 30px;
@@ -111,17 +111,14 @@
             margin-top: 5px;
             margin-bottom: 20px;
             font-family: Arial, Helvetica, sans-serif; }
-        #profile_container #profile_info #profile_header #profile_name span {
-          margin-left: 20px;
-          margin-right: 10px; }
-          #profile_container #profile_info #profile_header #profile_name span a {
-            text-decoration: none;
-            border: 1px solid black;
-            border-radius: 3px;
-            padding: 7px;
-            color: #100c08;
-            padding-right: 10px;
-            padding-left: 10px; }
+        #profile_container #profile_info #profile_header #profile_name span a {
+          text-decoration: none;
+          border: 1px solid black;
+          border-radius: 3px;
+          padding: 7px;
+          color: #100c08;
+          padding-right: 10px;
+          padding-left: 10px; }
   #profile_container #profile_space {
     height: 100vh;
     width: 75%;

@@ -40,7 +40,7 @@
          </div>
             
             <%for(let post of posts){%>
-                <%if(post.user.id != locals.user.id){%>
+                <%if(post.user.id != temp.id){%>
                    
              <div id="unanswered">
              <div id="header"><span>Question added</span><a href="#"><span>-<%=post.topic%></span></a></div>

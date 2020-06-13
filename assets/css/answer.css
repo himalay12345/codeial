@@ -6,7 +6,8 @@
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
-  padding-top: 30px; }
+  padding-top: 30px;
+  margin-top: 70px; }
   #home-container #leaderboard {
     width: 25%;
     height: auto;

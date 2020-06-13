@@ -93,7 +93,7 @@ class PostComments{
             <a href="#"><span><i class="fas fa-reply"></i></span>Reply</a>
             <a href="#"><span><i class="fas fa-heart"></i></span>Like</a>
             <a class="delete-comment-button" href="/comment/destroy/${comment._id}"><span><i class="fas fa-trash"></i></span>Delete comment</a>
-            <div class="dropdown" onclick = "boo('.comment-${ comment._id}')">
+            <div class="c_dropdown" onclick = "boo('.comment-${ comment._id}')">
                 <!-- three dots -->
                 <ul class="c_dropbtn icons btn-right showLeft">
                     <li></li>
@@ -101,7 +101,7 @@ class PostComments{
                     <li></li>
                 </ul>
                 <!-- menu -->
-                <div id="c_myDropdown" class="dropdown-content comment-${ comment._id }">
+                <div id="c_myDropdown" class="c_dropdown-content comment-${ comment._id }">
                     <a class="delete-comment-button" href="/comment/destroy/${comment._id}">Delete comment</a>
                     <a href="#about">Edit</a>
                 </div>

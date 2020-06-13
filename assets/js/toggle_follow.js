@@ -23,11 +23,11 @@ class ToggleFollow{
                 if (data.data.deleted == true){
                     followCount -= 1; 
                     $(self).attr('data-follows', followCount);
-                    $(self).html(`<a href="${profile_id}" class="toggle-follow-button" data-follows="${followCount}"><button id="follow_btn">Follow</button></a>`)
+                    $(self).html(`<a href="${profile_id}" class="toggle-follow-button" data-follows="${followCount}"><button id="follow_btn"><i class="fas fa-rss"></i> Follow</button></a>`)
                 }else{
                     followCount += 1;
                     $(self).attr('data-follows', followCount);
-                    $(self).html(`<a href="${profile_id}" class="toggle-follow-button" data-follows=""><button id="follow_btn">${followCount} Following</button></a>`);
+                    $(self).html(`<a href="${profile_id}" class="toggle-follow-button" data-follows=""><button id="follow_btn"><i class="fas fa-check-square"></i> Following</button></a>`);
                 }
 
                

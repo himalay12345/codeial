@@ -34,7 +34,8 @@ module.exports.home = async function(req,res)
 let users = await User.find({});
 
 
-    return res.render('home',{
+
+    return res.render('post',{
         title:"Codeial | Home",
         posts:posts,
         all_users:users

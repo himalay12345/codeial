@@ -58,16 +58,49 @@ header #logout_header {
     right: 11%; }
 
 header #login_header {
-  position: sticky;
+  position: fixed;
+  z-index: 1;
+  top: 0;
   height: 70px;
   display: inline-block;
   width: 100%;
   background-color: #373737; }
+  header #login_header .header_dropdown {
+    position: absolute;
+    transition: 0.5 all; }
+    header #login_header .header_dropdown .display_option {
+      display: block !important; }
+    header #login_header .header_dropdown .user_icon {
+      margin-top: 8px;
+      margin-left: 40px; }
+    header #login_header .header_dropdown #user_option {
+      position: relative;
+      left: 23%;
+      display: none;
+      margin-top: 30px;
+      background-color: #97a7a7;
+      min-width: 120px;
+      overflow: auto;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      z-index: 1; }
+      header #login_header .header_dropdown #user_option a {
+        color: white;
+        padding: 8px 16px;
+        text-decoration: none;
+        font-size: 1rem;
+        font-family: Arial, Helvetica, sans-serif;
+        cursor: pointer;
+        display: block; }
+      header #login_header .header_dropdown #user_option a:hover {
+        color: black; }
+  header #login_header .no_hover:hover {
+    background-color: transparent !important; }
   header #login_header img {
     height: 40px;
     width: 40px;
     margin: 10px 40px 0px 50px;
-    border-radius: 50%; }
+    border-radius: 50%;
+    cursor: pointer; }
   header #login_header #search {
     margin-top: 20px;
     height: 35px;

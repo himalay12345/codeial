@@ -18,6 +18,7 @@
           <div><h1><%=profile_user.name%></h1></div>
           <span><a href="#"><b><%=profile_user.follower.length%></b> Follower</a></span>
           <span><a href="#"><b><%=profile_user.following.length%></b> Following</a></span>
+          <span><a href="#"><i class="fas fa-envelope"></i> Message</a></span>
         </div>
 
       </div>
@@ -31,9 +32,9 @@
               <%flag=true}%>
               <%}%>
             <%if(!flag){%>
-            <a href="/follow/toggle/<%=profile_user._id%>" class="toggle-follow-button" data-follows="<%=profile_user.follower.length%>"><button id="follow_btn">Follow</button></a>
+            <a href="/follow/toggle/<%=profile_user._id%>" class="toggle-follow-button" data-follows="<%=profile_user.follower.length%>"><button id="follow_btn"><i class="fas fa-rss"></i>  Follow</button></a>
             <%}else{%>
-              <a href="/follow/toggle/<%=profile_user._id%>" class="toggle-follow-button" data-follows="<%=profile_user.follower.length%>"><button id="follow_btn"><%=profile_user.follower.length%> Following</button></a>
+              <a href="/follow/toggle/<%=profile_user._id%>" class="toggle-follow-button" data-follows="<%=profile_user.follower.length%>"><button id="follow_btn"><i class="fas fa-check-square"></i> Following</button></a>
               <%}%>
             <%}%>
           <%if(profile_user.description){%>

@@ -75,7 +75,9 @@ header{
     }
 
     #login_header{
-    position: sticky; 
+    position: fixed;
+    z-index: 1;
+    top:0; 
     height:70px;
     display: inline-block;
     width:100%;
@@ -83,12 +85,60 @@ header{
     background-color:#373737;
     // border-bottom: 2px solid grey;
 
+    
+    .header_dropdown{
+            position: absolute;
+            transition: 0.5 all;
+            // display: inline-block;
+            // right: 0;
+
+            .display_option{
+                display: block !important;
+            }
+
+            .user_icon{
+                margin-top: 8px;
+                margin-left: 40px;
+            }
+        
+
+            #user_option{
+                position: relative;
+                left:23%;
+                display: none;
+                margin-top: 30px;
+                background-color: rgb(151, 167, 167);
+                
+                min-width: 120px;
+                overflow: auto;
+                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+                z-index: 1;
+                    a{
+                        color: white;
+                        padding: 8px 16px;
+                        text-decoration: none;
+                        font-size: 1rem;
+                        font-family: Arial, Helvetica, sans-serif;
+                        cursor: pointer;
+                        display:block;
+                    }
+                    a:hover {
+                    color:black;}
+
+            }
+        }
+
+        .no_hover:hover{
+            background-color: transparent !important;
+        }
+    
+
     img{
         height:40px;
         width: 40px;
         margin:10px 40px 0px 50px;
         border-radius: 50%; 
-       
+        cursor: pointer;
     }
 
     #search{
