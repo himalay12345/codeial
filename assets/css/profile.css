@@ -13,7 +13,11 @@
     #profile_container #profile_info #profile_credential {
       min-height: 100px;
       height: auto; }
-      #profile_container #profile_info #profile_credential #edit_profile button {
+      #profile_container #profile_info #profile_credential .c_blue {
+        background-color: #0066ff !important;
+        color: white !important;
+        font-weight: 550 !important; }
+      #profile_container #profile_info #profile_credential #edit_profile .c_grey {
         width: 300px;
         padding: 10px;
         color: black;
@@ -94,7 +98,7 @@
         border-radius: 3px;
         position: absolute;
         bottom: 27.5%;
-        right: 9%; }
+        right: 0%; }
       #profile_container #profile_info #profile_header #image img {
         height: 270px;
         width: 100%;
@@ -124,6 +128,37 @@
     width: 75%;
     padding-right: 25px;
     padding-left: 10px; }
+    #profile_container #profile_space #following_card {
+      display: flex;
+      padding: 10px;
+      position: relative;
+      box-sizing: border-box;
+      border-bottom: 1px solid grey; }
+      #profile_container #profile_space #following_card img {
+        height: 50px;
+        width: 50px;
+        border-radius: 50%; }
+      #profile_container #profile_space #following_card span {
+        font-size: 1rem;
+        font-family: Arial, Helvetica, sans-serif;
+        margin-left: 15px;
+        margin-top: 15px; }
+      #profile_container #profile_space #following_card button {
+        color: white !important;
+        border: none;
+        padding: 8px;
+        margin-top: 8px;
+        font-weight: bold;
+        border-radius: 3px;
+        margin-left: 10px;
+        width: 100px;
+        cursor: pointer;
+        position: absolute;
+        right: 0; }
+      #profile_container #profile_space #following_card .c_grey {
+        background-color: grey !important; }
+      #profile_container #profile_space #following_card .c_blue {
+        background-color: #0066ff !important; }
     #profile_container #profile_space #profile_nav {
       margin-top: 10px;
       height: 60px;

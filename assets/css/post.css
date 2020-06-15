@@ -152,7 +152,7 @@
       display: none !important; }
     #home-container #center #answer_container #comment_section {
       height: auto;
-      width: 95%;
+      width: 100%;
       margin-right: auto;
       margin-left: auto;
       display: flex;
@@ -217,7 +217,7 @@
       #home-container #center #answer_container #comment_section .comment_card {
         height: 80%;
         display: flex;
-        border: 1px solid black;
+        border: 1px solid grey;
         flex-direction: column;
         padding: 8px;
         margin-bottom: -1px;
@@ -301,9 +301,29 @@
             cursor: pointer;
             font-family: Arial, Helvetica, sans-serif; }
     #home-container #center #answers {
-      border: 1px solid black;
+      border: 1px solid grey;
       margin-bottom: 5px;
       border-radius: 5px; }
+      #home-container #center #answers .c_blue {
+        background-color: #0066ff !important;
+        color: white !important;
+        border: none;
+        padding: 8px;
+        font-weight: bold;
+        border-radius: 3px;
+        margin-left: 10px;
+        width: 100px;
+        cursor: pointer; }
+      #home-container #center #answers .c_grey {
+        cursor: pointer;
+        color: black;
+        background-color: grey;
+        border: none;
+        padding: 8px;
+        font-weight: bold;
+        border-radius: 3px;
+        margin-left: 10px;
+        width: 100px; }
     #home-container #center #answer_container {
       padding: 8px;
       box-sizing: border-box;

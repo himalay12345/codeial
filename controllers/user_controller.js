@@ -11,6 +11,7 @@ var crypto = require("crypto");
 module.exports.post = async function(req,res)
 {
     try{
+        
         let posts = await Post.find({}).sort('_createdAt').populate('user')
     .populate({
         path:'answers',
@@ -42,7 +43,6 @@ let users = await User.find({});
         title:"Codeial | Post",
         posts:posts,
         all_users:users
-    
     });   
     
     }

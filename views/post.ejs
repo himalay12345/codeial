@@ -31,7 +31,7 @@
               <%}else{%>
               <div id="answer_container"> 
                    <div id="question_asked">
-                       <p>Question asked by <b><%=post.user.name%></b></p>
+                       <p>Question asked by <a href="/profile/user/<%=post.user._id%>"><b><%=post.user.name%></b></a></p>
                        <h1><%=post.content%></h1>
                    </div>
                <%for(ans of post.answers){%>
@@ -39,10 +39,21 @@
               <div class="topic_answered" id="post-<%= ans._id %>" data="<%= ans._id %>">
                     <div id="author_image">
                         <img src="<%=ans.user.avatar%>">
-                        <a href="#"><span  class="margin"><span><i class="fas fa-rss"></i></span><span>Follow</span></span></a>
+                        <%var flag = false;for(u of user1){%>
+                            <%if(u.id == ans.user.id){%>
+                              <%flag=true}%>
+                              <%}%>
+                            <%if(ans.user.id == user.id){%>
+                             <%}else{%>
+                                <%if(!flag){%>
+                                    <a href="/follow/toggle/<%=ans.user._id%>" class="toggle-follow-button" data-follows="<%=ans.user.follower.length%>"><button class="c_blue" id="follow_btn"><i class="fas fa-rss"></i>  Follow</button></a>
+                                <%}else{%>
+                                    <a href="/follow/toggle/<%=ans.user._id%>" class="toggle-follow-button" data-follows="<%=ans.user.follower.length%>"><button class="c_grey" id="follow_btn"><i class="fas fa-check-square"></i> Following</button></a>
+                                <%}%>
+                            <%}%>
                     </div>
                    <div id="topic_content">
-                       <div id="author_header"><span><%=ans.user.name%></span><b>Answered this question</b>
+                       <div id="author_header"><span><a href="/profile/user/<%=ans.user._id%>"><%=ans.user.name%></a></span><b>Answered this question</b>
                            <span style="font-size:small">
                                <%if(locals.user && user.id==ans.user.id){%>
                                    <div class="ans_dropdown"> 
@@ -79,8 +90,8 @@
    
                    </div>
               </div>
-              <%-include('_home_comments');%>
            </div>
+           <%-include('_home_comments');%>
               <%}%>
            </div>  
            
@@ -102,7 +113,8 @@
    <script src="/js/post.js"></script>
    <script src="/js/comment.js"></script>
    <script src="/js/toggle_likes.js"></script>
-   <script>
+   <script src="/js/toggle_follow.js"></script>
+<script>
        $('.toggle-like-button').each(function()
        {
            let self= this;
@@ -114,8 +126,12 @@
            let self= this;
            let deleteAnswer = deletePost(this);
        });
+  
+       $('.toggle-follow-button').each(function()
+        {
+            let self= this;
+            let togglefollow = new ToggleFollow(self);
+        });
 
-      
-   </script>
-
-  <%}%>
+</script>
+ <%}%>

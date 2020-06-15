@@ -25,16 +25,16 @@
       <div id="profile_credential">
         <div id="edit_profile">
           <%if(locals.user.id == profile_user.id){%>
-          <button id="edit_btn">Edit Profile</button>
+          <button class="c_grey" id="edit_btn">Edit Profile</button>
           <%}else{%>
             <%var flag = false;for(u of user1){%>
             <%if(u.id == profile_user.id){%>
               <%flag=true}%>
               <%}%>
             <%if(!flag){%>
-            <a href="/follow/toggle/<%=profile_user._id%>" class="toggle-follow-button" data-follows="<%=profile_user.follower.length%>"><button id="follow_btn"><i class="fas fa-rss"></i>  Follow</button></a>
+            <a href="/follow/toggle/<%=profile_user._id%>" class="toggle-follow-button" data-follows="<%=profile_user.follower.length%>"><button class="c_grey c_blue" id="follow_btn"><i class="fas fa-rss"></i>  Follow</button></a>
             <%}else{%>
-              <a href="/follow/toggle/<%=profile_user._id%>" class="toggle-follow-button" data-follows="<%=profile_user.follower.length%>"><button id="follow_btn"><i class="fas fa-check-square"></i> Following</button></a>
+              <a href="/follow/toggle/<%=profile_user._id%>" class="toggle-follow-button" data-follows="<%=profile_user.follower.length%>"><button class="c_grey" id="follow_btn"><i class="fas fa-check-square"></i> Following</button></a>
               <%}%>
             <%}%>
           <%if(profile_user.description){%>
@@ -83,8 +83,8 @@
         <a href="/profile/question">Questions<span><%=profile_user.questions.length%></span></a>
         <a href="/profile/answer">Answers<span><%=profile_user.answers.length%></span></a>
         <a href="#">Shares</a>
-        <a href="#">Followers</a>
-        <a href="#">Following</a>
+        <a href="/profile/follower">Followers<span><%=profile_user.follower.length%></span></a>
+        <a href="/profile/following">Following<span><%=profile_user.following.length%></span> </a>
         <a href="#">More</a>
         <%if(locals.user.id == profile_user.id){%>
         <a href="/user/sign-out"><b>Sign out</b></a>

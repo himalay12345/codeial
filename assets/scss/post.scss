@@ -207,7 +207,7 @@
             }
             #comment_section{
                 height:auto;
-                width:95%;
+                width:100%;
                 margin-right: auto;
                 margin-left: auto;
                 display: flex;
@@ -298,7 +298,7 @@
                     height:80%;
                     // border:1px solid red;
                     display: flex;
-                    border:1px solid black;
+                    border:1px solid grey;
                     flex-direction: column;
                     padding:8px;
                     margin-bottom: -1px;
@@ -426,9 +426,35 @@
     }
 
         #answers{
-            border:1px solid black;
+            border:1px solid grey;
             margin-bottom: 5px;
             border-radius: 5px;
+
+            
+
+            .c_blue{
+                background-color: rgb(0, 102, 255) !important;
+                color: white !important;
+                border: none;
+                padding: 8px;
+                font-weight: bold;
+                border-radius: 3px;
+                margin-left: 10px;
+                width: 100px;
+                cursor: pointer;
+            }
+
+            .c_grey{
+                cursor: pointer;
+                color:black;
+                background-color: grey;
+                border: none;
+                padding: 8px;
+                font-weight: bold;
+                border-radius: 3px;
+                margin-left: 10px;
+                width: 100px;
+            }
         }
 
 
