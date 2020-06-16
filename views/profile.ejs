@@ -18,7 +18,7 @@
           <div><h1><%=profile_user.name%></h1></div>
           <span><a href="#"><b><%=profile_user.follower.length%></b> Follower</a></span>
           <span><a href="#"><b><%=profile_user.following.length%></b> Following</a></span>
-          <span><a href="#"><i class="fas fa-envelope"></i> Message</a></span>
+          <span><a href="#" id="message_btn"><i class="fas fa-envelope"></i> Message</a></span>
         </div>
 
       </div>
@@ -92,6 +92,25 @@
       </div>
       <div id="profile_space_content">
      
+      </div>
+    </div>
+    <div id="chat_box">
+      <div id="chat_header">
+        <h3>Himalay Kashyap<span id="margin">_</span><span id="message_close"> X</span></h3>
+      </div>
+      <div id="message_body">
+          <div id="message_content">
+                <ul>
+                  <li class="other-message"><span>Other Message</span></li>
+                  <li class="self-message"><span>Self Message</span></li>
+                </ul>
+          </div>
+          <div id="input_message">
+            <form>
+              <input type="text" placeholder="Your Message Here...." name="message" required>
+              <button type="submit">Send</button>
+            </form>
+          </div>
       </div>
     </div>
     </div>

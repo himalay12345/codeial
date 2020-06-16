@@ -24,7 +24,7 @@
             <%for(user of users){%>
             <div id="rank-box">
 
-                <div id="rank"><span><%=i++%></span><span><img src="<%=user.avatar%>"</span></div>
+                <div id="rank"><span><%=i++%></span><span><img src="<%=user.avatar%>" onerror=this.src="/images/user.png"></span></div>
                 <div id="name"><%=user.name%></div>
                 <div   id="answers"><%=user.answers.length%></div>
            </div>

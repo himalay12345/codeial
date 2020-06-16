@@ -27,3 +27,17 @@ $("#edit_photo").click(function(e) {
 document.getElementById("imageUpload").onchange = function() {
     document.getElementById("edit_form").submit();
 };
+
+
+var message_btn = document.getElementById('message_btn');
+var chatbox = document.getElementById('chat_box');
+message_btn.addEventListener('click',function()
+{
+    chatbox.classList.toggle('show');
+});
+
+var chat_cancel = document.getElementById('message_close');
+chat_cancel.addEventListener('click',function()
+{
+    chatbox.classList.remove('show');
+});
