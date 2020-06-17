@@ -80,11 +80,11 @@
     <div id="profile_space">
       <div id="profile_nav">
         <a href="/profile/user/<%=profile_user._id%>">Overview</a>
-        <a href="/profile/question">Questions<span><%=profile_user.questions.length%></span></a>
-        <a href="/profile/answer">Answers<span><%=profile_user.answers.length%></span></a>
+        <a href="/profile/question/<%=profile_user._id%>">Questions<span><%=profile_user.questions.length%></span></a>
+        <a href="/profile/answer/<%=profile_user._id%>">Answers<span><%=profile_user.answers.length%></span></a>
         <a href="#">Shares</a>
-        <a href="/profile/follower">Followers <span><%=profile_user.follower.length%></span></a>
-        <a href="#" id="overview">Following <span><%=profile_user.following.length%></span></a>
+        <a href="/profile/follower/<%=profile_user._id%>">Followers <span><%=profile_user.follower.length%></span></a>
+        <a href="/profile/following/<%=profile_user._id%>" id="overview">Following <span><%=profile_user.following.length%></span></a>
         <a href="#">More</a>
         <%if(locals.user.id == profile_user.id){%>
         <a href="/user/sign-out"><b>Sign out</b></a>
@@ -95,8 +95,12 @@
             <div id="following_card">
                 <img src="<%=following.avatar%>" onerror=this.src="/images/user.png">
                 <span><%=following.name%></span>
-                <a href="/follow/toggle/<%=following._id%>" class="toggle-follow-button" data-follows="<%=profile_user.follower.length%>"><button class="c_grey" id="follow_btn"><i class="fas fa-check-square"></i> Following</button></a>        
-            </div>
+                <%if(locals.user.id == profile_user.id){%>
+                <a href="/follow/toggle/<%=following._id%>" class="toggle-follow-button" data-follows="<%=profile_user.follower.length%>"><button class="c_grey cur" id="follow_btn"><i class="fas fa-check-square"></i> Following</button></a>        
+                <%}else{%>
+                  <a><button class="c_grey" id="follow_btn"><i class="fas fa-check-square"></i> Following</button></a>        
+                <%}%>
+              </div>
         <%}%>
       </div>
     </div>

@@ -80,11 +80,11 @@
     <div id="profile_space">
       <div id="profile_nav">
         <a href="/profile/user/<%=profile_user._id%>">Overview</a>
-        <a href="/profile/question">Questions<span><%=profile_user.questions.length%></span></a>
-        <a href="/profile/answer">Answers<span><%=profile_user.answers.length%></span></a>
+        <a href="/profile/question/<%=profile_user._id%>">Questions<span><%=profile_user.questions.length%></span></a>
+        <a href="/profile/answer/<%=profile_user._id%>">Answers<span><%=profile_user.answers.length%></span></a>
         <a href="#">Shares</a>
-        <a href="#" id="overview">Followers<span><%=profile_user.follower.length%></span></a>
-        <a href="/profile/following">Following<span><%=profile_user.following.length%></span></a>
+        <a href="/profile/follower/<%=profile_user._id%>" id="overview">Followers<span><%=profile_user.follower.length%></span></a>
+        <a href="/profile/following/<%=profile_user._id%>">Following<span><%=profile_user.following.length%></span></a>
         <a href="#">More</a>
         <%if(locals.user.id == profile_user.id){%>
         <a href="/user/sign-out"><b>Sign out</b></a>
@@ -101,10 +101,18 @@
                     <%}%>
 
                 <%if(flag){%>
-                    <a href="/follow/toggle/<%=follower._id%>" class="toggle-follow-button" data-follows="<%=profile_user.follower.length%>"><button class="c_grey"id="follow_btn"><i class="fas fa-check-square"></i> Following</button></a>
-                <%}else{%>
-                    <a href="/follow/toggle/<%=follower._id%>" class="toggle-follow-button" data-follows="<%=profile_user.follower.length%>"><button class="c_blue" id="follow_btn"><i class="fas fa-rss"></i>  Follow</button></a>
-                <%}%>
+                  <%if(locals.user.id == profile_user.id){%>
+                    <a href="/follow/toggle/<%=follower._id%>" class="toggle-follow-button" data-follows="<%=profile_user.follower.length%>"><button class="c_grey cur"id="follow_btn"><i class="fas fa-check-square"></i> Following</button></a>
+                  <%}else{%>
+                    <a><button class="c_grey"id="follow_btn"><i class="fas fa-check-square"></i> Following</button></a>
+                    <%}%>
+                    <%}else{%>
+                      <%if(locals.user.id == profile_user.id){%>
+                        <a href="/follow/toggle/<%=follower._id%>" class="toggle-follow-button" data-follows="<%=profile_user.follower.length%>"><button class="c_blue cur" id="follow_btn"><i class="fas fa-rss"></i>  Follow</button></a>
+                      <%}else{%>
+                        <a><button class="c_blue" id="follow_btn"><i class="fas fa-rss"></i>  Follow</button></a>
+                        <%}%>
+                        <%}%>
         </div>
         <%}%>
      

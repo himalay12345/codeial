@@ -37,10 +37,10 @@ module.exports.create = async function(req,res)
 module.exports.following = async function(req,res)
 {
     try{
-        let user1 = await User.find({follower:req.user._id});
+        let user1 = await User.find({follower:req.params.id});
     // let user2 = await User.findOne({follower:req.user._id});
     
-        let user = await User.findById(req.user._id)
+        let user = await User.findById(req.params.id)
         .populate({path: 'questions'})
         .populate({
             path:'answers'
@@ -68,10 +68,10 @@ module.exports.following = async function(req,res)
 module.exports.follower = async function(req,res)
 {
     try{
-        let user1 = await User.find({follower:req.user._id});
-        let user2 = await User.find({following:req.user._id});
+        let user1 = await User.find({follower:req.params.id});
+        let user2 = await User.find({following:req.params.id});
     
-        let user = await User.findById(req.user._id)
+        let user = await User.findById(req.params.id)
         .populate({path: 'questions'})
         .populate({
             path:'answers'
@@ -101,9 +101,9 @@ module.exports.follower = async function(req,res)
 
 module.exports.question = async function(req,res)
 {
-    let user1 = await User.find({follower:req.user._id});
+    let user1 = await User.find({follower:req.params.id});
     let sorted = { createdAt:-1};
-    let user = await User.findById(req.user._id).populate({path: 'questions', options: { sort:(sorted)}})
+    let user = await User.findById(req.params.id).populate({path: 'questions', options: { sort:(sorted)}})
     .populate({
         path:'answers'
         
@@ -128,9 +128,9 @@ module.exports.question = async function(req,res)
 
 module.exports.answer = async function(req,res)
 {
-    let user1 = await User.find({follower:req.user._id});
+    let user1 = await User.find({follower:req.params.id});
     let sorted = { createdAt:-1};
-    let user = await User.findById(req.user._id).populate({path: 'questions', options: { sort:(sorted)}})
+    let user = await User.findById(req.params.id).populate({path: 'questions', options: { sort:(sorted)}})
     .populate({
         path:'answers',
         populate: {

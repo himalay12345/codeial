@@ -13,6 +13,10 @@ const MongoStore = require('connect-mongo')(session);
 const sassMiddleware = require('node-sass-middleware');
 const flash = require('connect-flash');
 const customMiddleware = require('./config/middleware');
+const chatServer = require('http').Server(app);
+const chatSockets = require('./config/chat_socket').chatSockets(chatServer);
+chatServer.listen(5000);
+console.log('Chat server is running on port 5000');
 require('dotenv').config();
 app.use(sassMiddleware({
     src:'./assets/scss',

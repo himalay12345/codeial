@@ -80,11 +80,11 @@
     <div id="profile_space">
       <div id="profile_nav">
         <a href="#" id="overview">Overview</a>
-        <a href="/profile/question">Questions<span><%=profile_user.questions.length%></span></a>
-        <a href="/profile/answer">Answers<span><%=profile_user.answers.length%></span></a>
+        <a href="/profile/question/<%=profile_user._id%>">Questions<span><%=profile_user.questions.length%></span></a>
+        <a href="/profile/answer/<%=profile_user._id%>">Answers<span><%=profile_user.answers.length%></span></a>
         <a href="#">Shares</a>
-        <a href="/profile/follower">Followers<span><%=profile_user.follower.length%></span></a>
-        <a href="/profile/following">Following<span><%=profile_user.following.length%></span> </a>
+        <a href="/profile/follower/<%=profile_user._id%>">Followers<span><%=profile_user.follower.length%></span></a>
+        <a href="/profile/following/<%=profile_user._id%>">Following<span><%=profile_user.following.length%></span> </a>
         <a href="#">More</a>
         <%if(locals.user.id == profile_user.id){%>
         <a href="/user/sign-out"><b>Sign out</b></a>
@@ -100,15 +100,15 @@
       </div>
       <div id="message_body">
           <div id="message_content">
-                <ul>
-                  <li class="other-message"><span>Other Message</span></li>
-                  <li class="self-message"><span>Self Message</span></li>
+                <ul id="chat-message-list">
+                  <!-- <li class="other-message"><span>Other Message</span></li>
+                  <li class="self-message"><span>Self Message</span></li> -->
                 </ul>
           </div>
           <div id="input_message">
             <form>
-              <input type="text" placeholder="Your Message Here...." name="message" required>
-              <button type="submit">Send</button>
+              <input id="chat-message-input" type="text" placeholder="Your Message Here...." name="message" required>
+              <button id="send-message" type="submit">Send</button>
             </form>
           </div>
       </div>
@@ -127,6 +127,9 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 <script src="/js/profile.js"></script>
 <script src="/js/toggle_follow.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
+<script src="/js/chat_engine.js"></script>
+<%if(locals.user){%>
 <script>
   $('.toggle-follow-button').each(function()
   {
@@ -134,6 +137,9 @@
       let togglefollow = new ToggleFollow(self);
   });
 
+</script>
 
- 
+<%}%>
+<script>
+  new ChatEngine('chat_box','<%= locals.user.email %>')
 </script>
