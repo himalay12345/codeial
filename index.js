@@ -14,7 +14,7 @@ const sassMiddleware = require('node-sass-middleware');
 const flash = require('connect-flash');
 const customMiddleware = require('./config/middleware');
 const chatServer = require('http').Server(app);
-const chatSockets = require('./config/chat_socket').chatSockets(chatServer);
+const chatSockets = require('./config/chat_user_socket').chatUserSockets(chatServer);
 chatServer.listen(5000);
 console.log('Chat server is running on port 5000');
 require('dotenv').config();

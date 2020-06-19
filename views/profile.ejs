@@ -128,7 +128,7 @@
 <script src="/js/profile.js"></script>
 <script src="/js/toggle_follow.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
-<script src="/js/chat_engine.js"></script>
+<script src="/js/chat_user_engine.js"></script>
 <%if(locals.user){%>
 <script>
   $('.toggle-follow-button').each(function()
@@ -141,5 +141,5 @@
 
 <%}%>
 <script>
-  new ChatEngine('chat_box','<%= locals.user.email %>')
+  new ChatUserEngine('chat_box','<%= locals.user.email %>' ,'<%= profile_user.email %>');
 </script>
