@@ -13,9 +13,10 @@
                 <div class ="user_icon">
                    <img src="<%=user.avatar%>" onerror=this.src="/images/user.png" >
                 </div>
+                
                 <div id="user_option" class="dropdown-content">
                     <a href="/profile/user/<%=locals.user.id%>" id="profile"> Profile</a>
-                    <a>Messages</a>
+                    <a href="/user/message">Messages</a>
                     <a>Settings</a>
                     <a href="/user/sign-out"><b>Sign out</b></a>
                 </div>

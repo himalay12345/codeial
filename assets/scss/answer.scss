@@ -218,6 +218,13 @@
                 padding-top: 0;
                 box-sizing: border-box;
 
+                #checked{
+                    // cursor: text;
+                    i{
+                        color: green;
+                    }
+                }
+
                 a:hover{
                     background-color: rgb(255, 255, 255);
                     color: black;

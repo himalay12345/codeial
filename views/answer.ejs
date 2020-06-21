@@ -49,7 +49,15 @@
                  <div id="content_key"><a></a><span><b><%=post.answers.length%> Answer</b></span></a><span>-Last followed 20m ago</span></div>
              </div>
              <div id="interact">
-                 <a href="#" id="ans"><span  class="margin"><span><i class="fas fa-edit"></i></span><span>Answer</span></span></a>
+                 <%var flag=false;for(let answer of temp.answers){%>
+                    <%if(answer.question.id == post.id){flag=true;}%>
+                <%}%>
+                <%if(flag){%>
+                    <a id="checked"><span  class="margin"><span><i class="fas fa-check-square"></i></span><span>Answered</span></span></a>
+                    <%flag=false;%>
+                    <%}else{%>
+                    <a href="#" id="ans"><span  class="margin"><span><i class="fas fa-edit"></i></span><span>Answer</span></span></a>
+                 <%}%>
                  <a href="#" id="pass"><span class="margin"><i class="fas fa-sync"></i><span></span><span>Pass</span></span></a>
                  <a href="#" id="req"><span class="margin"><i class="fas fa-users"></i><span></span><span>Request Answer</span></span></a>
                  <a href="#" id="follow"><span class="margin"><i class="fas fa-rss"></i><span></span><span>Follow</span><span>3</span></span></a>

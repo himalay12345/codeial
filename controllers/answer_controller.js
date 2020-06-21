@@ -30,7 +30,7 @@ module.exports.create =async function(req,res)
                     post.answers.push(answer);
                     post.save();
                     req.flash('success','Answer added successfully');
-                    return res.redirect('/profile/answer');
+                    return res.redirect("/profile/answer/"+req.user._id);
                 
         }
 

@@ -59,7 +59,7 @@ header #logout_header {
 
 header #login_header {
   position: fixed;
-  z-index: 1;
+  z-index: 5;
   top: 0;
   height: 70px;
   display: inline-block;
@@ -73,6 +73,9 @@ header #login_header {
     header #login_header .header_dropdown .user_icon {
       margin-top: 8px;
       margin-left: 40px; }
+      header #login_header .header_dropdown .user_icon img {
+        height: 50px;
+        width: 50px; }
     header #login_header .header_dropdown #user_option {
       position: relative;
       left: 23%;

@@ -137,6 +137,8 @@
         padding: 10px;
         padding-top: 0;
         box-sizing: border-box; }
+        #home-container #main #unanswered #interact #checked i {
+          color: green; }
         #home-container #main #unanswered #interact a:hover {
           background-color: white;
           color: black;

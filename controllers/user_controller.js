@@ -8,6 +8,23 @@ var async = require("async");
 const nodeMailer = require('../config/nodemailer');
 var crypto = require("crypto");
 
+module.exports.message = async function(req,res)
+{
+    try{
+        let users = await User.find({});
+            return res.render('message',{
+                title:'My Messages',
+                users:users
+            });
+    }
+
+    catch(err)
+    {
+        console.log('Error',err);
+        return;
+    }
+}
+
 module.exports.post = async function(req,res)
 {
     try{
@@ -236,6 +253,8 @@ module.exports.answer =async function(req,res)
 {
     try{
     let posts = await Post.find({}).populate('user');
+    
+    
     let users = await User.find({})
     .populate({
         path:'answers'
@@ -247,6 +266,16 @@ module.exports.answer =async function(req,res)
     .populate({
         path:'answers'
         
+    }
+    )
+    .populate({
+        path:'answers',
+        populate: {
+            path:'question',
+            populate: {
+                path:'user'
+            }
+           }
     }
     );
 

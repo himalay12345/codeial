@@ -5,7 +5,7 @@ const passport = require('passport');
 const userController = require('../controllers/user_controller');
 
 
-
+router.get('/message',passport.checkAuthentication,userController.message);
 router.get('/post',userController.post);
 router.post('/post/create',userController.temp);
 router.get('/sign-in',userController.signIn);
