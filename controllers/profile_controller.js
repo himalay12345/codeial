@@ -1,11 +1,14 @@
 const User = require('../models/users');
 const Post = require('../models/posts');
 const Follower = require('../models/follower');
+const Message = require('../models/message');
 
 
 module.exports.create = async function(req,res)
 {
     try{
+        // let sender = await Message.find({reciever:req.user._id,sender:req.params.id});
+        // let reciever = await Message.find({reciever:req.params.id,sender:req.user._id}); 
         let user1 = await User.find({follower:req.user._id});
     // let user2 = await User.findOne({follower:req.user._id});
     
@@ -22,6 +25,8 @@ module.exports.create = async function(req,res)
             title:"Profile",
             profile_user:user,
             user1:user1
+            // sender:sender,
+            // reciever:reciever
             // user2:user2
         });
  

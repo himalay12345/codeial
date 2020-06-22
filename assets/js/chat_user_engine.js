@@ -1,8 +1,10 @@
 class ChatUserEngine{
-    constructor(chatBoxId, userEmail, recieverEmail){
+    constructor(chatBoxId, userEmail, recieverEmail,fromId,toId){
         this.chatBox = $(`#${chatBoxId}`);
         this.userEmail = userEmail;
         this.recieverEmail = recieverEmail;
+        this.fromId = fromId;
+        this.toId = toId;
 
         this.socket = io.connect('http://localhost:5000');
 
@@ -41,6 +43,8 @@ class ChatUserEngine{
                         message:msg,
                         from:self.userEmail,
                         to:self.recieverEmail,
+                        fromId:self.fromId,
+                        toId:self.toId,
                         chatroom:'codeial'
                 });
             }

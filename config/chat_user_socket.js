@@ -1,3 +1,6 @@
+const User = require('../models/users');
+const Message = require('../models/message');
+
 module.exports.chatUserSockets = function(socketServer)
 {
     let userSocket = [];

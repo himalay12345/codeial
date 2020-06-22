@@ -1,27 +1,73 @@
 <header>
     <% if(locals.user){%>
         <div id="login_header">
-        <a href="/"><img src="/images/logo.jpg" id="header_logo"></a>
+        <a href="/" id="logo"><img src="/images/logo.jpg" id="header_logo"></a>
         <input id="search" type="search" name="search" placeholder="Search">
-        <ul>
-        <li><a href="/">HOME</a></li>
-        <li><a href="/user/answer">ANSWER</a></li>
-        <li><a href="#">ADD QUESTION</a></li>
-        <li><a href="#">BLOG</a></li>
-        <li class="no_hover"> 
-            <div class="header_dropdown"> 
-                <div class ="user_icon">
-                   <img src="<%=user.avatar%>" onerror=this.src="/images/user.png" >
-                </div>
-                
-                <div id="user_option" class="dropdown-content">
-                    <a href="/profile/user/<%=locals.user.id%>" id="profile"> Profile</a>
-                    <a href="/user/message">Messages</a>
-                    <a>Settings</a>
-                    <a href="/user/sign-out"><b>Sign out</b></a>
-                </div>
-            </div>
-        </li>
+        <div id="list">
+            <ul>
+                <li><a href="/">HOME</a></li>
+                <li><a href="/user/answer">ANSWER</a></li>
+                <li><a href="#">ADD QUESTION</a></li>
+                <li><a href="#">BLOG</a></li>
+                <li class="no_hover">
+                    <div class="nots_dropdown">
+                        <div id="nots_icon">
+                            <i class="fas fa-bell" style="font-size: 1.5rem;"></i>
+                        </div>
+
+                        <div id="nots_content">
+                            <h2>Notifications</h2>
+                            <div id="nots_list">
+                                    <ul>
+                                        <li class="no_hover">
+                                            <div><img src="/images/logo.jpg"></div>
+                                            <div class="margin"><b>Himalay </b>commented on your post.</div>
+                                        </li>
+                                        <li class="no_hover">
+                                            <div><img src="/images/logo.jpg"></div>
+                                            <div class="margin"><b>Himalay </b>commented on your post.</div>
+                                        </li>
+                                        <li class="no_hover">
+                                            <div><img src="/images/logo.jpg"></div>
+                                            <div class="margin"><b>Himalay </b>commented on your post.</div>
+                                        </li>
+                                        <li class="no_hover">
+                                            <div><img src="/images/logo.jpg"></div>
+                                            <div class="margin"><b>Himalay </b>commented on your post.</div>
+                                        </li>
+                                        <li class="no_hover">
+                                            <div><img src="/images/logo.jpg"></div>
+                                            <div class="margin"><b>Himalay </b>commented on your post.</div>
+                                        </li>
+                                        <li class="no_hover">
+                                            <div><img src="/images/logo.jpg"></div>
+                                            <div class="margin"><b>Himalay </b>commented on your post.</div>
+                                        </li>
+                                        <li class="no_hover">
+                                            <div><img src="/images/logo.jpg"></div>
+                                            <div class="margin"><b>Kunal </b>commented on your post.</div>
+                                        </li>
+                                    </ul>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="no_hover"> 
+                    <div class="header_dropdown"> 
+                        <div class ="user_icon">
+                        <img src="<%=user.avatar%>" onerror=this.src="/images/user.png" >
+                        </div>
+                        
+                        <div id="user_option" class="dropdown-content">
+                            <a href="/profile/user/<%=locals.user.id%>" id="profile"> Profile</a>
+                            <a href="/user/message">Messages</a>
+                            <a>Settings</a>
+                            <a href="/user/sign-out"><b>Sign out</b></a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
     
         <%}else{%>
             <div id="logout_header">

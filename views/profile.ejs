@@ -141,5 +141,5 @@
 
 <%}%>
 <script>
-  new ChatUserEngine('chat_box','<%= locals.user.email %>' ,'<%= profile_user.email %>');
+  new ChatUserEngine('chat_box','<%= locals.user.email %>' ,'<%= profile_user.email %>' ,'<%= locals.user._id %>' ,'<%= profile_user._id %>');
 </script>

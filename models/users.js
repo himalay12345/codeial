@@ -19,6 +19,12 @@ const userSchema = new mongoose.Schema({
         required : true,
         unique:false
     },
+    message_sender:[
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'User'
+        }
+    ],
     description:{
         type:String
     },

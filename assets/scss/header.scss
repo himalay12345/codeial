@@ -85,6 +85,95 @@ header{
     background-color:#373737;
     // border-bottom: 2px solid grey;
 
+    .nots_dropdown{
+        .display_option{
+            display: block !important;
+        }
+
+        #nots_icon{
+            i{
+                // color: rgb(0, 102, 255) !important;
+                color: white;
+                font-size: 1.5rem;
+                cursor: pointer;
+
+            }
+        }
+        
+        #nots_content{
+            // display: none;
+            position: absolute;
+            right:12%;
+            top:53px;
+            padding: 10px;
+            // min-height: 300px;
+            // z-index: 5;
+            background-color:white;
+            height: 350px;
+            width:300px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+            display:none;
+          
+            // display: none;
+            border: 1px solid grey;
+            overflow-y: auto;
+            overflow-x: hidden;
+            border-radius: 5px;
+
+            #nots_list{
+                // border: 1px solid red;
+                // height: 240px;
+                // overflow: hidden;
+                // z-index: 10;
+
+            ul{
+                display: flex;
+                flex-direction: column-reverse;
+                flex-wrap: wrap-reverse;
+                width: 100%;
+               margin-top: 50px;
+                
+                li{
+                    // border: 1px solid red;
+                    position: relative;
+                    min-height: 35px;
+                    right:60%;
+
+                    div{
+                       margin-left: 10px;
+                        
+                    }
+
+                    .margin{
+                        margin-left: 30px;
+                        margin-top: -15px;
+                    }
+                    
+                   
+                    img{
+                        height:30px;
+                        width: 30px;
+                        // margin:10px 40px 0px 50px;
+                        margin-top: 0px;
+                        border:1px solid black;
+                        border-radius: 50%; 
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+
+            h2{
+                margin-top: 0;
+                width: 100%;
+                font-size: 2rem;
+                // color: rgb(0, 102, 255) !important;
+                // text-align: center;
+            border-bottom:1px solid black;
+            }
+        }
+    }
+
     
     .header_dropdown{
             position: absolute;
@@ -98,18 +187,24 @@ header{
 
             .user_icon{
                 margin-top: 8px;
-                margin-left: 40px;
+                // margin-left: 10px;
 
                 img{
-                    height: 50px;
-                    width: 50px;
+                    height:40px;
+                    width: 40px;
+                    // margin:10px 40px 0px 50px;
+                    margin-top: -15px;
+                    border-radius: 50%; 
+                    cursor: pointer;
                 }
+            
             }
         
 
             #user_option{
                 position: relative;
-                left:23%;
+                // left:23%;
+                left: -20%;
                 display: none;
                 margin-top: 30px;
                 background-color: rgb(151, 167, 167);
@@ -137,15 +232,16 @@ header{
             background-color: transparent !important;
         }
     
-
-    img{
-        height:40px;
-        width: 40px;
-        margin:10px 40px 0px 50px;
-        border-radius: 50%; 
-        cursor: pointer;
-    }
-
+        #logo{
+            img{
+                height:40px;
+                width: 40px;
+                margin:10px 40px 0px 50px;
+                border-radius: 50%; 
+                cursor: pointer;
+            }
+        
+        }
     #search{
         margin-top: 20px;
         height: 35px;
@@ -172,38 +268,40 @@ header{
         opacity: 1; /* Firefox */
       }
 
-      ul{
-          list-style: none;
-          display: inline-flex;
-          flex-wrap: wrap;
-          position: absolute;
-          top:0.5%;
-          left:50%;
-
-          li{
-            font-size: 1.1rem;
-            padding: 6px 8px;
-            margin-right: 30px;
-          }
-
-          li:hover{
-              background-color: #5C5C5C;
-              border-radius: 15px;
-              transition: 0.1s ease-in-out;
-
-          }
-
-          a{
-            text-decoration: none;
-            color: white;
+     #list{
+        ul{
+            list-style: none;
+            display: inline-flex;
+            flex-wrap: wrap;
+            position: absolute;
+            top:0.5%;
+            left:50%;
+  
+            li{
+              font-size: 1.1rem;
+              padding: 6px 8px;
+              margin-right: 30px;
             }
-
-            img{
-                height: 50px;
-                width: 50px;
-                margin: -20px;
+  
+            li:hover{
+                background-color: #5C5C5C;
+                border-radius: 15px;
+                transition: 0.1s ease-in-out;
+  
             }
-      }
+  
+            a{
+              text-decoration: none;
+              color: white;
+              }
+  
+              img{
+                  height: 50px;
+                  width: 50px;
+                  margin: -20px;
+              }
+        }
+     }
 
      
 

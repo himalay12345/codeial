@@ -89,6 +89,14 @@ window.onclick = function(event) {
                 openDropdown.classList.remove('display_option');
             }
         }
+
+        if (!event.target.matches('.nots_dropdown')) {
+            var openDropdown = document.getElementById("nots_content");
+            
+                if (openDropdown.classList.contains('display_option')) {
+                    openDropdown.classList.remove('display_option');
+                }
+            }
 }
 
 //     // if(!event.target.matches('.comment_option'))
