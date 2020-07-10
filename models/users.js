@@ -68,7 +68,10 @@ following: [
         ref: 'Follower' 
     }
 ],
-    resetPasswordToken: String,
+interests:[{
+    type:String
+}],
+resetPasswordToken: String,
 resetPasswordExpires: Date,
 },
     {

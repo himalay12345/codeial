@@ -43,6 +43,11 @@ module.exports.chatUserSockets = function(socketServer)
         // io.to(userSocket[msg.to].emit('chat-message', msg));
         
       });
+
+      socket.on('send-notification',function(nots)
+      {
+        io.in(nots.chatroom).emit('receive_notification',nots);
+      })
 });
 
 }

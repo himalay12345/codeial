@@ -1,6 +1,7 @@
 var comment = document.querySelectorAll('#comment');
 var flag=false;
 
+
 for(let i=0;i<comment.length;i++)
 {
     comment[i].addEventListener('click',function()

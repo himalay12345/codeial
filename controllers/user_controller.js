@@ -188,6 +188,87 @@ module.exports.create = function(req,res)
     });
 }
 
+module.exports.topicRemove = async function(req,res)
+{
+    try{
+        let topic = await User.findById(req.query.id);
+        var userId = req.query.id;
+        console.log('Im in');
+        if(topic.id == req.user.id)
+        {
+            // console.log(req.query.id);
+           let user1  = await User.findByIdAndUpdate(userId, { $pull: {interests:{$in:req.query.topic}}
+            });
+            
+            req.flash('success','Topic removed successfully');
+            return res.redirect('back');
+        }
+    }
+
+    catch(err)
+    {
+        console.log('Error',err);
+        return;
+    }
+}
+
+module.exports.topic = async function(req,res)
+{
+    try{
+        if(req.user.id == req.params.id)
+        {
+            let user = await User.findById(req.params.id);
+            console.log(req.body.topic.length);
+       
+        if(typeof(req.body.topic)=='object'){
+           for(var i=0;i<req.body.topic.length;i++)
+           {
+            let new_user = await User.findOne({interests : req.body.topic[i], _id:req.params.id});
+                
+            if(!new_user)
+                {
+                    // console.log(req.body.topic[i]);
+                user.interests.push(req.body.topic[i]);
+                
+                }
+            // console.log(req.body.topic[i]);
+           }
+           user.save();
+          
+        }
+
+        else{
+            User.findOne({interests : req.body.topic, _id:req.params.id},function(err,new_user)
+            {
+                if(err)
+                {
+                    console.log('Error in finding interest',err);
+                    return;
+                }
+                if(!new_user)
+                {
+                user.interests.push(req.body.topic);
+                user.save();
+                }
+            });
+
+            
+        }
+           
+            req.flash('success','Topic added successsfully');
+           return res.redirect('back');
+        }
+
+
+    }
+
+    catch(err)
+    {
+      console.log("Error",err);
+      return;
+    }
+}
+
 module.exports.update = async function(req,res){
   
     try{

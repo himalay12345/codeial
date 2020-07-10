@@ -79,8 +79,11 @@
                            <div id="ans"><p><%=ans.content%></p></div>
                        </div>
                        <div id="author_interact">
-                           <%if(locals.user){%><a href="/likes/toggle/?id=<%=ans._id%>&type=Answer" class="toggle-like-button" data-likes="<%=ans.likes.length%>"><span><i class="fas fa-chevron-circle-up"></i><span><%= ans.likes.length%></span></span>Upvote</span></a><%}else{%>
-                           <%=ans.likes.length%> Upvotes <%}%>
+                           <%if(locals.user){%>
+                            <a href="/likes/toggle/?id=<%=ans._id%>&type=Answer" class="toggle-like-button" data-likes="<%=ans.likes.length%>"><span><i class="fas fa-chevron-circle-up"></i><span><%= ans.likes.length%></span></span>Upvote</span></a>
+                           <%}else{%>
+                            <%=ans.likes.length%> Upvotes 
+                           <%}%>
                            <a href="#"><span><i class="fas fa-sync"></i>Share</span></a>
                            <a id="comment"><span><i class="fas fa-comment"></i><%=ans.comments.length%>Comment</span></a>
                            <a href="#"><span><i class="fas fa-eye"></i>500</span></a>
@@ -114,6 +117,8 @@
    <script src="/js/comment.js"></script>
    <script src="/js/toggle_likes.js"></script>
    <script src="/js/toggle_follow.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
+   <script src="/js/user_interaction_notification.js"></script>
 <script>
        $('.toggle-like-button').each(function()
        {
@@ -132,6 +137,8 @@
             let self= this;
             let togglefollow = new ToggleFollow(self);
         });
+
+        // new UserNotification('<%locals.user._id%>','<%ans.user._id%>');
 
 </script>
  <%}%>

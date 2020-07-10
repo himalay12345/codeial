@@ -13,6 +13,8 @@ router.post('/forgot',userController.forgot);
 router.get('/sign-up',userController.signUp);
 router.post('/create',userController.create);
 router.post('/update/:id',userController.update);
+router.post('/topic/:id',userController.topic);
+router.get('/topic/remove',userController.topicRemove);
 router.post('/create-session',passport.authenticate(
     'local',
     {failureRedirect:'/user/sign-in',}

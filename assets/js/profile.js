@@ -41,3 +41,35 @@ chat_cancel.addEventListener('click',function()
 {
     chatbox.classList.remove('show');
 });
+
+var add_topic = document.getElementById('add_topic');
+var interest_box = document.getElementById('interests');
+var interest_list = document.getElementById('interest_list');
+var interest_cancel = document.getElementById('interest_cancel_btn');
+var add_topic_btn = document.getElementById('add_topic_btn');
+
+
+
+
+add_topic.addEventListener('click',function()
+{
+    interest_box.classList.toggle('display');
+    interest_list.classList.toggle('display');
+    
+});
+
+
+
+interest_cancel.addEventListener('click',function()
+{
+    interest_list.classList.toggle('display');
+    interest_box.classList.toggle('display');
+    // alert('hello');
+});
+
+add_topic_btn.addEventListener('click',function()
+{
+    interest_box.classList.toggle('display');
+    interest_list.classList.toggle('display');
+    
+});
