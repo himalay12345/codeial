@@ -1,6 +1,7 @@
 const express = require('express');
 const port = 8000;
 const app = express();
+const env = require('./config/environment');
 const expressLayouts = require('express-ejs-layouts');
 const db = require('./config/mongoose');
 const cookieParser = require('cookie-parser');
@@ -17,10 +18,11 @@ const chatServer = require('http').Server(app);
 const chatSockets = require('./config/chat_user_socket').chatUserSockets(chatServer);
 chatServer.listen(5000);
 console.log('Chat server is running on port 5000');
-require('dotenv').config();
+// require('dotenv').config();
+const path = require('path');
 app.use(sassMiddleware({
-    src:'./assets/scss',
-    dest:'./assets/css',
+    src:path.join(__dirname,env.asset_path,'scss'),
+    dest:path.join(__dirname,env.asset_path,'css'),
     debug: true,
     outputStyle:'extended',
     prefix:'/css'
@@ -28,7 +30,7 @@ app.use(sassMiddleware({
 app.use(express.urlencoded());
 app.use(cookieParser());
 app.use(expressLayouts);
-app.use(express.static('./assets'));
+app.use(express.static(env.asset_path));
 app.use('/uploads',express.static(__dirname + '/uploads'));
 app.set('layout extractStyles',true);
 app.set('layout exrtactScripts',true);
@@ -39,7 +41,7 @@ app.set('views','./views');
 
 app.use(session({
     name: 'codeial',
-    secret:'blahsomething',
+    secret:env.session_cookie_key,
     saveUninitialized:false,
     resave:false,
     cookie:{

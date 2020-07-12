@@ -84,7 +84,21 @@ module.exports.temp = function(req,res)
     })
 }
 
+module.exports.reset = function(req,res)
+{
+    return res.render('forgot_passw',{
+        title:'EduHub | Reset Password'
+    });
+}
 
+
+
+module.exports.home = function(req,res)
+{
+    return res.render('_home-signin',{
+        title:'EduHub | Sign-in'
+    });
+}
 
 module.exports.signUp = function(req,res)
 {
@@ -327,7 +341,7 @@ module.exports.destroySession = function(req,res)
 {
     req.logout();
     req.flash('success','Logged out successfully');
-    return res.redirect('/user/sign-in');
+    return res.redirect('/user/home');
 }
 
 module.exports.answer =async function(req,res)

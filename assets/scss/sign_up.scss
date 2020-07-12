@@ -301,5 +301,60 @@ hr.one{
 .link_bottom{
     font-weight: 700;
 }
+
+#phone_container{
+    display: none;
+    #logo_header{
+        color:white;
+        text-align: center;
+        padding-top: 60px;
+        margin-bottom: 20px;
+        h2{
+            font-size: 1.4rem;
+            font-weight: 100;
+        }
+    }
+
+    #user_input{
+        margin-top: 20px;
+        input{
+            width:85%;
+            height:35px !important;
+            margin-top: 15px;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 3px;
+        }
+
+        #create{
+            margin-top: 50px;
+            height:45px !important;
+            background-color: rgb(15, 114, 226);
+            border: 0;
+            color: white;
+        }
+    }
+}
 /* #signup{ display: none; } */
 
+
+@media screen and (max-width: 590px) {
+    #top_header {
+      display: none; }
+    #content {
+      display: none; }
+      #signup_container{
+          display:none;
+      }
+      #reset_container{
+        display:none;
+    }
+    #phone_container{
+        display:block;
+    }
+
+      main{
+          background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.4)),url('/images/camille-couvez-H5PnIYI_1I0-unsplash.jpg');
+          height: 100%;
+      }
+   }

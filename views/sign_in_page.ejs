@@ -41,24 +41,19 @@
             </div>
         <div id="phone_container">
             <div id="logo_header">
-                <h2>EduHub</h2>
-                <h3>A Place to Share & Grow Knowledge</h3>
+                <img src="/images/computer.jpg">
+                <h3>Sign in to EduHub</h3>
             </div>
-            <div id="social_btn">
-                <a href="/user/auth/facebook"><div id="facebook_btn" class="form-control"><span><img src="/images/fb.png"></span><span>Continue with Facebook</span></div></a>
-                <a href="/user/auth/google"><div id="google_btn" class="form-control"><span><img src="/images/google1.png"></span><span>Continue with Google</span></div></a>
+        <form id="signin" method="POST" action="/user/create-session">
+            <div id="user_input">
+                <input type="email" name="email" placeholder="Email" required autofocus="" class="form-control">
+                <input type="password" name="password" placeholder="Password" autofocus class="form-control" required="">
+                <input type="submit" value="Sign in" class="form-control" id="create">
             </div>
-
-            <div id="connect_btn_row">
-                <a href="/user/sign-in">Sign in</a>
-                <a href="/user/sign-up">Sign up with Email</a>
-            </div>
-
-            <div id="disclaimer">
-                <span>By continuing you indicate that you have read and agree to EduHub's </span>
-                <a>Terms of service</a><span> and</span>
-                <a>Privacy policy.</a>
-            </div>
+        </form>
+                <div class="footer"><span>Don't have an account? </span><span><a href="/user/sign-up" class="link_bottom">Sign Up</a></span></div>
+                <div class="footer"><span>Forgot </span><span><a href="/user/reset" id="forgot_btn" class="link_bottom">password?</a></span></div>
+            
         </div>
 </main>
 

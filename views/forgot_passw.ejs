@@ -1,0 +1,16 @@
+<link rel="stylesheet" type="text/css" href="/css/forgot_passw.css">
+<main>
+    <div id="phone_container">
+        <div id="logo_header">
+            <img src="/images/computer.jpg">
+            <h3>Reset your password</h3>
+        </div>
+        <form action="/user/forgot" method="POST" class="form-reset">
+        <div id="reset_link">
+            <label for="resetEmail">Enter your user account's verified email address and we will send you a password reset link.</label></br>
+            <input type="email" id="resetEmail" name="email" class="form-control" placeholder="Email address" required="" >
+            <button class="btn btn-primary btn-block" type="submit" id="create">Reset Password</button>
+            <a href="/user/sign-in" id="cancel_reset"><i class="fas fa-angle-left"></i> Back</a>
+        </div>
+        </form>
+</main>

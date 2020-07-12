@@ -49,7 +49,7 @@ passport.checkAuthentication = function(req,res,next){
         }
 
 
-        return res.redirect('/user/sign-up');
+        return res.redirect('/user/home');
 }
 
 passport.setAuthenticatedUser = function(req,res,next)

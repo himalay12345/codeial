@@ -7,9 +7,11 @@ const userController = require('../controllers/user_controller');
 
 router.get('/message',passport.checkAuthentication,userController.message);
 router.get('/post',userController.post);
+router.get('/home',userController.home);
 router.post('/post/create',userController.temp);
 router.get('/sign-in',userController.signIn);
 router.post('/forgot',userController.forgot);
+router.get('/reset',userController.reset);
 router.get('/sign-up',userController.signUp);
 router.post('/create',userController.create);
 router.post('/update/:id',userController.update);

@@ -352,40 +352,51 @@ hr.one{
 #phone_container{
     display:none;
     #logo_header{
-        text-align: center;
-        margin-bottom: 20px;
     padding-top: 70px;
-       img{
-           height:50px;
-           width:50px;
-           border-radius: 50%;
-           margin-bottom: 15px;
-           
-       }
+        h2{
+            color:white;
+            font-size: 3rem;
+            font-weight: bold;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            text-align: center;
+        }
 
         h3{
             text-align: center;
             color: white;
-            font-weight: 100;
             font-size: 1.2rem;
         }
     }
 
-    #user_input{
-        input{
-            width:85%;
-            margin-right: auto;
-            margin-left: auto;
-            height:40px !important;
-            margin-bottom: 15px;
-            border-radius: 3px;
+    #social_btn{
+        
+       
+        img{
+            height:30px;
+            width:30px;
         }
-        #create{
-            margin-top: 50px;
-            height:45px !important;
-            background-color: rgb(15, 114, 226);
-            border: 0;
-            color: white;
+
+        a{
+            padding:15px !important;
+            text-decoration: none;
+            
+        }
+
+        #facebook_btn,#google_btn{
+            margin-bottom: -15px !important;
+            height:50px;
+            border-radius: 2px;
+            width:85%;
+            margin-left: auto;
+            margin-right: auto;
+            padding-top: 10px;
+            
+            span{
+                font-size: 1.1rem;
+                font-family: sans-serif;
+                margin-right: 8px;
+                
+            }
         }
     }
 
@@ -425,7 +436,7 @@ hr.one{
 // =============================================================
 
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 590px) {
     #top_header {
       display: none; }
     #content {
@@ -442,6 +453,6 @@ hr.one{
 
       main{
           background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.4)),url('/images/camille-couvez-H5PnIYI_1I0-unsplash.jpg');
-          height: 100%;
+          height:100%;
       }
    }
