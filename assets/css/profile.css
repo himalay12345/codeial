@@ -1,5 +1,4 @@
 #profile_container {
-  margin-top: 70px;
   height: auto;
   display: flex;
   flex-direction: row;
@@ -274,11 +273,11 @@
         margin-left: 30px;
         cursor: pointer; }
       #profile_container #profile_info #profile_credential #edit_profile p {
-        font-size: 1rem;
+        font-size: 1.1rem;
         font-family: Arial, Helvetica, sans-serif;
         color: #100c08;
         margin-left: 30px;
-        margin-bottom: -5px; }
+        margin-bottom: 0px; }
         #profile_container #profile_info #profile_credential #edit_profile p span {
           margin-right: 12px; }
       #profile_container #profile_info #profile_credential #credential_input {
@@ -338,7 +337,7 @@
         text-decoration: none;
         color: white;
         padding: 5px;
-        width: 70px;
+        width: 90px;
         background-color: black;
         border-radius: 3px;
         position: absolute;
@@ -360,9 +359,13 @@
             margin-top: 5px;
             margin-bottom: 20px;
             font-family: Arial, Helvetica, sans-serif; }
+        #profile_container #profile_info #profile_header #profile_name span #message_btn {
+          color: white;
+          background-color: #1a97eb; }
         #profile_container #profile_info #profile_header #profile_name span a {
           text-decoration: none;
           border: 1px solid black;
+          font-size: 0.95rem;
           border-radius: 3px;
           padding: 7px;
           color: #100c08;
@@ -396,9 +399,10 @@
         padding: 8px;
         margin-top: 8px;
         font-weight: bold;
+        font-size: 0.9rem;
         border-radius: 3px;
         margin-left: 10px;
-        width: 100px;
+        width: 110px;
         position: absolute;
         right: 0;
         outline: 0; }

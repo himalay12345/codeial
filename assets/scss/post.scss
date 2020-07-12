@@ -4,7 +4,7 @@
     // position: relative;
     // background-color: cyan;
     display: flex;
-    margin-top: 70px;
+    // margin-top: 70px;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -18,11 +18,13 @@
         // border:3px solid black;
 
         .card{
-            background-color:#373737;
+            // background-color:#373737;
+            background: linear-gradient(#817575,#645c5c5d);
             padding:8px;
             margin-top: 20px;
             box-sizing: border-box;
-            height: 450px;
+            height: 500px;
+            // height: auto;
             border:1px solid white;
             border-radius:5px;
 
@@ -56,10 +58,11 @@
         }
         .card-text{
             // text-align: center;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             font-family: sans-serif;
             background-color: transparent;
-            color:white;
+            // color:white;
+            color: black;
             height: 40px;
             border-radius: 3px;
             padding-top: 7px;
@@ -118,7 +121,8 @@
             h2{
                 // border:1px solid red;
                 padding-top: 7px;
-                background-color:#373737;
+                // background-color:#373737;
+                background-color: rgb(39, 128, 64);
                 text-align: center;
                 border-radius: 3px;
                 padding:7px;
@@ -147,6 +151,7 @@
             padding-bottom: 8px;
             margin-bottom: 15px;
             margin-top: 20px;
+            background: linear-gradient(rgb(218, 246, 253),rgb(233, 233, 255));
             
 
             h3{
@@ -163,16 +168,18 @@
                 font-size: 1.18rem;
                 height: auto;
                 // background-color: #DD4124;
-                font-weight: 600;
+                font-weight: 200;
                 font-family: Arial, Helvetica, sans-serif;
                 color: black;
                 margin-top: -12px;
+                background-color: transparent;;
                 outline: 0;
                 resize: none;
             }
 
             ::placeholder { 
-                color:grey;
+                color:black;
+                font-weight: normal;
             }
 
             #btn{
@@ -182,6 +189,7 @@
                     outline: 0;
                     font-family: sans-serif;
                     font-size: 1rem;
+                    background-color: transparent;
                     margin-bottom: 10px;
                 }
 
@@ -190,8 +198,11 @@
                     font-family: sans-serif;
                     margin-left: 20px;
                     border-radius: 3px;
-                    border:1px solid white;
-                    background-color:#5B5EA6 ;
+                    // border:1px solid white;
+                    // box-shadow: ;
+                    // background-color:#5B5EA6 ;
+                    background-color: rgb(5, 141, 5);
+                    outline: 0;
                     color: white;
                     cursor: pointer;
                 }

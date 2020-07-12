@@ -7,7 +7,7 @@
     justify-content: space-around;
     flex-wrap: wrap;
     padding-top: 30px;
-    margin-top: 70px;
+    // margin-top: 70px;
 
 
     #leaderboard{
@@ -174,6 +174,7 @@
             background-color: #373737;
             color: white;
             padding: 10px;
+            margin-top: -20px;
             margin-bottom: 10px;
             border:1px solid grey;
 
@@ -195,6 +196,7 @@
             margin-bottom: 5px;
             a{
                 text-decoration: none;
+                cursor: pointer;
             }
             
 

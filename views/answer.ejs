@@ -54,15 +54,15 @@
                 <%}%>
                 <%if(flag){%>
                     <a id="checked"><span  class="margin"><span><i class="fas fa-check-square"></i></span><span>Answered</span></span></a>
-                    <%flag=false;%>
                     <%}else{%>
-                    <a href="#" id="ans"><span  class="margin"><span><i class="fas fa-edit"></i></span><span>Answer</span></span></a>
+                    <a id="ans"><span  class="margin"><span><i class="fas fa-edit"></i></span><span>Answer</span></span></a>
                  <%}%>
                  <a href="#" id="pass"><span class="margin"><i class="fas fa-sync"></i><span></span><span>Pass</span></span></a>
                  <a href="#" id="req"><span class="margin"><i class="fas fa-users"></i><span></span><span>Request Answer</span></span></a>
                  <a href="#" id="follow"><span class="margin"><i class="fas fa-rss"></i><span></span><span>Follow</span><span>3</span></span></a>
               </div>
          </div>
+         <%if(!flag){%>
          <div id="editor" class="display">
              <form method="POST" action="/answer/create">
              <textarea id="text" name="content"></textarea>
@@ -71,9 +71,10 @@
              <!-- <input name="user" value="<%=user._id%>" type="hidden"> -->
              </br>
              <button type="submit" id="editor_submit">Sumbit</button>
-             <a href="#" id="editor_cancel" class="cancel">Cancel</a>
+             <a id="editor_cancel" class="cancel">Cancel</a>
              </form>
          </div>
+         <%flag=false;}%>
             <%}else{%>
                
                 <%}%>

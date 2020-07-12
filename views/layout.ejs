@@ -2,10 +2,10 @@
     <head>
         <title><%=title%></title>
         <link rel="stylesheet" type="text/css" href="/css/layout.css">
-        <link rel="stylesheet" type="text/css" href="/css/header.css">
         <link rel="stylesheet" type="text/css" href="/css/_footer.css">
         <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.css">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
         <!-- -------------------------Messages----------------------- -->
 
         <%-style%>
@@ -13,7 +13,8 @@
 
 <body>
     
-    <%-include('_header');%>
+    
+    <%-include('boot_header')%>
     <%-body%>   
     
     <script>

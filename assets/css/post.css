@@ -2,7 +2,6 @@
   min-height: 200vh;
   height: auto;
   display: flex;
-  margin-top: 70px;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
@@ -14,11 +13,11 @@
     position: sticky;
     top: 70px; }
     #home-container #left_aside .card {
-      background-color: #373737;
+      background: linear-gradient(#817575, #645c5c5d);
       padding: 8px;
       margin-top: 20px;
       box-sizing: border-box;
-      height: 450px;
+      height: 500px;
       border: 1px solid white;
       border-radius: 5px; }
       #home-container #left_aside .card a {
@@ -44,10 +43,10 @@
       background-color: white;
       color: black; }
     #home-container #left_aside .card-text {
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       font-family: sans-serif;
       background-color: transparent;
-      color: white;
+      color: black;
       height: 40px;
       border-radius: 3px;
       padding-top: 7px;
@@ -90,7 +89,7 @@
             text-decoration: underline; }
       #home-container #right_aside #our_blogs h2 {
         padding-top: 7px;
-        background-color: #373737;
+        background-color: #278040;
         text-align: center;
         border-radius: 3px;
         padding: 7px;
@@ -111,7 +110,8 @@
       padding-left: 20px;
       padding-bottom: 8px;
       margin-bottom: 15px;
-      margin-top: 20px; }
+      margin-top: 20px;
+      background: linear-gradient(#daf6fd, #e9e9ff); }
       #home-container #center #question h3 {
         font-family: Arial, Helvetica, sans-serif;
         color: black;
@@ -124,28 +124,31 @@
         border: 0;
         font-size: 1.18rem;
         height: auto;
-        font-weight: 600;
+        font-weight: 200;
         font-family: Arial, Helvetica, sans-serif;
         color: black;
         margin-top: -12px;
+        background-color: transparent;
         outline: 0;
         resize: none; }
       #home-container #center #question ::placeholder {
-        color: grey; }
+        color: black;
+        font-weight: normal; }
       #home-container #center #question #btn select {
         width: 30%;
         padding: 7px;
         outline: 0;
         font-family: sans-serif;
         font-size: 1rem;
+        background-color: transparent;
         margin-bottom: 10px; }
       #home-container #center #question #btn button {
         padding: 8px;
         font-family: sans-serif;
         margin-left: 20px;
         border-radius: 3px;
-        border: 1px solid white;
-        background-color: #5B5EA6;
+        background-color: #058d05;
+        outline: 0;
         color: white;
         cursor: pointer; }
     #home-container #center #answer_container .display {

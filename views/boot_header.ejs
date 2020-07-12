@@ -1,0 +1,79 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="/css/boot_header.css">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark p-lg-3 sticky-top">
+    <a class="navbar-brand ml-1 font-weight-bold" href="/">EduHub</a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <% if(locals.user){%>
+        <form class="form-inline my-2 my-lg-0 w-lg-50">
+            <input class="form-control mr-sm-2 w-lg-50 ml-lg-5" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active mr-2 ">
+          <a class="nav-link py-1 rounded px-lg-2" href="/">Home</a>
+        </li>
+        <li class="nav-item mr-2">
+          <a class="nav-link  py-1 rounded text-white" href="#">Add Question</a>
+        </li>
+        <li class="nav-item mr-2">
+          <a class="nav-link py-1 rounded text-white" href="/user/answer">Answer</a>
+        </li>
+        <li class="nav-item mr-2">
+            <a class="nav-link py-1 rounded text-white" href="/blog">Blog</a>
+          </li>
+          <li class="nav-item mr-2">
+            <a class="nav-link py-1 rounded text-white" href="/profile/user/<%=locals.user.id%>">Profile</a>
+          </li>
+        <!-- <li class="nav-item dropdown  mr-2">
+            <a class="nav-link dropdown-toggle py-1 rounded text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <img src="/images/logo.jpg">
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+          </li> -->
+      </ul>
+      
+
+      <%}else{%>
+        <ul class="navbar-nav logged_out">
+            <li class="nav-item mr-2 ">
+                <a class="nav-link py-1 rounded px-lg-2 text-white" href="#">Why EduHub?<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item mr-2 ">
+                <a class="nav-link py-1 rounded px-lg-2 text-white" href="#">Explore<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item mr-2 ">
+                <a class="nav-link py-1 rounded px-lg-2 text-white" href="#">Blog<span class="sr-only">(current)</span></a>
+            </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0  ml-lg-auto" id="loggedout_search">
+            <input class="form-control mr-sm-2 w-90" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0 mr-5" type="submit">Search</button>
+          </form>
+        <ul class="navbar-nav logged_out">
+            <li class="nav-item mr-2 ">
+              <a class="nav-link py-1 rounded px-lg-2 text-white" href="#">Sign up<span class="sr-only">(current)</span></a>
+            </li>
+
+            <li class="nav-item mr-2 ">
+                <a class="nav-link py-1 rounded px-lg-2 text-white" href="#">Sign in<span class="sr-only">(current)</span></a>
+              </li>
+        </ul>
+      <%}%>
+      
+    </div>
+  </nav>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <!--/.Navbar -->

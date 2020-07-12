@@ -6,6 +6,15 @@ var async = require("async");
 const nodeMailer = require('../config/nodemailer');
 var crypto = require("crypto");
 
+module.exports.blog = function(req,res)
+{
+  return res.render('blog',{
+    title:"EduHub | Blog",
+
+});  
+}
+
+
 module.exports.home = async function(req,res)
 {
     try{

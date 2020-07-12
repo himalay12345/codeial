@@ -11,36 +11,64 @@
     <p>GuruShisya is a educational platform to share & get knowledge.It is a symbol of the pure relationship of the Guru & Shishya followed by the traditional vedic culture. </p>
 </div>
 <main>
-    <div id="signin_container">
-        <form id="signin" method="POST" action="/user/create-session">
-            <h2>Sign in</h2>
-            <h3>to your Guru Shisya account</h3>
-            <div id="form_input">
-            <input type="email" name="email" placeholder="Email" required autofocus="" class="form-control">
-            <input type="password" name="password" placeholder="Password" autofocus class="form-control" required="">
-            <div id="divider">
-            <hr class="one"><span>OR</span>
-            </div>
-            <div id="social_container">
-            <a href="/user/auth/facebook"><div id="facebook" class="form-control"><span><img src="/images/fb.png"></span><span>Facebook</span></div></a>
-            <a href="/user/auth/google"><div id="google" class="form-control"><span><img src="/images/google1.png"></span><span>Google</span></div></a>
-            </div>
-            <input type="submit" value="Sign in"class="form-control">
-            <div class="footer"><span>Don't have an account? </span><span><a href="/user/sign-up" class="link_bottom">Sign Up</a></span></div>
-            <div class="footer"><span>Forgot </span><span><a href="#" id="forgot_btn" class="link_bottom">password?</a></span></div>
-            </div>
-        </form>
-    </div>
-        <div id="reset_container" class="display">
-            <form action="/user/forgot" method="POST" class="form-reset">
-                <h2>Forgot Password</h2>
-                <input type="email" id="resetEmail"name="email" class="form-control" placeholder="Email address" required="" >
-                <button class="btn btn-primary btn-block" type="submit">Reset Password</button>
-                <a href="#" id="cancel_reset"><i class="fas fa-angle-left"></i> Back</a>
+        <div id="signin_container">
+            <form id="signin" method="POST" action="/user/create-session">
+                <h2>Sign in</h2>
+                <h3>to your Guru Shisya account</h3>
+                <div id="form_input">
+                <input type="email" name="email" placeholder="Email" required autofocus="" class="form-control">
+                <input type="password" name="password" placeholder="Password" autofocus class="form-control" required="">
+                <div id="divider">
+                <hr class="one"><span>OR</span>
+                </div>
+                <div id="social_container">
+                <a href="/user/auth/facebook"><div id="facebook" class="form-control"><span><img src="/images/fb.png"></span><span>Facebook</span></div></a>
+                <a href="/user/auth/google"><div id="google" class="form-control"><span><img src="/images/google1.png"></span><span>Google</span></div></a>
+                </div>
+                <input type="submit" value="Sign in"class="form-control">
+                <div class="footer"><span>Don't have an account? </span><span><a href="/user/sign-up" class="link_bottom">Sign Up</a></span></div>
+                <div class="footer"><span>Forgot </span><span><a href="#" id="forgot_btn" class="link_bottom">password?</a></span></div>
+                </div>
             </form>
         </div>
-    
+            <div id="reset_container" class="display">
+                <form action="/user/forgot" method="POST" class="form-reset">
+                    <h2>Forgot Password</h2>
+                    <input type="email" id="resetEmail"name="email" class="form-control" placeholder="Email address" required="" >
+                    <button class="btn btn-primary btn-block" type="submit">Reset Password</button>
+                    <a href="#" id="cancel_reset"><i class="fas fa-angle-left"></i> Back</a>
+                </form>
+            </div>
+        <div id="phone_container">
+            <div id="logo_header">
+                <h2>EduHub</h2>
+                <h3>A Place to Share & Grow Knowledge</h3>
+            </div>
+            <div id="social_btn">
+                <a href="/user/auth/facebook"><div id="facebook_btn" class="form-control"><span><img src="/images/fb.png"></span><span>Continue with Facebook</span></div></a>
+                <a href="/user/auth/google"><div id="google_btn" class="form-control"><span><img src="/images/google1.png"></span><span>Continue with Google</span></div></a>
+            </div>
+
+            <div id="connect_btn_row">
+                <a href="/user/sign-in">Sign in</a>
+                <a href="/user/sign-up">Sign up with Email</a>
+            </div>
+
+            <div id="disclaimer">
+                <span>By continuing you indicate that you have read and agree to EduHub's </span>
+                <a>Terms of service</a><span> and</span>
+                <a>Privacy policy.</a>
+            </div>
+        </div>
 </main>
+
+
+   
+
+</phone>
+
+
+
 
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>

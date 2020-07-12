@@ -6,8 +6,7 @@
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
-  padding-top: 30px;
-  margin-top: 70px; }
+  padding-top: 30px; }
   #home-container #leaderboard {
     width: 25%;
     height: auto;
@@ -110,6 +109,7 @@
       background-color: #373737;
       color: white;
       padding: 10px;
+      margin-top: -20px;
       margin-bottom: 10px;
       border: 1px solid grey; }
       #home-container #main #question span {
@@ -123,7 +123,8 @@
       border-radius: 3px;
       margin-bottom: 5px; }
       #home-container #main #unanswered a {
-        text-decoration: none; }
+        text-decoration: none;
+        cursor: pointer; }
       #home-container #main #unanswered #header {
         height: 25%;
         padding: 10px;

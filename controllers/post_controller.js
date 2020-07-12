@@ -15,7 +15,7 @@ module.exports.create = async function(req,res)
             user.save();
 
             req.flash('success','Question added successfully');
-            return res.redirect('/profile/question');
+            return res.redirect('/profile/question/'+req.user.id);
     }
     catch(err){
         console.log("Error",err);

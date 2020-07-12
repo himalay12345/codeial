@@ -285,3 +285,74 @@ hr.one {
 
 .display {
   display: none; }
+
+#phone_container {
+  display: none; }
+  #phone_container #logo_header {
+    padding-top: 70px; }
+    #phone_container #logo_header h2 {
+      color: white;
+      font-size: 3rem;
+      font-weight: bold;
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      text-align: center; }
+    #phone_container #logo_header h3 {
+      text-align: center;
+      color: white;
+      font-size: 1.2rem; }
+  #phone_container #social_btn img {
+    height: 30px;
+    width: 30px; }
+  #phone_container #social_btn a {
+    padding: 15px !important;
+    text-decoration: none; }
+  #phone_container #social_btn #facebook_btn, #phone_container #social_btn #google_btn {
+    margin-bottom: -15px !important;
+    height: 50px;
+    border-radius: 2px;
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 10px; }
+    #phone_container #social_btn #facebook_btn span, #phone_container #social_btn #google_btn span {
+      font-size: 1.1rem;
+      font-family: sans-serif;
+      margin-right: 8px; }
+  #phone_container #connect_btn_row {
+    display: block;
+    text-align: center;
+    margin-top: 10px; }
+    #phone_container #connect_btn_row a {
+      font-size: 1rem;
+      padding: 5px;
+      margin-right: 15px;
+      font-family: sans-serif;
+      text-decoration: none;
+      color: white; }
+    #phone_container #connect_btn_row a:hover {
+      border-radius: 3px;
+      border: 1px solid white; }
+  #phone_container #disclaimer {
+    margin-top: 30px;
+    padding-left: 25px; }
+    #phone_container #disclaimer span, #phone_container #disclaimer a {
+      color: white;
+      font-size: 0.75rem;
+      line-height: 0.7rem; }
+    #phone_container #disclaimer a {
+      text-decoration: underline; }
+
+@media screen and (max-width: 590px) {
+  #top_header {
+    display: none; }
+  #content {
+    display: none; }
+  #signin_container {
+    display: none; }
+  #reset_container {
+    display: none; }
+  #phone_container {
+    display: block; }
+  main {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4)), url("/images/camille-couvez-H5PnIYI_1I0-unsplash.jpg");
+    height: 550px; } }
