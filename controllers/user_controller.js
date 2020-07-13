@@ -7,6 +7,7 @@ var async = require("async");
 // var nodemailer = require("nodemailer");
 const nodeMailer = require('../config/nodemailer');
 var crypto = require("crypto");
+const env = require('../config/environment');
 
 module.exports.message = async function(req,res)
 {
@@ -146,13 +147,6 @@ module.exports.forgot = function(req, res, next) {
         });
       },
       function(token, user, done) {
-        // var smtpTransport = nodemailer.createTransport({
-        //   service: 'Gmail', 
-        //   auth: {
-        //     user: 'learntocodeinfo@gmail.com',
-        //     pass: process.env.GMAILPW
-        //   }
-        // });
         nodeMailer.transporter.sendMail({
           to: user.email,
           from: 'himalayshankar31@gmail.com',
