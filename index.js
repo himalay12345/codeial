@@ -22,6 +22,8 @@ console.log('Chat server is running on port 5000');
 // require('dotenv').config();
 const path = require('path');
 
+
+console.log(env.name);
 if(env.name == 'development'){
 app.use(sassMiddleware({
     src:path.join(__dirname,env.asset_path,'scss'),

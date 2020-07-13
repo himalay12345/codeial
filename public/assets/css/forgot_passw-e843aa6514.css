@@ -1,0 +1,48 @@
+main {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4)), url("/images/camille-couvez-H5PnIYI_1I0-unsplash.jpg");
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-top: -10px;
+  width: 100%; }
+
+#phone_container #logo_header {
+  text-align: center;
+  padding-top: 70px; }
+  #phone_container #logo_header img {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    margin-bottom: 15px; }
+  #phone_container #logo_header h3 {
+    text-align: center;
+    color: white;
+    font-weight: 100;
+    font-size: 1.3rem; }
+
+#phone_container #reset_link {
+  width: 85%;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 3px;
+  border: 1px solid grey;
+  height: 200px;
+  margin-top: 30px;
+  padding: 8px; }
+  #phone_container #reset_link label {
+    font-size: 0.9rem;
+    color: white;
+    line-height: 1rem; }
+  #phone_container #reset_link input {
+    width: 100%;
+    margin-right: auto;
+    margin-top: 15px;
+    margin-left: auto;
+    height: 40px !important;
+    margin-bottom: 15px;
+    border-radius: 3px; }
+  #phone_container #reset_link #create {
+    height: 35px !important;
+    background-color: #0f72e2;
+    border: 0;
+    color: white; }

@@ -1,0 +1,493 @@
+#profile_container {
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  color: #100c08;
+  justify-content: space-around; }
+  #profile_container .show {
+    display: block !important; }
+  #profile_container .display {
+    display: none; }
+  #profile_container #chat_box {
+    height: 350;
+    width: 300px;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    box-sizing: border-box;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2), 0 1px 5px rgba(0, 0, 0, 0.2), 0 0 0 12px rgba(255, 255, 255, 0.4);
+    display: none;
+    transition: 0.5s all; }
+    #profile_container #chat_box #message_content {
+      position: absolute;
+      bottom: 14%;
+      width: 100%;
+      height: 240px;
+      padding: 0;
+      margin: 0;
+      display: flex !important;
+      flex-direction: column-reverse;
+      flex-wrap: wrap-reverse;
+      padding-bottom: 10px;
+      overflow: auto; }
+      #profile_container #chat_box #message_content ul {
+        list-style: none;
+        font-size: 0.9rem;
+        font-family: sans-serif; }
+        #profile_container #chat_box #message_content ul .self-message {
+          text-align: right;
+          margin-right: 5px; }
+          #profile_container #chat_box #message_content ul .self-message span {
+            padding: 15px;
+            display: inline-block;
+            background-color: #F19B3B;
+            color: white;
+            border-bottom-left-radius: 12px;
+            border-top-left-radius: 12px;
+            border-top-right-radius: 12px;
+            margin-bottom: 10px; }
+        #profile_container #chat_box #message_content ul .other-message {
+          margin-left: -35px;
+          margin-bottom: 10px; }
+          #profile_container #chat_box #message_content ul .other-message span {
+            padding: 15px;
+            display: inline-block;
+            background-color: #EFEFEF;
+            border-bottom-right-radius: 12px;
+            border-top-left-radius: 12px;
+            border-top-right-radius: 12px; }
+    #profile_container #chat_box #chat_header {
+      background-color: #F19B3B;
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+      height: 50px;
+      padding-top: 1px;
+      box-sizing: border-box; }
+      #profile_container #chat_box #chat_header #message_close {
+        cursor: pointer; }
+      #profile_container #chat_box #chat_header h3 {
+        margin-left: 10px;
+        color: white;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1rem; }
+        #profile_container #chat_box #chat_header h3 #margin {
+          margin-left: 100px;
+          margin-right: 15px;
+          font-size: 1.2rem; }
+    #profile_container #chat_box #input_message {
+      position: absolute;
+      bottom: 0;
+      height: 60px;
+      background-color: #373737;
+      width: 100%; }
+      #profile_container #chat_box #input_message button {
+        width: 70px;
+        padding: 7px;
+        border: none;
+        background-color: #0066ff !important;
+        color: white !important;
+        outline: 0;
+        cursor: pointer;
+        border-radius: 5px; }
+      #profile_container #chat_box #input_message input {
+        padding: 8px;
+        margin-top: 12px;
+        margin-left: 10px;
+        width: 200px;
+        background-color: #787878;
+        color: white;
+        border: none;
+        border-radius: 5px; }
+      #profile_container #chat_box #input_message input:focus {
+        background-color: white;
+        color: black;
+        outline: 0; }
+      #profile_container #chat_box #input_message ::placeholder {
+        /* Chrome, Firefox, Opera, Safari 10.1+ */
+        color: white;
+        opacity: 1;
+        /* Firefox */ }
+  #profile_container #profile_info {
+    height: auto;
+    width: 25%; }
+    #profile_container #profile_info .display {
+      display: none !important; }
+    #profile_container #profile_info #profile_interests .display {
+      display: none !important; }
+    #profile_container #profile_info #profile_interests #interest_list {
+      height: auto;
+      width: 92%;
+      border: 1px solid grey;
+      border-radius: 3px;
+      margin-left: 30px;
+      margin-bottom: 30px; }
+      #profile_container #profile_info #profile_interests #interest_list a {
+        text-decoration: none;
+        background-color: #F7F9FA;
+        color: black;
+        cursor: pointer;
+        font-weight: bold;
+        font-family: Arial, Helvetica, sans-serif;
+        padding: 6px;
+        border: 1px solid black;
+        margin-left: 5px;
+        margin-bottom: 15px;
+        margin-top: 15px;
+        border-radius: 3px;
+        font-size: 0.9rem;
+        outline: none; }
+      #profile_container #profile_info #profile_interests #interest_list button {
+        margin-top: 15px;
+        margin-left: 15px;
+        margin-bottom: 15px;
+        width: 50px;
+        font-size: 0.9rem;
+        padding: 7px;
+        background-color: #30C553;
+        color: white;
+        border: none;
+        cursor: pointer;
+        border-radius: 3px;
+        outline: none; }
+      #profile_container #profile_info #profile_interests #interest_list #subject {
+        border-bottom: 0.1px solid grey;
+        display: inline-flex;
+        width: 98%;
+        font-size: 1.2rem;
+        font-family: sans-serif;
+        padding: 2px;
+        height: 40px; }
+        #profile_container #profile_info #profile_interests #interest_list #subject input {
+          cursor: pointer;
+          margin-left: auto;
+          font-weight: 400;
+          color: #0066ff;
+          text-align: right;
+          margin-top: 5px;
+          font-size: 1.2rem; }
+        #profile_container #profile_info #profile_interests #interest_list #subject p {
+          margin-left: 20px;
+          margin-top: 5px; }
+        #profile_container #profile_info #profile_interests #interest_list #subject img {
+          height: 35px;
+          border: 1px solid grey;
+          width: 35px;
+          border-radius: 50%;
+          margin-left: 10px; }
+    #profile_container #profile_info #profile_interests #interests {
+      height: 120px;
+      width: 92%;
+      border: 1px solid grey;
+      border-radius: 3px;
+      margin-left: 30px;
+      margin-bottom: 30px;
+      text-align: center; }
+      #profile_container #profile_info #profile_interests #interests h3 {
+        font-family: sans-serif;
+        font-size: 1.1rem;
+        color: #100c08;
+        font-weight: 100; }
+      #profile_container #profile_info #profile_interests #interests i {
+        margin-top: 20px;
+        font-size: 2.3rem;
+        font-weight: 400;
+        color: #0066ff;
+        cursor: pointer; }
+    #profile_container #profile_info #profile_interests .add_interest {
+      border: none !important;
+      height: auto !important;
+      margin-bottom: 30px !important; }
+      #profile_container #profile_info #profile_interests .add_interest #subject_topic {
+        height: auto;
+        width: 99%;
+        border: 1px solid grey;
+        border-radius: 0 !important;
+        margin-bottom: 0 !important;
+        position: relative; }
+        #profile_container #profile_info #profile_interests .add_interest #subject_topic #subject {
+          border-bottom: none !important;
+          display: inline-flex;
+          width: 98%;
+          font-size: 1.2rem;
+          font-family: sans-serif;
+          padding: 2px;
+          height: 40px; }
+          #profile_container #profile_info #profile_interests .add_interest #subject_topic #subject a {
+            font-size: 1rem;
+            font-family: sans-serif; }
+          #profile_container #profile_info #profile_interests .add_interest #subject_topic #subject i {
+            font-size: 1.3rem;
+            margin-top: 8px;
+            color: red;
+            position: absolute;
+            right: 20px; }
+          #profile_container #profile_info #profile_interests .add_interest #subject_topic #subject input {
+            cursor: pointer;
+            margin-left: auto;
+            font-weight: 400;
+            color: #0066ff;
+            text-align: right;
+            margin-top: 5px;
+            font-size: 1.2rem; }
+          #profile_container #profile_info #profile_interests .add_interest #subject_topic #subject p {
+            margin-left: 20px;
+            margin-top: 5px; }
+          #profile_container #profile_info #profile_interests .add_interest #subject_topic #subject img {
+            height: 35px;
+            border: 1px solid grey;
+            width: 35px;
+            border-radius: 50%;
+            margin-left: 10px; }
+    #profile_container #profile_info #profile_interests #interest_heading {
+      margin-top: 40px;
+      margin-left: 30px;
+      border-bottom: 1px solid grey;
+      margin-bottom: 15px; }
+      #profile_container #profile_info #profile_interests #interest_heading .fas {
+        font-size: 1rem !important;
+        cursor: pointer; }
+      #profile_container #profile_info #profile_interests #interest_heading span {
+        font-size: 1.5rem;
+        font-weight: 400;
+        font-family: sans-serif; }
+      #profile_container #profile_info #profile_interests #interest_heading #mark {
+        margin-left: 120px; }
+    #profile_container #profile_info #profile_credential {
+      min-height: 100px;
+      height: auto; }
+      #profile_container #profile_info #profile_credential .c_blue {
+        background-color: #0066ff !important;
+        color: white !important;
+        font-weight: 550 !important; }
+      #profile_container #profile_info #profile_credential #edit_profile .c_grey {
+        width: 300px;
+        padding: 10px;
+        color: black;
+        background-color: grey;
+        font-size: medium;
+        border: none;
+        border-radius: 3px;
+        font-weight: 700;
+        margin-left: 30px;
+        cursor: pointer; }
+      #profile_container #profile_info #profile_credential #edit_profile p {
+        font-size: 1.1rem;
+        font-family: Arial, Helvetica, sans-serif;
+        color: #100c08;
+        margin-left: 30px;
+        margin-bottom: 0px; }
+        #profile_container #profile_info #profile_credential #edit_profile p span {
+          margin-right: 12px; }
+      #profile_container #profile_info #profile_credential #credential_input {
+        padding-left: 30px;
+        transition: 0.5 all; }
+        #profile_container #profile_info #profile_credential #credential_input textarea {
+          width: 100%;
+          height: 70px;
+          font-size: 1rem;
+          outline: none;
+          margin-bottom: 10px;
+          box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1), inset 0 3px 2px rgba(0, 0, 0, 0.1); }
+        #profile_container #profile_info #profile_credential #credential_input a {
+          text-decoration: none;
+          background-color: #F7F9FA;
+          color: black;
+          font-weight: bold;
+          font-family: Arial, Helvetica, sans-serif;
+          padding: 6px;
+          border: 1px solid black;
+          margin-left: 5px;
+          border-radius: 3px;
+          font-size: 0.9rem;
+          outline: none; }
+        #profile_container #profile_info #profile_credential #credential_input button {
+          width: 50px;
+          font-size: 0.9rem;
+          padding: 7px;
+          background-color: #30C553;
+          color: white;
+          border: none;
+          cursor: pointer;
+          border-radius: 3px;
+          outline: none; }
+        #profile_container #profile_info #profile_credential #credential_input span {
+          margin-right: 15px; }
+        #profile_container #profile_info #profile_credential #credential_input input {
+          padding: 7px;
+          width: 82%;
+          font-size: 0.9rem;
+          margin-bottom: 8px;
+          border: 0.5px solid grey;
+          box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1), inset 0 3px 2px rgba(0, 0, 0, 0.1);
+          border-radius: 3px;
+          outline: none; }
+    #profile_container #profile_info #profile_header {
+      min-height: 400px;
+      height: auto;
+      width: 100%;
+      padding-top: 20px;
+      padding-left: 30px;
+      box-sizing: border-box;
+      box-sizing: border-box;
+      display: inline-block;
+      position: relative; }
+      #profile_container #profile_info #profile_header #image a {
+        text-decoration: none;
+        color: white;
+        padding: 5px;
+        width: 90px;
+        background-color: black;
+        border-radius: 3px;
+        position: absolute;
+        bottom: 27.5%;
+        right: 0%; }
+      #profile_container #profile_info #profile_header #image img {
+        height: 270px;
+        width: 100%;
+        border-radius: 3px; }
+      #profile_container #profile_info #profile_header #profile_name {
+        padding-top: 30px;
+        padding-bottom: 20px;
+        display: block; }
+        #profile_container #profile_info #profile_header #profile_name div {
+          margin-top: -20px;
+          width: 100%; }
+          #profile_container #profile_info #profile_header #profile_name div h1 {
+            font-size: 1.7rem;
+            margin-top: 5px;
+            margin-bottom: 20px;
+            font-family: Arial, Helvetica, sans-serif; }
+        #profile_container #profile_info #profile_header #profile_name span #message_btn {
+          color: white;
+          background-color: #1a97eb; }
+        #profile_container #profile_info #profile_header #profile_name span a {
+          text-decoration: none;
+          border: 1px solid black;
+          font-size: 0.95rem;
+          border-radius: 3px;
+          padding: 7px;
+          color: #100c08;
+          padding-right: 10px;
+          padding-left: 10px; }
+  #profile_container #profile_space {
+    height: 100vh;
+    width: 75%;
+    padding-right: 25px;
+    padding-left: 10px; }
+    #profile_container #profile_space .cur {
+      cursor: pointer; }
+    #profile_container #profile_space #following_card {
+      display: flex;
+      padding: 10px;
+      position: relative;
+      box-sizing: border-box;
+      border-bottom: 1px solid grey; }
+      #profile_container #profile_space #following_card img {
+        height: 50px;
+        width: 50px;
+        border-radius: 50%; }
+      #profile_container #profile_space #following_card span {
+        font-size: 1rem;
+        font-family: Arial, Helvetica, sans-serif;
+        margin-left: 15px;
+        margin-top: 15px; }
+      #profile_container #profile_space #following_card button {
+        color: white !important;
+        border: none;
+        padding: 8px;
+        margin-top: 8px;
+        font-weight: bold;
+        font-size: 0.9rem;
+        border-radius: 3px;
+        margin-left: 10px;
+        width: 110px;
+        position: absolute;
+        right: 0;
+        outline: 0; }
+      #profile_container #profile_space #following_card .c_grey {
+        background-color: grey !important; }
+      #profile_container #profile_space #following_card .c_blue {
+        background-color: #0066ff !important; }
+    #profile_container #profile_space #profile_nav {
+      margin-top: 10px;
+      height: 60px;
+      border-bottom: 1px solid grey;
+      display: inline-flex;
+      width: 100%;
+      padding-top: 20px;
+      box-sizing: border-box; }
+      #profile_container #profile_space #profile_nav #overview {
+        border-bottom: 2px solid orangered;
+        font-weight: bold; }
+      #profile_container #profile_space #profile_nav a {
+        text-decoration: none;
+        color: #100c08;
+        font-size: 0.97rem;
+        font-family: sans-serif;
+        margin-right: 40px; }
+        #profile_container #profile_space #profile_nav a span {
+          margin-left: 10px;
+          border-radius: 30%;
+          background-color: gray;
+          color: white;
+          padding: 3px; }
+      #profile_container #profile_space #profile_nav a:hover {
+        transform: 0.5 all;
+        border-bottom: 2px solid grey;
+        color: #110f0d;
+        width: auto; }
+
+#unanswered {
+  height: 130px;
+  width: 100%;
+  border: 1px solid grey;
+  background-color: white;
+  border-radius: 3px;
+  margin-bottom: 5px; }
+  #unanswered a {
+    text-decoration: none; }
+  #unanswered #header {
+    height: 25%;
+    padding: 10px;
+    box-sizing: border-box; }
+    #unanswered #header span {
+      margin-right: 25px;
+      font-size: 1rem;
+      color: grey; }
+  #unanswered #interact {
+    height: 25%;
+    padding: 10px;
+    padding-top: 0;
+    box-sizing: border-box; }
+    #unanswered #interact a:hover {
+      background-color: white;
+      color: black;
+      transition: 0.2s all; }
+    #unanswered #interact .margin {
+      margin-right: 20px;
+      color: grey;
+      border-radius: 20px; }
+      #unanswered #interact .margin i {
+        color: #5B5EA6; }
+      #unanswered #interact .margin span {
+        margin-right: 5px; }
+  #unanswered #unanswered_content {
+    padding: 10px;
+    box-sizing: border-box;
+    height: 50%;
+    padding-top: 5px; }
+    #unanswered #unanswered_content #content {
+      font-size: 1.1rem;
+      font-weight: 600;
+      font-family: Verdana, Geneva, sans-serif;
+      margin-bottom: 5px; }
+      #unanswered #unanswered_content #content a {
+        color: #100c08; }
+    #unanswered #unanswered_content #content_key span {
+      font-size: 0.9rem;
+      color: grey;
+      margin-right: 6px; }
+      #unanswered #unanswered_content #content_key span b {
+        font-weight: 1000; }

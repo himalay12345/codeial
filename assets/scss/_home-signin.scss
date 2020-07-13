@@ -435,8 +435,17 @@ hr.one{
 
 // =============================================================
 
+@media screen and (max-width: 768px) {
+    main{
+        background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.4)),url('/images/camille-couvez-H5PnIYI_1I0-unsplash.jpg');
+        height:100%;
+    }
+          #signin_container{
+          display:none;
+      }
+}
 
-@media screen and (max-width: 590px) {
+@media screen and (max-width: 425px) {
     #top_header {
       display: none; }
     #content {
@@ -453,6 +462,7 @@ hr.one{
 
       main{
           background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.4)),url('/images/camille-couvez-H5PnIYI_1I0-unsplash.jpg');
-          height:100%;
+          height:110%;
       }
    }
+

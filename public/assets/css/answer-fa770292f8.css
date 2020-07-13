@@ -1,0 +1,262 @@
+#home-container {
+  background-color: white;
+  margin: 0;
+  min-height: 600px;
+  height: auto;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding-top: 30px; }
+  #home-container #leaderboard {
+    width: 25%;
+    height: auto;
+    border-radius: 3px; }
+    #home-container #leaderboard #leaderboard_header {
+      box-sizing: border-box;
+      color: white;
+      height: 90px;
+      width: 100%;
+      border-radius: 3px;
+      background-color: #373737;
+      margin-top: -21px;
+      margin-bottom: 3px; }
+      #home-container #leaderboard #leaderboard_header h2 {
+        padding-top: 7px;
+        text-align: center;
+        font-size: 1.6rem;
+        font-family: Arial, Helvetica, sans-serif; }
+      #home-container #leaderboard #leaderboard_header #view_by {
+        display: inline-flex;
+        justify-content: space-around;
+        height: 25px;
+        width: 100%;
+        margin-top: -5px; }
+        #home-container #leaderboard #leaderboard_header #view_by a {
+          text-decoration: none;
+          color: white;
+          background-color: grey;
+          border-radius: 3px;
+          padding: 4px;
+          font-family: Arial, Helvetica, sans-serif; }
+    #home-container #leaderboard #ranking_title {
+      height: 40px;
+      width: 100%;
+      background-color: #373737;
+      display: inline-flex; }
+      #home-container #leaderboard #ranking_title div {
+        padding: 9px 0px;
+        text-align: center;
+        font-size: 1rem;
+        font-family: Arial, Helvetica, sans-serif;
+        color: white;
+        border: 0.5px solid #acadd2; }
+      #home-container #leaderboard #ranking_title #rank {
+        width: 20%; }
+      #home-container #leaderboard #ranking_title #name {
+        width: 50%; }
+      #home-container #leaderboard #ranking_title #answers {
+        width: 30%; }
+    #home-container #leaderboard #ranking {
+      height: auto;
+      background-color: white; }
+      #home-container #leaderboard #ranking #rank-box {
+        display: inline-flex;
+        width: 100%;
+        height: 40px;
+        box-sizing: border-box; }
+        #home-container #leaderboard #ranking #rank-box div {
+          padding: 14px 0px;
+          font-family: Arial, Helvetica, sans-serif;
+          background-color: #373737;
+          color: white;
+          border: 0.5px solid #acadd2; }
+      #home-container #leaderboard #ranking #rank {
+        width: 20%;
+        position: relative;
+        font-size: 1.4rem;
+        padding-bottom: 5px; }
+        #home-container #leaderboard #ranking #rank span {
+          padding-left: 8px; }
+          #home-container #leaderboard #ranking #rank span img {
+            position: absolute;
+            top: -8px;
+            left: -20px;
+            height: 25px;
+            width: 25px;
+            margin: 16px 40px 0px 50px; }
+      #home-container #leaderboard #ranking #name {
+        width: 50%;
+        padding-left: 10px;
+        font-size: 1.1rem; }
+      #home-container #leaderboard #ranking #answers {
+        width: 30%;
+        text-align: center;
+        font-size: 0.9rem; }
+    #home-container #leaderboard #leaderboard_footer {
+      height: 40px;
+      margin-top: 3px;
+      margin-bottom: 10px;
+      background-color: #373737;
+      width: 100%;
+      border-bottom-left-radius: 3px;
+      border-bottom-right-radius: 3px; }
+  #home-container #main {
+    width: 45%;
+    height: auto; }
+    #home-container #main #question {
+      height: auto;
+      border-radius: 3px;
+      background-color: #373737;
+      color: white;
+      padding: 10px;
+      margin-top: -20px;
+      margin-bottom: 10px;
+      border: 1px solid grey; }
+      #home-container #main #question span {
+        margin-left: 10px;
+        font-size: 1.2rem; }
+    #home-container #main #unanswered {
+      height: 130px;
+      width: 100%;
+      border: 1px solid grey;
+      background-color: white;
+      border-radius: 3px;
+      margin-bottom: 5px; }
+      #home-container #main #unanswered a {
+        text-decoration: none;
+        cursor: pointer; }
+      #home-container #main #unanswered #header {
+        height: 25%;
+        padding: 10px;
+        box-sizing: border-box; }
+        #home-container #main #unanswered #header span {
+          margin-right: 25px;
+          font-size: 1rem;
+          color: grey; }
+      #home-container #main #unanswered #interact {
+        height: 25%;
+        padding: 10px;
+        padding-top: 0;
+        box-sizing: border-box; }
+        #home-container #main #unanswered #interact #checked i {
+          color: green; }
+        #home-container #main #unanswered #interact a:hover {
+          background-color: white;
+          color: black;
+          transition: 0.2s all; }
+        #home-container #main #unanswered #interact .margin {
+          margin-right: 20px;
+          color: grey;
+          border-radius: 20px; }
+          #home-container #main #unanswered #interact .margin i {
+            color: #5B5EA6; }
+          #home-container #main #unanswered #interact .margin span {
+            margin-right: 5px; }
+      #home-container #main #unanswered #unanswered_content {
+        padding: 10px;
+        box-sizing: border-box;
+        height: 50%;
+        padding-top: 5px; }
+        #home-container #main #unanswered #unanswered_content #content {
+          font-size: 1.1rem;
+          font-weight: 600;
+          font-family: Verdana, Geneva, sans-serif;
+          margin-bottom: 5px; }
+          #home-container #main #unanswered #unanswered_content #content a {
+            color: #100c08; }
+        #home-container #main #unanswered #unanswered_content #content_key span {
+          font-size: 0.9rem;
+          color: grey;
+          margin-right: 6px; }
+          #home-container #main #unanswered #unanswered_content #content_key span b {
+            font-weight: 1000; }
+    #home-container #main #editor {
+      display: block;
+      text-align: center;
+      border: 1px solid white;
+      margin-bottom: 5px;
+      border-radius: 3px;
+      padding-top: 5px;
+      padding-left: 5px;
+      padding-right: 5px; }
+      #home-container #main #editor #editor_submit {
+        margin-top: 10px;
+        padding: 8px;
+        background-color: #5B5EA6;
+        color: white;
+        width: 90px;
+        border-radius: 3px;
+        border: none;
+        cursor: pointer;
+        font-size: 1rem;
+        font-weight: 600; }
+      #home-container #main #editor #editor_cancel {
+        margin-top: 10px;
+        padding: 8px;
+        background-color: #5B5EA6;
+        color: white;
+        width: 90px;
+        border-radius: 3px;
+        border: none;
+        cursor: pointer;
+        font-size: 1rem;
+        font-weight: 600; }
+      #home-container #main #editor a {
+        text-decoration: none;
+        font-family: sans-serif; }
+      #home-container #main #editor #text {
+        font-size: 1rem; }
+  #home-container #aside {
+    width: 26%;
+    height: 200px; }
+    #home-container #aside #stat-box #stat_header {
+      box-sizing: border-box;
+      color: white;
+      height: 90px;
+      width: 100%;
+      border-radius: 3px;
+      background-color: #373737;
+      margin-top: -21px;
+      margin-bottom: 3px; }
+      #home-container #aside #stat-box #stat_header h2 {
+        padding-top: 25px;
+        text-align: center;
+        font-size: 1.6rem;
+        font-family: Arial, Helvetica, sans-serif; }
+    #home-container #aside #stat-box #table {
+      height: 40px;
+      width: 100%;
+      background-color: #373737;
+      display: inline-flex; }
+      #home-container #aside #stat-box #table div {
+        padding: 9px 0px;
+        text-align: center;
+        width: 25%;
+        font-size: 1rem;
+        font-family: Arial, Helvetica, sans-serif;
+        color: white;
+        border: 0.5px solid #acadd2; }
+    #home-container #aside #stat-box #content {
+      height: 40px;
+      width: 100%;
+      background-color: white;
+      display: inline-flex; }
+      #home-container #aside #stat-box #content div {
+        padding: 9px 0px;
+        text-align: center;
+        width: 25%;
+        font-size: 1rem;
+        background-color: #373737;
+        font-family: Arial, Helvetica, sans-serif;
+        color: white;
+        border: 0.5px solid #acadd2; }
+    #home-container #aside #stat-box #stat_footer {
+      height: 40px;
+      margin-top: 3px;
+      background-color: #373737;
+      width: 100%;
+      border-bottom-left-radius: 3px;
+      border-bottom-right-radius: 3px; }
+
+.display {
+  display: none !important; }
