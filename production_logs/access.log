@@ -38,3 +38,52 @@
 ::1 - - [13/Jul/2020:14:22:32 +0000] "GET /css/_footer.css HTTP/1.1" 404 154 "http://localhost:8000/user/sign-in" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Mobile Safari/537.36"
 [0mGET /user/sign-in [36m304[0m 150.109 ms - -[0m
 [0mGET /css/_footer.css [33m404[0m 68.252 ms - 154[0m
+[0mGET / [36m302[0m 71.352 ms - 64[0m
+[0mGET /user/home [32m200[0m 636.496 ms - 8010[0m
+[0mGET /css/_footer.css [33m404[0m 15.314 ms - 154[0m
+[0mGET /favicon.ico [33m404[0m 6.615 ms - 150[0m
+[0mGET /user/sign-in [36m304[0m 88.453 ms - -[0m
+[0mGET /css/_footer.css [33m404[0m 7.254 ms - 154[0m
+[0mGET /user/sign-up [36m304[0m 70.885 ms - -[0m
+[0mGET /css/_footer.css [33m404[0m 6.252 ms - 154[0m
+[0mGET / [36m302[0m 5.763 ms - 64[0m
+[0mGET /user/home [36m304[0m 14.056 ms - -[0m
+[0mGET /css/_footer.css [33m404[0m 10.995 ms - 154[0m
+[0mGET / [36m302[0m 7.296 ms - 64[0m
+[0mGET /user/home [36m304[0m 21.003 ms - -[0m
+[0mGET /css/_footer.css [33m404[0m 6.652 ms - 154[0m
+[0mGET / [36m302[0m 2.317 ms - 64[0m
+[0mGET /user/home [36m304[0m 383.010 ms - -[0m
+[0mGET /css/_footer.css [33m404[0m 15.432 ms - 154[0m
+[0mGET /favicon.ico [33m404[0m 7.899 ms - 150[0m
+::1 - - [14/Jul/2020:03:46:55 +0000] "GET /user/home HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36"
+::1 - - [14/Jul/2020:03:46:55 +0000] "GET /css/layout.css HTTP/1.1" 404 153 "http://localhost:8000/user/home" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36"
+::1 - - [14/Jul/2020:03:46:55 +0000] "GET /css/_footer.css HTTP/1.1" 404 154 "http://localhost:8000/user/home" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36"
+::1 - - [14/Jul/2020:03:46:56 +0000] "GET /css/boot_header.css HTTP/1.1" 404 158 "http://localhost:8000/user/home" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36"
+::1 - - [14/Jul/2020:03:46:56 +0000] "GET /css/_home-signin.css HTTP/1.1" 404 159 "http://localhost:8000/user/home" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36"
+::1 - - [14/Jul/2020:03:46:56 +0000] "GET /css/home.css HTTP/1.1" 404 151 "http://localhost:8000/user/home" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36"
+::1 - - [14/Jul/2020:03:46:56 +0000] "GET /js/header.js HTTP/1.1" 404 151 "http://localhost:8000/user/home" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36"
+::1 - - [14/Jul/2020:03:46:56 +0000] "GET /images/google1.png HTTP/1.1" 404 157 "http://localhost:8000/user/home" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36"
+::1 - - [14/Jul/2020:03:46:56 +0000] "GET /js/sign_in.js HTTP/1.1" 404 152 "http://localhost:8000/user/home" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36"
+::1 - - [14/Jul/2020:03:46:56 +0000] "GET /images/fb.png HTTP/1.1" 404 152 "http://localhost:8000/user/home" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36"
+::1 - - [14/Jul/2020:03:46:57 +0000] "GET /js/header.js HTTP/1.1" 404 151 "http://localhost:8000/user/home" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36"
+::1 - - [14/Jul/2020:03:47:07 +0000] "GET /css/layout.css HTTP/1.1" 404 153 "http://localhost:8000/user/home" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36"
+::1 - - [14/Jul/2020:03:47:07 +0000] "GET /css/_footer.css HTTP/1.1" 404 154 "http://localhost:8000/user/home" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36"
+::1 - - [14/Jul/2020:03:47:07 +0000] "GET /css/_home-signin.css HTTP/1.1" 404 159 "http://localhost:8000/user/home" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36"
+::1 - - [14/Jul/2020:03:47:07 +0000] "GET /css/home.css HTTP/1.1" 404 151 "http://localhost:8000/user/home" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36"
+::1 - - [14/Jul/2020:03:47:07 +0000] "GET /css/boot_header.css HTTP/1.1" 404 158 "http://localhost:8000/user/home" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36"
+::1 - - [14/Jul/2020:03:48:26 +0000] "GET /user/home HTTP/1.1" 304 - "-" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Mobile Safari/537.36"
+::1 - - [14/Jul/2020:03:48:26 +0000] "GET /css/layout.css HTTP/1.1" 404 153 "http://localhost:8000/user/home" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Mobile Safari/537.36"
+::1 - - [14/Jul/2020:03:48:26 +0000] "GET /css/_footer.css HTTP/1.1" 404 154 "http://localhost:8000/user/home" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Mobile Safari/537.36"
+::1 - - [14/Jul/2020:03:48:27 +0000] "GET /css/_home-signin.css HTTP/1.1" 404 159 "http://localhost:8000/user/home" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Mobile Safari/537.36"
+::1 - - [14/Jul/2020:03:48:27 +0000] "GET /css/home.css HTTP/1.1" 404 151 "http://localhost:8000/user/home" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Mobile Safari/537.36"
+::1 - - [14/Jul/2020:03:48:27 +0000] "GET /css/boot_header.css HTTP/1.1" 404 158 "http://localhost:8000/user/home" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Mobile Safari/537.36"
+::1 - - [14/Jul/2020:03:48:28 +0000] "GET /js/sign_in.js HTTP/1.1" 404 152 "http://localhost:8000/user/home" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Mobile Safari/537.36"
+::1 - - [14/Jul/2020:03:48:28 +0000] "GET /images/fb.png HTTP/1.1" 404 152 "http://localhost:8000/user/home" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Mobile Safari/537.36"
+::1 - - [14/Jul/2020:03:48:28 +0000] "GET /js/header.js HTTP/1.1" 404 151 "http://localhost:8000/user/home" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Mobile Safari/537.36"
+::1 - - [14/Jul/2020:03:48:28 +0000] "GET /images/google1.png HTTP/1.1" 404 157 "http://localhost:8000/user/home" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Mobile Safari/537.36"
+::1 - - [14/Jul/2020:03:48:28 +0000] "GET /css/boot_header.css HTTP/1.1" 404 158 "http://localhost:8000/user/home" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Mobile Safari/537.36"
+::1 - - [14/Jul/2020:03:48:28 +0000] "GET /images/fb.png HTTP/1.1" 404 152 "http://localhost:8000/user/home" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Mobile Safari/537.36"
+::1 - - [14/Jul/2020:03:48:28 +0000] "GET /images/google1.png HTTP/1.1" 404 157 "http://localhost:8000/user/home" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Mobile Safari/537.36"
+::1 - - [14/Jul/2020:03:48:29 +0000] "GET /js/sign_in.js HTTP/1.1" 404 152 "http://localhost:8000/user/home" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Mobile Safari/537.36"
+::1 - - [14/Jul/2020:03:48:29 +0000] "GET /js/header.js HTTP/1.1" 404 151 "http://localhost:8000/user/home" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Mobile Safari/537.36"
