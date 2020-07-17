@@ -1,4 +1,4 @@
-<link rel="stylesheet" type="text/css" href="/css/answer.css">
+<link rel="stylesheet" type="text/css" href="<%=assetPath('css/answer.css')%>">
 <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 
 <div id="home-container">
@@ -24,7 +24,7 @@
             <%for(user of users){%>
             <div id="rank-box">
 
-                <div id="rank"><span><%=i++%></span><span><img src="<%=user.avatar%>" onerror=this.src="/images/user.png"></span></div>
+                <div id="rank"><span><%=i++%></span><span><img src="<%=user.avatar%>" onerror=this.src="<%=assetPath('images/user.png')%>"></span></div>
                 <div id="name"><%=user.name%></div>
                 <div   id="answers"><%=user.answers.length%></div>
            </div>
@@ -126,7 +126,8 @@
     </div>
     </div>
     </div>
-    <script type="text/javascript" src="/ckeditor/ckeditor.js"></script>
+    <!-- <script type="text/javascript" src="/ckeditor/ckeditor.js"></script> -->
     
-    <script type="text/javascript" src="/js/answer.js"></script>
+    <script type="text/javascript" src="<%=assetPath('js/answer.js')%>"></script>
+   
  

@@ -11,31 +11,32 @@ const del = require('del');
 
 gulp.task('css', function(done){
     console.log('minifying css...');
-    gulp.src('./assets/sass/**/*.scss')
+    gulp.src('./assets/scss/**/*.scss')
     .pipe(sass())
     .pipe(cssnano())
-    .pipe(gulp.dest('./assets.css'));
+    .pipe(gulp.dest('./assets/css'));
 
      gulp.src('./assets/**/*.css')
     .pipe(rev())
     .pipe(gulp.dest('./public/assets'))
     .pipe(rev.manifest({
-        cwd: 'public',
+        // cwd: 'public',
+        base:'./public/assets',
         merge: true
     }))
     .pipe(gulp.dest('./public/assets'));
     done();
 });
 
-
+// run now
 gulp.task('js', function(done){
-    console.log('minifying js...');
+    console.log('minifying js...');  //leave mouse program run krna browser pe save it
      gulp.src('./assets/**/*.js')
     .pipe(uglify())
     .pipe(rev())
     .pipe(gulp.dest('./public/assets'))
     .pipe(rev.manifest({
-        cwd: 'public',
+        base:'./public/assets',
         merge: true
     }))
     .pipe(gulp.dest('./public/assets'));
@@ -50,7 +51,8 @@ gulp.task('images', function(done){
     .pipe(rev())
     .pipe(gulp.dest('./public/assets'))
     .pipe(rev.manifest({
-        cwd: 'public',
+        // cwd: 'public',
+        base:'./public/assets',
         merge: true
     }))
     .pipe(gulp.dest('./public/assets'));
@@ -63,7 +65,7 @@ gulp.task('clean:assets', function(done){
     del.sync('./public/assets');
     done();
 });
-
+// ho gaya na scss folder bn rha h iske ander let me check
 gulp.task('build', gulp.series('clean:assets', 'css', 'js', 'images'), function(done){
     console.log('Building assets');
     done();

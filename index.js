@@ -1,6 +1,7 @@
 const express = require('express');
 const port = 8000;
 const app = express();
+require('./config/view-helpers')(app);
 const env = require('./config/environment');
 const logger = require('morgan');
 const expressLayouts = require('express-ejs-layouts');
@@ -37,6 +38,7 @@ app.use(express.urlencoded());
 app.use(cookieParser());
 app.use(expressLayouts);
 app.use(express.static(env.asset_path));
+console.log(env.asset_path);
 app.use('/uploads',express.static(__dirname + '/uploads'));
 
 app.use(logger(env.morgan.mode, env.morgan.options));
