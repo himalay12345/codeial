@@ -2,3 +2,5 @@ node_modules/
 assets/ckeditor/
 public/
 rev-manifest.json
+production_logs/access.log/
+
