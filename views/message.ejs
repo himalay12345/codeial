@@ -24,7 +24,7 @@
               <%for(let user of users){%>
             <div class="chat_list">
               <div class="chat_people">
-                <div class="chat_img"> <img src="<%=user.avatar%>"  onerror=this.src="/images/user.png"> </div>
+                <div class="chat_img"> <img src="<%=user.avatar%>"  onerror=this.src="<%=assetPath('images/user.png')%>"> </div>
                 <div class="chat_ib">
                   <h5><%=user.name%><span class="chat_date">Dec 25</span></h5>
                   <p>Test, which is a new approach to have all solutions 

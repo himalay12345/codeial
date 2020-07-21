@@ -8,7 +8,7 @@
     <div id="profile_info">
       <div id="profile_header">
         <div id="image">
-          <img src="<%=profile_user.avatar%>" onerror=this.src="/images/user.png">
+          <img src="<%=profile_user.avatar%>" onerror=this.src="<%=assetPath('images/user.png')%>">
           <a href="#" id="edit_photo">Edit Photo</a>
         </div>
         <div id="profile_name">
@@ -70,7 +70,52 @@
           </form>
         </div>
       </div>
-      <div id="profile_interests"></div>
+      <div id="profile_interests">
+        <div id="interest_heading">
+          <span>Knows About</span>
+          <span id="mark"><i class="fas fa-pencil" id="add_topic"></i></span>
+        </div>
+        <%if(profile_user.interests.length==0){%>
+          <div id="interests">
+            <i class="fas fa-plus-circle" id="add_topic_btn"></i>
+            <h3>What topic do you know about?</h3>
+          </div>
+        <%}else{%>
+          <div id="interests"  class="add_interest">
+          <%for(var topic of profile_user.interests){%>
+            <div id="subject_topic">
+              <%if(topic=='Physics'){%>
+                <div id="subject"><img src="/images/physics.png"><p>Physics</p><span><a href="/user/topic/remove/?id=<%=profile_user._id%>&topic=Physics"><i class="fas fa-trash"></i></a></span></div>
+              <%}%>
+              <%if(topic=='Chemistry'){%>
+                <div id="subject"><img src="/images/chemistry.jpg"><p>Chemistry</p><span><a href="/user/topic/remove/?id=<%=profile_user._id%>&topic=Chemistry"><i class="fas fa-trash"></i></a></span></div>
+              <%}%>
+              <%if(topic=='Biology'){%>
+                <div id="subject"><img src="/images/biology.jpg"><p>Biology</p><span><a href="/user/topic/remove/?id=<%=profile_user._id%>&topic=Biology"><i class="fas fa-trash"></i></a></span></div>
+              <%}%>
+              <%if(topic=='History'){%>
+                <div id="subject"><img src="/images/history.jpg"><p>History</p><span><a href="/user/topic/remove/?id=<%=profile_user._id%>&topic=History"><i class="fas fa-trash"></i></a></span></div>
+              <%}%>
+              <%if(topic=='Computer'){%>
+                <div id="subject"><img src="/images/computer.jpg"><p>Computer</p><span><a href="/user/topic/remove/?id=<%=profile_user._id%>&topic=Computer"><i class="fas fa-trash"></i></a></span></div>
+              <%}%>
+            </div>
+            
+          <%}%>
+        </div>
+          <%}%>
+        <div id="interest_list" class="display">
+          <form action="/user/topic/<%=profile_user._id%>" method="POST" id="edit_topic">
+              <div id="subject"><img src="<%=assetPath('images/physics.png')%>"><p>Physics</p><input type="checkbox" class="checks" name="topic" value="Physics"></div>
+              <div id="subject"><img src="<%=assetPath('images/chemistry.jpg')%>"><p>Chemistry</p><input type="checkbox" class="checks" name="topic" value="Chemistry"></div>
+              <div id="subject"><img src="<%=assetPath('images/biology.jpg')%>"><p>Biology</p><input type="checkbox" class="checks" name="topic" value="Biology"></div>
+              <div id="subject"><img src="<%=assetPath('images/history.jpg')%>"><p>History</p><input type="checkbox" class="checks" name="topic" value="History"></div>
+              <div id="subject"><img src="<%=assetPath('images/computer.jpg')%>"><p>Computer</p><input type="checkbox" class="checks" name="topic" value="Computer"></div>
+              <button id="form_save" type="submit">Save</button>
+              <a id="interest_cancel_btn">Cancel</a>
+            </form>
+        </div>
+      </div>
     </div>
     <div id="profile_space">
       <div id="profile_nav">

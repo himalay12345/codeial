@@ -22,8 +22,8 @@
                 <hr class="one"><span>OR</span>
                 </div>
                 <div id="social_container">
-                <a href="/user/auth/facebook"><div id="facebook" class="form-control"><span><img src="/images/fb.png"></span><span>Facebook</span></div></a>
-                <a href="/user/auth/google"><div id="google" class="form-control"><span><img src="/images/google1.png"></span><span>Google</span></div></a>
+                <a href="/user/auth/facebook"><div id="facebook" class="form-control"><span><img src="<%=assetPath('images/fb.png')%>"></span><span>Facebook</span></div></a>
+                <a href="/user/auth/google"><div id="google" class="form-control"><span><img src="<%=assetPath('images/google1.png')%>"></span><span>Google</span></div></a>
                 </div>
                 <input type="submit" value="Sign in"class="form-control">
                 <div class="footer"><span>Don't have an account? </span><span><a href="/user/sign-up" class="link_bottom">Sign Up</a></span></div>
@@ -41,7 +41,7 @@
             </div>
         <div id="phone_container">
             <div id="logo_header">
-                <img src="/images/computer.jpg">
+                <img src="<%=assetPath('images/computer.jpg')%>">
                 <h3>Sign in to EduHub</h3>
             </div>
         <form id="signin" method="POST" action="/user/create-session">
@@ -60,7 +60,7 @@
 
    
 
-</phone>
+
 
 
 

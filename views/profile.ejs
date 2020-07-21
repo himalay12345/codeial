@@ -8,7 +8,7 @@
     <div id="profile_info">
       <div id="profile_header">
         <div id="image">
-          <img src="<%=profile_user.avatar%>" onerror=this.src="/images/user.png" >
+          <img src="<%=profile_user.avatar%>" onerror=this.src="<%=assetPath('images/user.png')%>" >
           <%if(locals.user.id == profile_user.id){%>
             <a href="#" id="edit_photo">Edit Photo</a>
             <%}%>
@@ -111,11 +111,11 @@
           <%}%>
         <div id="interest_list" class="display">
           <form action="/user/topic/<%=profile_user._id%>" method="POST" id="edit_topic">
-              <div id="subject"><img src="/images/physics.png"><p>Physics</p><input type="checkbox" class="checks" name="topic" value="Physics"></div>
-              <div id="subject"><img src="/images/chemistry.jpg"><p>Chemistry</p><input type="checkbox" class="checks" name="topic" value="Chemistry"></div>
-              <div id="subject"><img src="/images/biology.jpg"><p>Biology</p><input type="checkbox" class="checks" name="topic" value="Biology"></div>
-              <div id="subject"><img src="/images/history.jpg"><p>History</p><input type="checkbox" class="checks" name="topic" value="History"></div>
-              <div id="subject"><img src="/images/computer.jpg"><p>Computer</p><input type="checkbox" class="checks" name="topic" value="Computer"></div>
+              <div id="subject"><img src="<%=assetPath('images/physics.png')%>"><p>Physics</p><input type="checkbox" class="checks" name="topic" value="Physics"></div>
+              <div id="subject"><img src="<%=assetPath('images/chemistry.jpg')%>"><p>Chemistry</p><input type="checkbox" class="checks" name="topic" value="Chemistry"></div>
+              <div id="subject"><img src="<%=assetPath('images/biology.jpg')%>"><p>Biology</p><input type="checkbox" class="checks" name="topic" value="Biology"></div>
+              <div id="subject"><img src="<%=assetPath('images/history.jpg')%>"><p>History</p><input type="checkbox" class="checks" name="topic" value="History"></div>
+              <div id="subject"><img src="<%=assetPath('images/computer.jpg')%>"><p>Computer</p><input type="checkbox" class="checks" name="topic" value="Computer"></div>
               <button id="form_save" type="submit">Save</button>
               <a id="interest_cancel_btn">Cancel</a>
             </form>
