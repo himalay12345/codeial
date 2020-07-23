@@ -90,7 +90,7 @@ class PostComments{
         ${comment.content}
         </div>
         <div id="comment_interact">
-        <a class="toggle-like-button" href="/likes/toggle/?id=${comment._id}&type=Comment" data-likes="0"><span><i class="fas fa-chevron-circle-up"></i><span> 0 </span></span>Upvote</span></a>
+        <a class="toggle-like-button" href="/likes/toggle/?id=${comment._id}&type=Comment" data-likes="0"><span><i class="fas fa-chevron-circle-up"></i><span>0 </span></span>Upvote</span></a>
             <a href="#"><span><i class="fas fa-reply"></i></span>Reply</a>
             <a href="#"><span><i class="fas fa-heart"></i></span>Like</a>
             <a class="delete-comment-button" href="/comment/destroy/${comment._id}"><span><i class="fas fa-trash"></i></span>Delete comment</a>

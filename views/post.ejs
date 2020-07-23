@@ -39,7 +39,7 @@
                <div id="answers">
               <div class="topic_answered" id="post-<%= ans._id %>" data="<%= ans._id %>">
                     <div id="author_image">
-                        <img src="<%=ans.user.avatar%>">
+                        <img src="<%=ans.user.avatar%>" onerror=this.src="<%=assetPath('images/user.png')%>">
                         <%var flag = false;for(u of user1){%>
                             <%if(u.id == ans.user.id){%>
                               <%flag=true}%>
@@ -81,12 +81,12 @@
                        </div>
                        <div id="author_interact">
                            <%if(locals.user){%>
-                            <a href="/likes/toggle/?id=<%=ans._id%>&type=Answer" class="toggle-like-button" data-likes="<%=ans.likes.length%>"><span><i class="fas fa-chevron-circle-up"></i><span><%= ans.likes.length%></span></span>Upvote</span></a>
+                            <a href="/likes/toggle/?id=<%=ans._id%>&type=Answer" class="toggle-like-button" data-likes="<%=ans.likes.length%>"><span><i class="fas fa-chevron-circle-up"></i><span><%= ans.likes.length%></span></span> Upvote</span></a>
                            <%}else{%>
                             <%=ans.likes.length%> Upvotes 
                            <%}%>
                            <a href="#"><span><i class="fas fa-sync"></i>Share</span></a>
-                           <a id="comment"><span><i class="fas fa-comment"></i><%=ans.comments.length%>Comment</span></a>
+                           <a id="comment"><span><i class="fas fa-comment"></i><%=ans.comments.length%> Comment</span></a>
                            <a href="#"><span><i class="fas fa-eye"></i>500</span></a>
                        </div>
                    

@@ -319,6 +319,7 @@
                         height:30%;
                         display: inline-flex;
                         margin-bottom: 8px;
+                        
 
 
                         img{
@@ -331,12 +332,14 @@
                         div{
 
                             margin-left: 15px;
+                            
                                 h2{
                                     margin: 0;
                                     color: black;
                                     font-family: Arial, Helvetica, sans-serif;
                                     font-size: 0.9rem;
                                     margin-bottom: 5px;
+                                    font-weight: bold;
                                 }
 
                                 h3{
@@ -362,6 +365,7 @@
                     #comment_interact{
                         height:25%;
                         // border:1px solid red;
+                        border-top: 1px solid grey;
                         padding: 3px;
                         position: relative;
 
@@ -382,13 +386,13 @@
                 }
 
                 #comment_option{
-                    height:20%;
+                    height:17%;
                     display: flex;
                     flex-wrap: wrap;
                     justify-content: space-around;
                     // border:1px solid cyan;
-                    padding: 10px;
-
+                    padding-top: 10px;
+                  
                     img{
                         height:30px;
                         width: 30px;
@@ -425,7 +429,8 @@
 
                         button{
                             padding: 7px;
-                            width: 100px;
+                            min-width: 100px;
+                            width: auto;
                             border-radius: 5px;
                             border: 0;
                             cursor: pointer;
@@ -529,6 +534,7 @@
                 height: auto;
                 padding-top: 70px;
                 box-sizing: border-box;
+                padding-bottom: 8px;
 
                 img{
                     height:190px;
@@ -540,8 +546,9 @@
 
                 a{
                     text-decoration: none;
-                    // border:1px solid grey;
-                    padding: 3px;
+                    // border:1px solid;
+                  
+                    
                 }
 
                 span{
@@ -550,6 +557,10 @@
                     font-size: 0.9rem;
                     font-family: Arial, Helvetica, sans-serif;
                     font-weight: 600;
+                }
+
+                button{
+                    width:120px;
                 }
             }
             #topic_content{
@@ -566,6 +577,8 @@
                     padding-top: 7px;
 
                     h3{
+                        font-size: 0.9rem;
+                        font-weight: 700;
                         margin-top: 5px;
                         margin-left: 10px;
                     }
@@ -614,7 +627,7 @@
     
                     .btn-left, .btn-right {
                         position: absolute;
-                        top: -20px;
+                        // top: -20px;
                     }
     
                     .ans_dropbtn {
@@ -683,11 +696,13 @@
                     font-family: Arial, Helvetica, sans-serif;
                     display: flex;
                     justify-content: space-around;
-                    margin-bottom: 5px;
+                    margin-top: 10px;
+                    // margin-bottom: 5px;
 
                     a{
                         text-decoration: none;
-                        padding: 3px;
+                        padding:3px 8px;
+                        height:30px;
                         border-radius: 3px;
                         background-color:#5B5EA6 ;
                         border:1px solid grey;

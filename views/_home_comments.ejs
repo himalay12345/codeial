@@ -2,7 +2,7 @@
     <div id="comment_section" class="display comments">
         <form id="post-<%= ans._id %>-comments-form" action="/comment/create" method="POST">
         <div id="comment_option">
-            <img src="<%=user.avatar%>">
+            <img src="<%=user.avatar%>" onerror=this.src="<%=assetPath('images/user.png')%>">
             <input type="text" name="content" placeholder="Add a comment">
             <input type="hidden" name="post" value="<%=post._id%>">
             <input type="hidden" name="answer" value="<%=ans._id%>">
@@ -15,7 +15,7 @@
     <%for(comment of ans.comments){%>
         <div id="comment-<%= comment._id %>"class="comment_card">
             <div id="comment_header">
-                <img src="<%=comment.user.avatar%>">
+                <img src="<%=comment.user.avatar%>" onerror=this.src="<%=assetPath('images/user.png')%>">
                 <div>
                     <%var time = comment.createdAt.toString().slice(11,24)%>
                      <%var time1 = comment.createdAt.toString().slice(0,10)%>
