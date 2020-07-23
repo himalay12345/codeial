@@ -7,7 +7,7 @@ class ChatUserEngine{
         this.toId = toId;
 
         // this.socket = io.connect('http://localhost:5000');
-        this.socket = io.connect('http://54.90.31.221:5000');
+        this.socket = io.connect('http://18.212.108.180:5000');
 
         if(this.userEmail)
         {
