@@ -25,22 +25,22 @@
           <a class="nav-link py-1 rounded text-white" href="/user/answer">Answer</a>
         </li>
         <li class="nav-item mr-2">
-            <a class="nav-link py-1 rounded text-white" href="/blog">Blog</a>
+            <a class="nav-link py-1 rounded text-white" style="margin-right: 15px;" href="/blog">Blog</a>
           </li>
-          <li class="nav-item mr-2">
-            <a class="nav-link py-1 rounded text-white" href="/profile/user/<%=locals.user.id%>">Profile</a>
-          </li>
-        <!-- <li class="nav-item dropdown  mr-2">
-            <a class="nav-link dropdown-toggle py-1 rounded text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <img src="/images/logo.jpg">
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Something else here</a>
+          <li class="no_hover"> 
+            <div class="header_dropdown"> 
+                <div class ="user_icon">
+                <img src="<%=user.avatar%>" onerror=this.src="/images/user.png" >
+                </div>
+                
+                <div id="user_option" class="dropdown-content">
+                    <a href="/profile/user/<%=locals.user.id%>" id="profile"> Profile</a>
+                    <a href="/user/message">Messages</a>
+                    <a>Settings</a>
+                    <a href="/user/sign-out"><b>Sign out</b></a>
+                </div>
             </div>
-          </li> -->
+        </li>
       </ul>
       
 

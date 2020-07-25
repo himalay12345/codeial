@@ -1,12 +1,6 @@
 var edit = document.getElementById('edit_btn');
 var edit_container = document.getElementById('edit_profile');
 var input = document.getElementById('credential_input');
-edit.addEventListener('click',function()
-{
-    edit_container.classList.add('display');
-    input.classList.remove('display');
-    
-});
 
 
 var cancel = document.getElementById('form_cancel');
@@ -31,8 +25,9 @@ document.getElementById("imageUpload").onchange = function() {
 
 var message_btn = document.getElementById('message_btn');
 var chatbox = document.getElementById('chat_box');
-message_btn.addEventListener('click',function()
+message_btn.addEventListener('click',function(event)
 {
+    event.preventDefault();
     chatbox.classList.toggle('show');
 });
 
@@ -71,5 +66,12 @@ add_topic_btn.addEventListener('click',function()
 {
     interest_box.classList.toggle('display');
     interest_list.classList.toggle('display');
+    
+});
+
+edit.addEventListener('click',function()
+{
+    edit_container.classList.add('display');
+    input.classList.remove('display');
     
 });
