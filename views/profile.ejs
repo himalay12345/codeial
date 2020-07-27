@@ -90,19 +90,19 @@
           <%for(var topic of profile_user.interests){%>
             <div id="subject_topic">
               <%if(topic=='Physics'){%>
-                <div id="subject"><img src="/images/physics.png" ><p>Physics</p><span><a href="/user/topic/remove/?id=<%=profile_user._id%>&topic=Physics"><i class="fas fa-trash"></i></a></span></div>
+                <div id="subject"><img src="<%=assetPath('images/physics.png')%>" ><p>Physics</p><span><a href="/user/topic/remove/?id=<%=profile_user._id%>&topic=Physics"><i class="fas fa-trash"></i></a></span></div>
               <%}%>
               <%if(topic=='Chemistry'){%>
-                <div id="subject"><img src="/images/chemistry.jpg"><p>Chemistry</p><span><a href="/user/topic/remove/?id=<%=profile_user._id%>&topic=Chemistry"><i class="fas fa-trash"></i></a></span></div>
+                <div id="subject"><img src="<%=assetPath('images/chemistry.jpg')%>"><p>Chemistry</p><span><a href="/user/topic/remove/?id=<%=profile_user._id%>&topic=Chemistry"><i class="fas fa-trash"></i></a></span></div>
               <%}%>
               <%if(topic=='Biology'){%>
-                <div id="subject"><img src="/images/biology.jpg"><p>Biology</p><span><a href="/user/topic/remove/?id=<%=profile_user._id%>&topic=Biology"><i class="fas fa-trash"></i></a></span></div>
+                <div id="subject"><img src="<%=assetPath('images/biology.jpg')%>"><p>Biology</p><span><a href="/user/topic/remove/?id=<%=profile_user._id%>&topic=Biology"><i class="fas fa-trash"></i></a></span></div>
               <%}%>
               <%if(topic=='History'){%>
-                <div id="subject"><img src="/images/history.jpg"><p>History</p><span><a href="/user/topic/remove/?id=<%=profile_user._id%>&topic=History"><i class="fas fa-trash"></i></a></span></div>
+                <div id="subject"><img src="<%=assetPath('images/history.jpg')%>"><p>History</p><span><a href="/user/topic/remove/?id=<%=profile_user._id%>&topic=History"><i class="fas fa-trash"></i></a></span></div>
               <%}%>
               <%if(topic=='Computer'){%>
-                <div id="subject"><img src="/images/computer.jpg"><p>Computer</p><span><a href="/user/topic/remove/?id=<%=profile_user._id%>&topic=Computer"><i class="fas fa-trash"></i></a></span></div>
+                <div id="subject"><img src="<%=assetPath('images/computer.jpg')%>"><p>Computer</p><span><a href="/user/topic/remove/?id=<%=profile_user._id%>&topic=Computer"><i class="fas fa-trash"></i></a></span></div>
               <%}%>
             </div>
             

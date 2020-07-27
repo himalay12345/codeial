@@ -73,12 +73,12 @@
           <li class="no_hover"> 
             <div class="header_dropdown"> 
                 <div class ="user_icon">
-                <img src="<%=user.avatar%>" onerror=this.src="/images/user.png" >
+                <img src="<%=user.avatar%>" onerror=this.src="<%=assetPath('images/user.png')%>">
                 </div>
                 
                 <div id="user_option" class="dropdown-content">
                     <a href="/profile/user/<%=locals.user.id%>" id="profile">
-                      <span><img src="<%=user.avatar%>" onerror=this.src="/images/user.png" >
+                      <span><img src="<%=user.avatar%>" onerror=this.src="<%=assetPath('images/user.png')%>">
                       </span>
                       <span><%=locals.user.name%></span></a>
                     <a href="/user/message">
