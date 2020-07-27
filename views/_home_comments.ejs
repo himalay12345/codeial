@@ -29,7 +29,7 @@
                <%=comment.content%>
             </div>
             <div id="comment_interact">
-                <%if(locals.user){%><a href="/likes/toggle/?id=<%=comment._id%>&type=Comment" class="toggle-like-button" data-likes="<%=comment.likes.length%>"><span><i class="fas fa-chevron-circle-up"></i><span><%=comment.likes.length %></span></span>Upvote</span></a><%}else{%>
+                <%if(locals.user){%><a href="/likes/toggle/?id=<%=comment._id%>&type=Comment" class="toggle-like-button" data-likes="<%=comment.likes.length%>"><span><i class="fas fa-arrow-up"></i><span><%=comment.likes.length %></span></span></span></a><%}else{%>
                     <%=comment.likes.length%> Upvotes <%}%>
                 <a href="#"><span><i class="fas fa-reply"></i></span>Reply</a>
                 <!-- <a href="#"><span><i class="fas fa-heart"></i></span>Like</a> -->

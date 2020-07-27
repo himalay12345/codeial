@@ -28,7 +28,7 @@ class ToggleLike{
 
 
                 $(self).attr('data-likes', likesCount);
-                $(self).html(`<i class="fas fa-chevron-circle-up"></i>${likesCount} Upvote`);
+                $(self).html(`<i class="fas fa-arrow-up"></i>${likesCount}`);
 
             })
             .fail(function(errData) {

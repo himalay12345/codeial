@@ -159,5 +159,42 @@ let deletePost = function(deleteLink){
     });
 }
 
+// $('#author_content').each( function() {
+//     if ($('#ans', this).prop('scrollHeight') > $('#ans', this).prop('clientHeight')){
+//     // $('a', this).css('display', 'none');
+//     console.log('hello');
+//     }
+   
+// else
+// {
+//     console.log('hii');
+// }
+// });
+
+
+var ans_content = document.querySelectorAll('#ans');
+var see_more = document.querySelectorAll('#see_more');
+for(let i=0;i<see_more.length;i++)
+{
+    see_more[i].addEventListener('click',function(e)
+    {
+        e.preventDefault();
+        ans_content[i].style.height = "auto";
+        see_more[i].classList.add('display');
+    });
+}
+for(let i=0;i<ans_content.length;i++)
+{
+    
+if( ans_content[i].getElementsByTagName('img').length > 0) {
+    ans_content[i].style.height = "400px";
+}
+
+if(ans_content[i].innerHTML.length<70)
+    {
+        see_more[i].classList.add('display');
+    }
+}
+
 
 

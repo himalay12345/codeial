@@ -11,22 +11,65 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <% if(locals.user){%>
         <form class="form-inline my-2 my-lg-0 w-lg-50">
-            <input class="form-control mr-sm-2 w-lg-50 ml-lg-5" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            <input class="form-control mr-sm-2 w-lg-50 ml-lg-5 search_me" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
           </form>
       <ul class="navbar-nav ml-auto">
         <li class="nav-item active mr-2 ">
-          <a class="nav-link py-1 rounded px-lg-2" href="/">Home</a>
+          <a class="nav-link py-1 rounded px-lg-2 fsize no_hover" href="/">Home</a>
         </li>
         <li class="nav-item mr-2">
-          <a class="nav-link  py-1 rounded text-white" href="#">Add Question</a>
+          <a class="nav-link  py-1 rounded text-white fsize" href="#">Add Question</a>
         </li>
         <li class="nav-item mr-2">
-          <a class="nav-link py-1 rounded text-white" href="/user/answer">Answer</a>
+          <a class="nav-link py-1 rounded text-white fsize" href="/user/answer">Answer</a>
         </li>
         <li class="nav-item mr-2">
-            <a class="nav-link py-1 rounded text-white" style="margin-right: 15px;" href="/blog">Blog</a>
+            <a class="nav-link py-1 rounded text-white fsize" style="margin-right: 15px;" href="/blog">Blog</a>
           </li>
+          <li class="no_hover">
+            <div class="nots_dropdown">
+                <div id="nots_icon">
+                    <i class="fas fa-bell" style="font-size: 1.5rem;"></i>
+                </div>
+
+                <div id="nots_content">
+                    <h2>Notifications</h2>
+                    <div id="nots_list">
+                            <ul>
+                                <li class="no_hover">
+                                    <div><img src="/images/logo.jpg"></div>
+                                    <div class="margin"><b>Himalay </b>commented on your post.</div>
+                                </li>
+                                <li class="no_hover">
+                                    <div><img src="/images/logo.jpg"></div>
+                                    <div class="margin"><b>Himalay </b>commented on your post.</div>
+                                </li>
+                                <li class="no_hover">
+                                    <div><img src="/images/logo.jpg"></div>
+                                    <div class="margin"><b>Himalay </b>commented on your post.</div>
+                                </li>
+                                <li class="no_hover">
+                                    <div><img src="/images/logo.jpg"></div>
+                                    <div class="margin"><b>Himalay </b>commented on your post.</div>
+                                </li>
+                                <li class="no_hover">
+                                    <div><img src="/images/logo.jpg"></div>
+                                    <div class="margin"><b>Himalay </b>commented on your post.</div>
+                                </li>
+                                <li class="no_hover">
+                                    <div><img src="/images/logo.jpg"></div>
+                                    <div class="margin"><b>Himalay </b>commented on your post.</div>
+                                </li>
+                                <li class="no_hover">
+                                    <div><img src="/images/logo.jpg"></div>
+                                    <div class="margin"><b>Kunal </b>commented on your post.</div>
+                                </li>
+                            </ul>
+                    </div>
+                </div>
+            </div>
+        </li>
           <li class="no_hover"> 
             <div class="header_dropdown"> 
                 <div class ="user_icon">
@@ -34,10 +77,24 @@
                 </div>
                 
                 <div id="user_option" class="dropdown-content">
-                    <a href="/profile/user/<%=locals.user.id%>" id="profile"> Profile</a>
-                    <a href="/user/message">Messages</a>
-                    <a>Settings</a>
-                    <a href="/user/sign-out"><b>Sign out</b></a>
+                    <a href="/profile/user/<%=locals.user.id%>" id="profile">
+                      <span><img src="<%=user.avatar%>" onerror=this.src="/images/user.png" >
+                      </span>
+                      <span><%=locals.user.name%></span></a>
+                    <a href="/user/message">
+                      <span><i class="fas fa-envelope"></i></span>
+                      <span>Messages</span></a>
+                    <a href="/user/answer">
+                      <span><i class="fas fa-chart-bar"></i></span>
+                      <span>Stats</span>
+                    </a>
+                    <a>
+                      <span><i class="fas fa-cog"></i></span>
+                      <span>Settings</span>
+                    </a>
+                    <a style="font-size: 0.9rem;">Languages</a>
+                    <a style="font-size: 0.9rem;">Help</a>
+                    <a href="/user/sign-out"><b style="font-size: 0.9rem;">Sign out</b></a>
                 </div>
             </div>
         </li>
@@ -57,7 +114,7 @@
             </li>
         </ul>
         <form class="form-inline my-2 my-lg-0  ml-lg-auto" id="loggedout_search">
-            <input class="form-control mr-sm-2 w-90" type="search" placeholder="Search" aria-label="Search">
+            <input class="search_me form-control mr-sm-2 w-90" type="search" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-success my-2 my-sm-0 mr-5" type="submit">Search</button>
           </form>
         <ul class="navbar-nav logged_out">

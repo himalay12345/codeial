@@ -1,0 +1,46 @@
+<div id="answers">
+    <div class="topic_answered" id="post-<%= ans._id %>" data="<%= ans._id %>">
+         <div id="topic_content">
+             <div id="author_header"><span><img src="<%=ans.user.avatar%>" onerror=this.src="<%=assetPath('images/user.png')%>"></span><span><a href="/profile/user/<%=ans.user._id%>"><%=ans.user.name%></a></span><b>Answered this question</b>
+                 <span style="font-size:small">
+                     <%if(locals.user && user.id==ans.user.id){%>
+                         <div class="ans_dropdown"> 
+                             <!-- three dots -->
+                             <ul class="ans_dropbtn icons btn-right showLeft">
+                                 <li></li>
+                                 <li></li>
+                                 <li></li>
+                             </ul>
+                             <!-- menu -->
+                             <div id="ans_myDropdown" class="ans_dropdown-content">
+                                 <a class="delete-post-button" href="/answer/destroy/<%=ans.id%>">Delete Answer</a>
+                                 <a href="#about">Edit Answer</a>
+                             </div>
+                         </div>
+                         <%}%></br>
+                         <h3><%=ans.createdAt.toString().slice(4,10)%></h3>
+                         
+         
+                 </span>
+             </div>
+             <div id="author_content">
+                 <div id="ans"><%- ans.content%></div>
+                 <a href="" id="see_more">(more)</a>
+             </div>
+             <div id="author_interact">
+                 <%if(locals.user){%>
+                  <a href="/likes/toggle/?id=<%=ans._id%>&type=Answer" class="toggle-like-button" data-likes="<%=ans.likes.length%>"><span><i class="fas fa-arrow-up"></i><span><%= ans.likes.length%></span></a>
+                 <%}else{%>
+                  <%=ans.likes.length%> Upvotes 
+                 <%}%>
+                 <a href="#"><span><i class="fas fa-sync"></i>5</span></a>
+                 <a id="comment"><span><i class="fas fa-comment"></i><%=ans.comments.length%></span></a>
+                 <a href="#"><span><i class="fas fa-eye"></i>500</span></a>
+             </div>
+         
+        
+
+         </div>
+    </div>
+ </div>
+ <%-include('_home_comments');%>

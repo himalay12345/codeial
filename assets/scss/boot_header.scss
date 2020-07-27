@@ -1,11 +1,117 @@
+.fsize{
+  font-size: 1rem !important;
+}
+
 .navbar{
-  max-height: 70px;
+  max-height: 60px;
+  // background-color: #6B5B95 !important;
+
+  ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color:white !important;
+    font-size: medium;
+    opacity: 1; /* Firefox */
+  }
+}
+.nots_dropdown{
+  .display_option{
+      display: block !important;
+  }
+
+  #nots_icon{
+      i{
+          // color: rgb(0, 102, 255) !important;
+          color: white;
+          font-size: 1.7rem;
+          margin-right:40px;
+          margin-top: 6px;
+          cursor: pointer;
+
+      }
+  }
+  
+  #nots_content{
+      // display: none;
+      position: absolute;
+      right:7.5%;
+      top:58px;
+      padding: 10px;
+      // min-height: 300px;
+      // z-index: 5;
+      // background-color:white;
+      background-color: #F1F2F2;
+      height: 350px;
+      width:300px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+      display:none;
+    
+      // display: none;
+      border: 1px solid grey;
+      overflow-y: auto;
+      // overflow-x: hidden;
+      border-radius: 5px;
+
+      #nots_list{
+          // border: 1px solid red;
+          // height: 240px;
+          // overflow: hidden;
+          // z-index: 10;
+
+      ul{
+          display: flex;
+          flex-direction: column-reverse;
+          flex-wrap: wrap-reverse;
+          width: 100%;
+          list-style: none;
+        //  margin-top: 50px;
+          
+          li{
+              // border: 1px solid red;
+              position: relative;
+              left: -60px;
+              min-height: 35px;
+              // right:30%;
+
+             
+              div{
+                 margin-left: 25px;
+                  
+              }
+
+              .margin{
+                  margin-left:60px;
+                  margin-top: -30px;
+              }
+              
+             
+              img{
+                  height:30px;
+                  width: 30px;
+                  // margin:10px 40px 0px 50px;
+                  margin-top: 0px;
+                  border:1px solid black;
+                  border-radius: 50%; 
+                  cursor: pointer;
+              }
+          }
+      }
+  }
+
+      h2{
+          margin-top: 0;
+          width: 100%;
+          font-size: 2rem;
+          // color: rgb(0, 102, 255) !important;
+          // text-align: center;
+      border-bottom:1px solid black;
+      }
+  }
 }
 
     
 .header_dropdown{
   position: relative;
   right:8%;
+  top:5px;
   transition: 0.5 all;
   // display: inline-block;
   // right: 0;
@@ -15,7 +121,7 @@
   }
 
   .user_icon{
-      margin-top: 8px;
+      margin-top: 5px;
       // margin-left: 10px;
 
       img{
@@ -35,24 +141,43 @@
       // left:23%;
       right: -50%;
       display: none;
-      margin-top: 17px;
-      background-color: rgb(151, 167, 167);
+      margin-top: 9px;
+      // background-color: rgb(151, 167, 167);
+      background-color:  #F1F2F2;
       
-      min-width: 120px;
+      width: 250px;
+      height: 300px;
       overflow: auto;
       box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
       z-index: 1;
           a{
-              color: white;
+              // color: white;
+              color: black;
               padding: 8px 16px;
               text-decoration: none;
               font-size: 1rem;
               font-family: Arial, Helvetica, sans-serif;
               cursor: pointer;
               display:block;
+
+              i{
+                margin-right: 10px;
+              }
+
+              img{
+                height:35px;
+                width: 35px;
+                // margin:10px 40px 0px 50px;
+                margin-top: 0px;
+                border-radius: 50%; 
+                cursor: pointer;
+                margin-right: 10px;
+            }
           }
           a:hover {
-          color:black;}
+          color:black;
+        background-color: rgb(228, 228, 228);
+          }
 
   }
 }
@@ -79,6 +204,16 @@
     background-color: rgb(255, 124, 17);
     border-radius: 4px;
 }
+
+.search_me{
+  width:380px !important;
+  background-color: #5C5C5C;
+  border: none;
+  color: white;
+
+  
+}
+
 
 // ------------------------------------Media Queries---------------------------------------
 

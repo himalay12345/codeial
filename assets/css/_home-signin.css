@@ -2,7 +2,7 @@ main {
   margin-top: -14px;
   height: 110vh;
   width: 100%;
-  background-color: #5C5C5C;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4)), url("../images/jason-leung-wHddViTmSvA-unsplash.jpg");
   /* background-position: center; */
   background-size: cover;
   background-repeat: no-repeat;
@@ -344,7 +344,6 @@ hr.one {
 
 @media screen and (max-width: 768px) {
   main {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4)), url("/images/camille-couvez-H5PnIYI_1I0-unsplash.jpg");
     height: 100%; }
   #signin_container {
     display: none; } }
