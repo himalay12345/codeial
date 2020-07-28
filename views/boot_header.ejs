@@ -12,7 +12,7 @@
         <% if(locals.user){%>
         <form class="form-inline my-2 my-lg-0 w-lg-50">
             <input class="form-control mr-sm-2 w-lg-50 ml-lg-5 search_me" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
+            <button class="btn  my-2 my-sm-0" type="submit">Search</button>
           </form>
       <ul class="navbar-nav ml-auto">
         <li class="nav-item active mr-2 ">
@@ -78,8 +78,8 @@
                 
                 <div id="user_option" class="dropdown-content">
                     <a href="/profile/user/<%=locals.user.id%>" id="profile">
-                      <span><img src="<%=user.avatar%>" onerror=this.src="<%=assetPath('images/user.png')%>">
-                      </span>
+                      <div style="width:30%;"><img src="<%=user.avatar%>" onerror=this.src="<%=assetPath('images/user.png')%>">
+                      </div>
                       <span><%=locals.user.name%></span></a>
                     <a href="/user/message">
                       <span><i class="fas fa-envelope"></i></span>

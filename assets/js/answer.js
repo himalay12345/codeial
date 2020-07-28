@@ -25,10 +25,12 @@ answer[i].addEventListener('click',function()
 }
 
 
+
+
+
 var text = document.querySelectorAll('#text');
 for(let i=0;i<text.length;i++){
-CKEDITOR.replace( text[i],{height: 200 ,width:595});
-
+    CKEDITOR.replace( text[i],{height: 200 ,width:730});
 }
 
 

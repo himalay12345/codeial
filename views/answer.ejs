@@ -2,38 +2,15 @@
 <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 
 <div id="home-container">
-    <div id="Leaderboard">
-        <div id="leaderboard_header">
-            <h2>Leaderboards</h2>
-            <div id="view">
-                <div id="view_by">
-                    <a href="#">Answers</a>
-                    <a href="#">Upvotes</a>
-                    <a href="#">Followers</a>
-                </div> 
-                <div id="sort_by"></div>    
-            </div>
-        </div>
-        <div id="ranking_title">
-           <div id="rank">Rank</div>
-           <div id="name">Name</div>
-           <div id="answers">Answers</div>
-        </div>
-        <div id="ranking">
-            <%var i=1;%>
-            <%for(user of users){%>
-            <div id="rank-box">
-
-                <div id="rank"><span><%=i++%></span><span><img src="<%=user.avatar%>" onerror=this.src="<%=assetPath('images/user.png')%>"></span></div>
-                <div id="name"><%=user.name%></div>
-                <div   id="answers"><%=user.answers.length%></div>
-           </div>
-           <%}%>
-            
-
-        </div>
-        <div id="leaderboard_footer"></div>
+    <div id="left_aside">
+        <div id="left_header">Questions</div>
+        <a href="#">Question for you</a>
+        <a href="#">Your answered question</a>
+        <a href="#">Answer requests</a>
+        <a href="#">Answer Later</a>
+        
     </div>
+
     <div id="main">
         <div id="question">
             <span><i class="fas fa-question"></i></span><span>Questions For You</span>         
@@ -45,7 +22,7 @@
              <div id="unanswered">
              <div id="header"><span>Question added</span><a href="#"><span>-<%=post.topic%></span></a></div>
              <div id="unanswered_content">
-                 </a><div id="content"><a href="#"><%=post.content%></a></div>
+                <div id="content"><a href="#"><%=post.content%></a></div>
                  <div id="content_key"><a></a><span><b><%=post.answers.length%> Answer</b></span></a><span>-Last followed 20m ago</span></div>
              </div>
              <div id="interact">
@@ -82,9 +59,18 @@
 
          
     </div>
+
+    <%var upCount=0%>
+    <%for(let like of temp.answers){%>
+        <%upCount+=like.likes.length%>
+        <%}%>
+
     <div id="aside">
         <div id="stat-box">
-            <div id="stat_header"><h2>Your Stats</h2></div>
+            <div id="stat_header">
+                <span><i class="fas fa-chart-bar"></i></span>
+                <span>Your Stats</span>
+            </div>
             <div id="table">
                 <div></div>
                 <div>Answered</div>
@@ -95,28 +81,28 @@
                 <div id="content">
                     <div>Today</div>
                     <div><%=temp.answers.length%></div>
-                    <div>1.3K</div>
+                    <div><%=upCount%></div>
                     <div>500</div>
                 </div>
 
                 <div id="content">
                     <div>This Week</div>
                     <div><%=temp.answers.length%></div>
-                    <div>1.3K</div>
+                    <div><%=upCount%></div>
                     <div>500</div>
                 </div>
 
                 <div id="content">
                     <div>This Month</div>
                     <div><%=temp.answers.length%></div>
-                    <div>1.3K</div>
+                    <div><%=upCount%></div>
                     <div>500</div>
                 </div>
 
                 <div id="content">
                     <div>This Year</div>
                     <div><%=temp.answers.length%></div>
-                    <div>1.3K</div>
+                    <div><%=upCount%></div>
                     <div>500</div>
                 </div>
             </div>
@@ -130,10 +116,6 @@
     <script src="https://cdn.ckeditor.com/4.14.1/standard/ckeditor.js"></script> 
     
     <script type="text/javascript" src="<%=assetPath('js/answer.js')%>"></script>
-    <script>
-       CKEDITOR.replace( 'text', {
-        extraPlugins: 'abbr'
-} );
-    </script> 
+  
    
  

@@ -17,6 +17,39 @@
             </ul>
         </div>
     </div>
+
+    <div id="Leaderboard">
+        <div id="leaderboard_header">
+            <h2>Leaderboard</h2>
+            <div id="view">
+                <div id="view_by">
+                    <a href="#">Answers</a>
+                    <a href="#">Upvotes</a>
+                    <a href="#">Followers</a>
+                </div> 
+                <div id="sort_by"></div>    
+            </div>
+        </div>
+        <div id="ranking_title">
+           <div id="rank">Rank</div>
+           <div id="name">Name</div>
+           <div id="answers">Answers</div>
+        </div>
+        <div id="ranking">
+            <%var i=1;%>
+            <%for(user of users){%>
+            <div id="rank-box">
+
+                <div id="rank"><b><span style="font-size: 0.95rem;position:absolute;margin-top:5px;"><%=i++%></span></b><span><img src="<%=user.avatar%>" onerror=this.src="<%=assetPath('images/user.png')%>"></span></div>
+                <div id="name"><%=user.name%></div>
+                <div   id="answers"><%=user.answers.length%></div>
+           </div>
+           <%}%>
+            
+
+        </div>
+        <div id="leaderboard_footer"></div>
+    </div>
     <!-- <div id="friends_container">
         <div id="friends_header"><h2>Friends</h2></div>
         <div id="friends_content">

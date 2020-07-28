@@ -4,6 +4,7 @@
     height: auto;
     display: flex;
     flex-direction:row;
+    background-color: #F1F2F2;
     color:#100c08;
     justify-content: space-around;
     .show{
@@ -26,9 +27,9 @@
         // border:1px solid black;
         box-sizing: border-box;
         box-shadow:
-        0 2px 2px rgba(0,0,0,0.2),        
+        0 2px 2px rgba(0, 0, 0, 0.24),        
         0 1px 5px rgba(0,0,0,0.2),        
-        0 0 0 12px rgba(255,255,255,0.4); 
+        0 0 0 2px rgba(255, 255, 255, 0.171); 
         display:none;
         transition: 0.5s all;
 
@@ -82,7 +83,7 @@
                     span{
                         padding: 15px;
                         display: inline-block;
-                        background-color: #EFEFEF;
+                        background-color: white;
                         border-bottom-right-radius: 12px;
                         border-top-left-radius: 12px;
                         border-top-right-radius: 12px;
@@ -109,12 +110,16 @@
 
             #message_close{
                 cursor: pointer;
+                position: absolute;
+                right: 25px;
+                top:16px
             }
             
 
             h3{
                 margin-left: 10px;
                 color: white;
+                margin-top:5px;
                 font-family: Arial, Helvetica, sans-serif;
                 font-size: 1rem;
 
@@ -170,6 +175,7 @@
     #profile_info{
         height:auto;
         width:25%;
+        margin-right: 30px;
         // border-right: 1px solid grey;
         // border:1px solid black;
 
@@ -324,7 +330,7 @@
 
                     i{
                         //  margin-left: 160px;
-                        font-size: 1.3rem;
+                        font-size: 1rem;
                         margin-top: 8px;
                         color:red;
                         position: absolute;
@@ -407,14 +413,15 @@
                         font-weight: 700;
                         margin-left:30px;
                         cursor: pointer;
+                        margin-bottom: 10px;
             }
 
             p{
-                font-size: 1.1rem;
+                font-size: 1.05rem;
                 font-family: Arial, Helvetica, sans-serif;
                 color:#100c08;
                 margin-left: 30px;
-                margin-bottom: 0px;
+                margin-bottom: 8px;
 
                 span{
                     margin-right: 12px;
@@ -503,7 +510,7 @@
                     background-color: black;
                     border-radius: 3px;
                     position:absolute;
-                    bottom:27.5%;
+                    top:256px;
                     right: 0%;
                 }
     
@@ -514,6 +521,51 @@
                     // border:1px solid cyan;
                 }
     
+            }
+            #profile_home_name{
+                // border:1px solid red;
+                // padding-left: 20px;
+                padding-top: 30px;
+                padding-bottom: 20px;
+                display: block;
+
+                div{
+                    margin-top: -20px;
+                    width: 100%;
+                    // border:1px solid red;
+                    h1{
+                        font-size: 1.7rem;
+                        margin-top: 5px;
+                        margin-bottom: 20px;
+                        font-family: Arial, Helvetica, sans-serif;
+                        // border:1px solid red;
+                    }
+                }
+
+                span{
+                    // margin-left: 20px;
+                    // margin-right: 10px;
+                    display: inline-flex;
+                    flex-direction: row;
+
+                    #message_btn{
+                         color: white;
+                        background-color: rgb(26, 151, 235);
+                    }
+
+                    a{
+                        text-decoration: none;
+                        border:1px solid black;
+                        // width: 150px;
+                        // width: auto;
+                        font-size: 0.95rem;
+                        border-radius: 3px;
+                        padding:7px;
+                        color:#100c08;
+                        padding-right: 10px;
+                        padding-left: 10px;
+                    }
+                }
             }
 
             #profile_name{
@@ -539,6 +591,8 @@
                 span{
                     // margin-left: 20px;
                     // margin-right: 10px;
+                    display: inline-flex;
+                    flex-direction: row;
 
                     #message_btn{
                          color: white;
@@ -548,6 +602,8 @@
                     a{
                         text-decoration: none;
                         border:1px solid black;
+                        width: 150px;
+                        // width: auto;
                         font-size: 0.95rem;
                         border-radius: 3px;
                         padding:7px;
@@ -560,8 +616,8 @@
         }
     }
     #profile_space{
-        height:100vh;
-        width:75%;
+        height:auto;
+        width:70%;
         padding-right: 25px;
         padding-left: 10px;
         // border:1px solid black;
@@ -574,6 +630,7 @@
             display:flex;
            padding: 10px;
            position: relative;
+           background-color: white;
            box-sizing: border-box;
             border-bottom: 1px solid grey;
             img{
@@ -593,6 +650,7 @@
             button{
                 color: white !important;
                 border: none;
+                margin-right: 15px;
                 padding: 8px;
                 margin-top: 8px;
                 font-weight: bold;

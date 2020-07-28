@@ -139,6 +139,19 @@ module.exports.answer = async function(req,res)
     .populate({
         path:'answers',
         populate: {
+            path:'comments',
+            populate: {
+                path:'user',
+                populate:{
+                  path:'likes'
+                }
+            }
+        }
+    }
+    )
+    .populate({
+        path:'answers',
+        populate: {
             path:'question',
             populate: {
                 path:'user'

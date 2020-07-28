@@ -1,114 +1,42 @@
 #home-container {
-  background-color: white;
+  background-color: #F1F2F2;
   margin: 0;
   min-height: 600px;
   height: auto;
   display: flex;
-  justify-content: space-around;
   flex-wrap: wrap;
-  padding-top: 30px; }
-  #home-container #leaderboard {
-    width: 25%;
-    height: auto;
-    border-radius: 3px; }
-    #home-container #leaderboard #leaderboard_header {
-      box-sizing: border-box;
-      color: white;
-      height: 90px;
-      width: 100%;
+  padding-top: 40px; }
+  #home-container #left_aside {
+    width: 15%;
+    margin-right: 30px;
+    padding-left: 40px; }
+    #home-container #left_aside a {
+      display: block;
+      color: black;
+      font-size: 0.95rem;
+      line-height: 1.2rem;
+      text-decoration: none;
       border-radius: 3px;
-      background-color: #373737;
-      margin-top: -21px;
-      margin-bottom: 3px; }
-      #home-container #leaderboard #leaderboard_header h2 {
-        padding-top: 7px;
-        text-align: center;
-        font-size: 1.6rem;
-        font-family: Arial, Helvetica, sans-serif; }
-      #home-container #leaderboard #leaderboard_header #view_by {
-        display: inline-flex;
-        justify-content: space-around;
-        height: 25px;
-        width: 100%;
-        margin-top: 0px; }
-        #home-container #leaderboard #leaderboard_header #view_by a {
-          text-decoration: none;
-          color: white;
-          background-color: grey;
-          border-radius: 3px;
-          padding: 4px;
-          font-family: Arial, Helvetica, sans-serif; }
-    #home-container #leaderboard #ranking_title {
-      height: 40px;
-      width: 100%;
-      background-color: #373737;
-      display: inline-flex; }
-      #home-container #leaderboard #ranking_title div {
-        padding: 9px 0px;
-        text-align: center;
-        font-size: 1rem;
-        font-family: Arial, Helvetica, sans-serif;
-        color: white;
-        border: 0.5px solid #acadd2; }
-      #home-container #leaderboard #ranking_title #rank {
-        width: 20%; }
-      #home-container #leaderboard #ranking_title #name {
-        width: 50%; }
-      #home-container #leaderboard #ranking_title #answers {
-        width: 30%; }
-    #home-container #leaderboard #ranking {
-      height: auto;
-      background-color: white; }
-      #home-container #leaderboard #ranking #rank-box {
-        display: inline-flex;
-        width: 100%;
-        min-height: 40px;
-        height: auto;
-        box-sizing: border-box; }
-        #home-container #leaderboard #ranking #rank-box div {
-          padding: 8px 0px;
-          font-family: Arial, Helvetica, sans-serif;
-          background-color: #373737;
-          color: white;
-          border: 0.5px solid #acadd2; }
-      #home-container #leaderboard #ranking #rank {
-        width: 20%;
-        position: relative;
-        font-size: 1.4rem;
-        padding-bottom: 5px; }
-        #home-container #leaderboard #ranking #rank span {
-          padding-left: 8px; }
-          #home-container #leaderboard #ranking #rank span img {
-            position: absolute;
-            top: -8px;
-            left: -20px;
-            height: 25px;
-            width: 25px;
-            margin: 16px 40px 0px 50px; }
-      #home-container #leaderboard #ranking #name {
-        width: 50%;
-        padding-left: 10px;
-        font-size: 1.1rem; }
-      #home-container #leaderboard #ranking #answers {
-        width: 30%;
-        text-align: center;
-        font-size: 0.9rem; }
-    #home-container #leaderboard #leaderboard_footer {
-      height: 40px;
-      margin-top: 3px;
-      margin-bottom: 10px;
-      background-color: #373737;
-      width: 100%;
-      border-bottom-left-radius: 3px;
-      border-bottom-right-radius: 3px; }
+      padding: 8px 5px; }
+    #home-container #left_aside a:hover {
+      background-color: rgba(128, 128, 128, 0.445); }
+    #home-container #left_aside #left_header {
+      font-size: 1.1rem;
+      font-weight: bold;
+      font-family: Arial, Helvetica, sans-serif;
+      margin-top: -7px;
+      padding-bottom: 5px;
+      margin-bottom: 5px;
+      border-bottom: 1px solid grey; }
   #home-container #main {
-    width: 45%;
-    height: auto; }
+    width: 55%;
+    height: auto;
+    margin-right: 25px; }
     #home-container #main #question {
       height: auto;
       border-radius: 3px;
-      background-color: #373737;
-      color: white;
+      background-color: #98B4D4;
+      color: black;
       padding: 10px;
       margin-top: -20px;
       margin-bottom: 10px;
@@ -117,7 +45,8 @@
         margin-left: 10px;
         font-size: 1.2rem; }
     #home-container #main #unanswered {
-      height: 130px;
+      min-height: 130px;
+      height: auto;
       width: 100%;
       border: 1px solid grey;
       background-color: white;
@@ -125,9 +54,10 @@
       margin-bottom: 5px; }
       #home-container #main #unanswered a {
         text-decoration: none;
-        cursor: pointer; }
+        cursor: pointer;
+        font-size: 1rem; }
       #home-container #main #unanswered #header {
-        height: 25%;
+        height: 30px;
         padding: 10px;
         box-sizing: border-box; }
         #home-container #main #unanswered #header span {
@@ -135,7 +65,7 @@
           font-size: 1rem;
           color: grey; }
       #home-container #main #unanswered #interact {
-        height: 25%;
+        height: 30px;
         padding: 10px;
         padding-top: 0;
         box-sizing: border-box; }
@@ -156,7 +86,8 @@
       #home-container #main #unanswered #unanswered_content {
         padding: 10px;
         box-sizing: border-box;
-        height: 50%;
+        min-height: 70px;
+        height: auto;
         padding-top: 5px; }
         #home-container #main #unanswered #unanswered_content #content {
           font-size: 1.1rem;
@@ -173,17 +104,16 @@
             font-weight: 1000; }
     #home-container #main #editor {
       display: block;
-      text-align: center;
+      text-align: right;
       border: 1px solid white;
       margin-bottom: 5px;
       border-radius: 3px;
       padding-top: 5px;
-      padding-left: 5px;
-      padding-right: 5px; }
+      padding-left: 5px; }
       #home-container #main #editor #editor_submit {
         margin-top: 10px;
-        padding: 8px;
-        background-color: #5B5EA6;
+        padding: 5px;
+        background-color: #30C553;
         color: white;
         width: 90px;
         border-radius: 3px;
@@ -193,6 +123,7 @@
         font-weight: 600; }
       #home-container #main #editor #editor_cancel {
         margin-top: 10px;
+        margin-right: 15px;
         padding: 8px;
         background-color: #5B5EA6;
         color: white;
@@ -208,37 +139,39 @@
       #home-container #main #editor #text {
         font-size: 1rem; }
   #home-container #aside {
-    width: 26%;
-    height: 200px; }
+    width: 23%;
+    height: 200px;
+    margin-left: 20px; }
     #home-container #aside #stat-box #stat_header {
       box-sizing: border-box;
       color: white;
-      height: 90px;
+      height: 50px;
       width: 100%;
       border-radius: 3px;
-      background-color: #373737;
+      background-color: #5B5EA6;
       margin-top: -21px;
-      margin-bottom: 3px; }
-      #home-container #aside #stat-box #stat_header h2 {
-        padding-top: 25px;
-        text-align: center;
+      margin-bottom: 12px;
+      padding-top: 5px;
+      text-align: center; }
+      #home-container #aside #stat-box #stat_header i {
+        margin-right: 20px; }
+      #home-container #aside #stat-box #stat_header span {
         font-size: 1.6rem;
         font-family: Arial, Helvetica, sans-serif; }
     #home-container #aside #stat-box #table {
       height: 40px;
       width: 100%;
-      background-color: #373737;
       display: inline-flex; }
       #home-container #aside #stat-box #table div {
         padding: 9px 0px;
         text-align: center;
         width: 25%;
-        font-size: 1rem;
+        font-size: 0.9rem;
         font-family: Arial, Helvetica, sans-serif;
-        color: white;
+        color: black;
         border: 0.5px solid #acadd2; }
     #home-container #aside #stat-box #content {
-      height: 40px;
+      height: 35px;
       width: 100%;
       background-color: white;
       display: inline-flex; }
@@ -246,15 +179,13 @@
         padding: 9px 0px;
         text-align: center;
         width: 25%;
-        font-size: 1rem;
-        background-color: #373737;
+        font-size: 0.9rem;
         font-family: Arial, Helvetica, sans-serif;
-        color: white;
+        color: black;
         border: 0.5px solid #acadd2; }
     #home-container #aside #stat-box #stat_footer {
       height: 40px;
       margin-top: 3px;
-      background-color: #373737;
       width: 100%;
       border-bottom-left-radius: 3px;
       border-bottom-right-radius: 3px; }

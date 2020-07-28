@@ -2,7 +2,8 @@
   font-size: 1rem !important; }
 
 .navbar {
-  max-height: 60px; }
+  max-height: 60px;
+  background-color: #5B5EA6 !important; }
   .navbar ::placeholder {
     /* Chrome, Firefox, Opera, Safari 10.1+ */
     color: white !important;
@@ -80,13 +81,18 @@
     position: absolute;
     right: -50%;
     display: none;
-    margin-top: 9px;
+    margin-top: 15px;
     background-color: #F1F2F2;
     width: 250px;
     height: 300px;
     overflow: auto;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1; }
+    .header_dropdown #user_option #profile {
+      height: auto;
+      display: inline-flex;
+      font-weight: bold;
+      width: 100%; }
     .header_dropdown #user_option a {
       color: black;
       padding: 8px 16px;
@@ -128,9 +134,12 @@
 
 .search_me {
   width: 380px !important;
-  background-color: #5C5C5C;
+  background-color: rgba(128, 131, 226, 0.438);
   border: none;
   color: white; }
+
+.btn {
+  padding: 4px 6px !important; }
 
 @media screen and (max-width: 989.98px) {
   .navbar {

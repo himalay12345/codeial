@@ -1,7 +1,7 @@
 <link rel="stylesheet" type="text/css" href="<%=assetPath('css/profile.css')%>">
 <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 <!-- <script type="text/javascript" src="/ckeditor/ckeditor.js"></script> -->
-<main>
+
 
   
     <div id="profile_container">
@@ -14,7 +14,7 @@
             <%}%>
         </div>
         
-        <div id="profile_name">
+        <div id="profile_home_name">
           <div><h1><%=profile_user.name%></h1></div>
           <span><a href="#"><b><%=profile_user.follower.length%></b> Follower</a></span>
           <span><a href="#"><b><%=profile_user.following.length%></b> Following</a></span>
@@ -141,7 +141,7 @@
     </div>
     <div id="chat_box">
       <div id="chat_header">
-        <h3>Himalay Kashyap<span id="margin">_</span><span id="message_close"> X</span></h3>
+        <h3><%=profile_user.name%><span id="margin">_</span><span id="message_close"> X</span></h3>
       </div>
       <div id="message_body">
           <div id="message_content">
@@ -168,7 +168,7 @@
 
 
 
-</main>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 <script src="<%=assetPath('js/profile.js')%>"></script>
 <script src="<%=assetPath('js/toggle_follow.js')%>"></script>

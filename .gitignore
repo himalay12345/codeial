@@ -3,4 +3,5 @@ assets/ckeditor/
 public/
 rev-manifest.json
 production_logs/access.log
+uploads/users/avatars/
 

@@ -23,19 +23,7 @@ document.getElementById("imageUpload").onchange = function() {
 };
 
 
-var message_btn = document.getElementById('message_btn');
-var chatbox = document.getElementById('chat_box');
-message_btn.addEventListener('click',function(event)
-{
-    event.preventDefault();
-    chatbox.classList.toggle('show');
-});
 
-var chat_cancel = document.getElementById('message_close');
-chat_cancel.addEventListener('click',function()
-{
-    chatbox.classList.remove('show');
-});
 
 var add_topic = document.getElementById('add_topic');
 var interest_box = document.getElementById('interests');
@@ -62,6 +50,20 @@ interest_cancel.addEventListener('click',function()
     // alert('hello');
 });
 
+var message_btn = document.getElementById('message_btn');
+var chatbox = document.getElementById('chat_box');
+message_btn.addEventListener('click',function(event)
+{
+    event.preventDefault();
+    chatbox.classList.toggle('show');
+});
+
+var chat_cancel = document.getElementById('message_close');
+chat_cancel.addEventListener('click',function()
+{
+    chatbox.classList.remove('show');
+});
+
 add_topic_btn.addEventListener('click',function()
 {
     interest_box.classList.toggle('display');
@@ -69,9 +71,17 @@ add_topic_btn.addEventListener('click',function()
     
 });
 
+
 edit.addEventListener('click',function()
 {
     edit_container.classList.add('display');
     input.classList.remove('display');
     
 });
+
+
+
+
+
+
+

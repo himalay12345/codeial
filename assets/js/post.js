@@ -188,9 +188,11 @@ for(let i=0;i<ans_content.length;i++)
     
 if( ans_content[i].getElementsByTagName('img').length > 0) {
     ans_content[i].style.height = "400px";
+    see_more[i].style.bottom="2%";
+
 }
 
-if(ans_content[i].innerHTML.length<70)
+if(ans_content[i].innerHTML.length<350)
     {
         see_more[i].classList.add('display');
     }

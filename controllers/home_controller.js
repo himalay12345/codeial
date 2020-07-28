@@ -20,6 +20,16 @@ module.exports.home = async function(req,res)
     try{
         let user1 = await User.find({follower:req.user._id});
         let posts = await Post.find({}).sort('_createdAt').populate('user')
+        .populate({
+          path:'answers',
+          populate: {
+              path:'question',
+              populate: {
+                  path:'user'
+              }
+             }
+      }
+      )
     .populate({
         path:'answers',
         populate: {
@@ -43,12 +53,21 @@ module.exports.home = async function(req,res)
 
 let users = await User.find({});
 
+ 
+let top_users = await User.find({})
+.populate({
+    path:'answers'
+    
+}
+);
+
 
 
     return res.render('post',{
         title:"Codeial | Home",
         posts:posts,
         all_users:users,
+        users:top_users,
         user1:user1
     
     });   
