@@ -4,6 +4,71 @@ const Comment = require('../models/comments');
 const User = require('../models/users');
 const Like = require('../models/like');
 
+module.exports.all = async function(req,res)
+{
+    try{
+        let related = await Post.find({topic:req.query.topic});
+        let posts = await Post.findById(req.query.id)
+        .populate({
+            path:'answers',
+            populate: {
+                path:'comments',
+                populate: {
+                    path:'user',
+                    populate:{
+                      path:'likes'
+                    }
+                }
+            }
+        }
+        )
+        .populate({
+            path:'answers',
+            populate: {
+                path:'user'
+            }
+        }
+        )
+        .populate({
+            path:'answers',
+            populate: {
+                path:'question',
+                populate: {
+                    path:'user'
+                }
+               }
+        }
+        );
+        let user = await User.findById(req.user._id).populate({path: 'questions'})
+    .populate({
+        path:'answers'
+        
+    }
+    )
+    .populate({
+        path:'answers',
+        populate: {
+            path:'question',
+            populate: {
+                path:'user'
+            }
+           }
+    }
+    );
+        return res.render('all_answers',{
+            post:posts,
+            temp:user,
+            related:related,
+            title:'Answers'
+        });
+    }
+    catch(err)
+    {
+        console.log('Error',err);
+        return;
+    }
+}
+
 module.exports.create =async function(req,res)
 {
     let post = await Post.findById(req.body.question).sort('_createdAt');

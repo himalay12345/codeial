@@ -12,9 +12,16 @@ module.exports.topic = async function(req,res)
 {
   try{
     let allTopics = await Topic.find({});
-    let topics = await Topic.findOne({name:req.params.id});
+    let topics = await Topic.findOne({name:req.query.name});
+    if(!topics){
+        Topic.create({
+          name:req.query.name,
+          image:req.query.image
+        });
+        return res.redirect('back');
+    }
     let user1 = await User.findById(req.user.id).populate('user');
-    let posts = await Post.find({topic:req.params.id})
+    let posts = await Post.find({topic:req.query.name})
     .populate({
       path:'answers',
       populate: {
@@ -67,7 +74,7 @@ let user = await User.findById(req.user._id).populate({path: 'questions'})
           posts:posts,
           related:allTopics,
           topic:topics,
-          title:"Topic |"+ req.params.id,
+          title:"Topic |"+ req.query.name,
           user1:user1,
 
 });

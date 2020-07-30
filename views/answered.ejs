@@ -1,7 +1,10 @@
 <div id="answers">
     <div class="topic_answered" id="post-<%= ans._id %>" data="<%= ans._id %>">
          <div id="topic_content">
-             <div id="author_header"><span><img src="<%=ans.user.avatar%>" onerror=this.src="<%=assetPath('images/user.png')%>"></span><span><a href="/profile/user/<%=ans.user._id%>"><%=ans.user.name%></a></span><b>Answered this question</b>
+             <div id="author_header">
+                 <span><img src="<%=ans.user.avatar%>" onerror=this.src="<%=assetPath('images/user.png')%>"></span>
+                 <span><a href="/profile/user/<%=ans.user._id%>" style="color:black;"><%=ans.user.name%></a></span>
+                 <b>Answered this question</b>
                  <span style="font-size:small">
                      <%if(locals.user && user.id==ans.user.id){%>
                          <div class="ans_dropdown"> 

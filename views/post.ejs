@@ -34,7 +34,7 @@
               <div id="answer_container"> 
                    <div id="question_asked">
                        <p>Question asked by <a href="/profile/user/<%=post.user._id%>"><b><%=post.user.name%></b></a></p>
-                       <span><%=post.content%></span><span id="see_all"><a href="">See all answers</a></span>
+                       <span><a href="/answer/all/?id=<%=post.id%>&topic=<%=post.topic%>"><%=post.content%></a></span><span id="see_all"><a href="/answer/all/?id=<%=post.id%>&topic=<%=post.topic%>">See all answers</a></span>
                    </div>
                    <%var max=0,value;%>
                <%for(ans of post.answers){%>

@@ -43,7 +43,6 @@ class PostComments{
         let pSelf = this;
         this.newCommentForm.submit(function(e){
             e.preventDefault();
-            $('#comment_submit').val("");
             let self = this;
 
             $.ajax({
@@ -69,6 +68,8 @@ class PostComments{
                     console.log(error.responseText);
                 }
             });
+
+            $('#comment_input').val("");
 
 
         });

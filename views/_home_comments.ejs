@@ -3,7 +3,7 @@
         <form id="post-<%= ans._id %>-comments-form" action="/comment/create" method="POST">
         <div id="comment_option">
             <img src="<%=user.avatar%>" onerror=this.src="<%=assetPath('images/user.png')%>">
-            <input type="text" name="content" placeholder="Add a comment">
+            <input type="text" name="content" placeholder="Add a comment" id="comment_input">
             <input type="hidden" name="post" value="<%=ans.question.user._id%>">
             <input type="hidden" name="answer" value="<%=ans._id%>">
             <input type="hidden" name="user" value="<%=user._id%>">

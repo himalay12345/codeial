@@ -1,0 +1,77 @@
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+<link rel="stylesheet" type="text/css" href="<%=assetPath('css/all_answers.css')%>">
+    
+<div id="answer_container_list">
+    <div id="left_aside">
+        <div id="question_container">
+            <h3><%=post.content%></h3>
+        </div>
+        <div id="interact">
+            <%var flag=false;for(let answer of temp.answers){%>
+               <%if(answer.question.id == post.id){flag=true;}%>
+           <%}%>
+           <%if(flag){%>
+               <a id="checked"><span  class="margin"><span><i class="fas fa-check-square"></i></span><span>Answered</span></span></a>
+               <%}else{
+                   if(locals.user.id != post.user._id){
+                      %>
+               <a id="ans_btn"><span  class="margin"><span><i class="fas fa-edit"></i></span><span>Answer</span></span></a>
+            <%}}%>
+            <a href="#" id="req"><span class="margin"><i class="fas fa-users"></i><span></span><span>Request Answer</span></span></a>
+            <a href="#" id="follow"><span class="margin"><i class="fas fa-rss"></i><span></span><span>Follow</span><span>3</span></span></a>
+         </div>
+         <div id="editor" class="display">
+            <form method="POST" action="/answer/create">
+            <textarea id="text" name="content"></textarea>
+            <input name="topic" value="<%=post.topic%>" type="hidden">
+            <input name="question" value="<%=post._id%>" type="hidden">
+            <!-- <input name="user" value="<%=user._id%>" type="hidden"> -->
+            </br>
+            <button type="submit" id="editor_submit">Sumbit</button>
+            <a id="editor_cancel" class="cancel">Cancel</a>
+            </form>
+        </div>
+         <div id="ans_count">
+             <h5><%=post.answers.length%> Answers</h5>
+         </div>
+         <%for(ans of post.answers){%>
+         <div id="answer_container">
+                <%-include('answered')%>
+        </div>
+        <%}%>
+    </div>
+    <div id="right_aside">
+        <h3>Related question</h3>
+        <%for(question of related){%>
+        <a href="/answer/all/?id=<%=question.id%>&topic=<%=question.topic%>"><%=question.content%></a>
+        <%}%>
+    </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<script src="<%=assetPath('js/post.js')%>"></script>
+<script src="<%=assetPath('js/comment.js')%>"></script>
+<script src="<%=assetPath('js/toggle_likes.js')%>"></script>
+<script src="<%=assetPath('js/toggle_follow.js')%>"></script>
+<script src="https://cdn.ckeditor.com/4.14.1/standard/ckeditor.js"></script> 
+<script type="text/javascript" src="<%=assetPath('js/answer.js')%>"></script>
+  
+<script>
+    $('.toggle-like-button').each(function()
+    {
+        let self= this;
+        let toggleLike = new ToggleLike(self);
+    });
+
+    $('.delete-post-button').each(function()
+    {
+        let self= this;
+        let deleteAnswer = deletePost(this);
+    });
+
+    $('.toggle-follow-button').each(function()
+     {
+         let self= this;
+         let togglefollow = new ToggleFollow(self);
+     });
+
+</script>
