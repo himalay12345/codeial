@@ -13,6 +13,9 @@
     #left_aside{
         width:15%;
         margin-right: 30px;
+        height: max-content;
+        position: sticky;
+        top:95px;
         padding-left: 40px;
         a{
             display: block;

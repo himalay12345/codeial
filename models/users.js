@@ -54,6 +54,11 @@ const userSchema = new mongoose.Schema({
             ref: 'Answer'
         }
     ],
+    topic_follow:[
+        {
+            type:mongoose.Schema.Types.ObjectId
+        }
+    ],
     follower: [
         { 
             type: mongoose.Schema.Types.ObjectId,

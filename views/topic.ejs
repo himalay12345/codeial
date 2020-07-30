@@ -1,0 +1,149 @@
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+<link rel="stylesheet" type="text/css" href="<%=assetPath('css/topic.css')%>">
+    
+<div id="topic_container">
+    <div id="left_aside">
+        <%-include('_home-feed')%>
+    </div>
+    <div id="center">
+        <div id="topic_header">
+            <div id="header_img">
+                <img src="<%=assetPath(topic.image)%>">
+            </div>
+            <div id="header_topic">
+                <h4><%=topic.name%></h4>
+                <%if(locals.user){%>
+                    <%var flag = false;for(u of user1.topic_follow){%>
+
+                        <%if(u == topic.id){%>
+                           
+                          <%flag=true}%>
+                          <%}%>
+                        <%if(!flag){%>
+                        <a href="/follow/topic/<%=topic.name%>" class="toggle-topic-follow-button" data-follows="<%=topic.follower.length%>"><button class="c_grey c_blue" id="follow_btn"><i class="fas fa-rss"></i>  Follow <%=topic.follower.length%></button></a>
+                        <%}else{%>
+                          <a href="/follow/topic/<%=topic.name%>" class="toggle-topic-follow-button" data-follows="<%=topic.follower.length%>"><button class="c_grey" id="follow_btn"><i class="fas fa-check-square"></i> Following <%=topic.follower.length%></button></a>
+                          <%}%>
+                    <%}%>
+            </div>
+        </div>
+        <div id="topic_switch">
+            <ul>
+                <li id="ques_click" class="active">Read</li>
+                <li id="ans_click">Answer</li>
+                <li>Most viewed writers</li>
+           
+            </ul>
+                
+        </div>
+        <div id="answer_list">
+            <%for(post of posts){%><%if(!(post.answers && post.answers.length)){%>
+                <%}else{%>
+                <div id="answer_container"> 
+                     <div id="question_asked">
+                         <p>Question asked by <a href="/profile/user/<%=post.user._id%>"><b><%=post.user.name%></b></a></p>
+                         <span><%=post.content%></span><span id="see_all"><a href="">See all answers</a></span>
+                     </div>
+                     <%var max=0,value;%>
+                 <%for(ans of post.answers){%>
+                  <%if(ans.likes.length>max){max=ans.likes.length;value=ans;}%>
+                 <%}%>
+                <%-include('answered')%>
+             </div>  
+             
+     
+             <%}%>
+         
+             <%}%>
+        </div>
+        <div id="question_list"  class="display">
+            <%for(let post of posts){%>
+                   
+             <div id="unanswered">
+             <div id="header"><span>Question added</span><a href="#"><span>-<%=post.topic%></span></a></div>
+             <div id="unanswered_content">
+                <div id="content"><a href="#"><%=post.content%></a></div>
+                 <div id="content_key"><a></a><span><b><%=post.answers.length%> Answer</b></span></a><span>-Last followed 20m ago</span></div>
+             </div>
+             <div id="interact">
+                 <%var flag=false;for(let answer of temp.answers){%>
+                    <%if(answer.question.id == post.id){flag=true;}%>
+                <%}%>
+                <%if(flag){%>
+                    <a id="checked"><span  class="margin"><span><i class="fas fa-check-square"></i></span><span>Answered</span></span></a>
+                    <%}else{%>
+                    <a id="ans_btn"><span  class="margin"><span><i class="fas fa-edit"></i></span><span>Answer</span></span></a>
+                 <%}%>
+                 <a href="#" id="pass"><span class="margin"><i class="fas fa-sync"></i><span></span><span>Pass</span></span></a>
+                 <a href="#" id="req"><span class="margin"><i class="fas fa-users"></i><span></span><span>Request Answer</span></span></a>
+                 <a href="#" id="follow"><span class="margin"><i class="fas fa-rss"></i><span></span><span>Follow</span><span>3</span></span></a>
+              </div>
+         </div>
+         <%if(!flag){%>
+         <div id="editor" class="display">
+             <form method="POST" action="/answer/create">
+             <textarea id="text" name="content"></textarea>
+             <input name="topic" value="<%=post.topic%>" type="hidden">
+             <input name="question" value="<%=post._id%>" type="hidden">
+             <!-- <input name="user" value="<%=user._id%>" type="hidden"> -->
+             </br>
+             <button type="submit" id="editor_submit">Sumbit</button>
+             <a id="editor_cancel" class="cancel">Cancel</a>
+             </form>
+         </div>
+         <%flag=false;}%>
+           
+        <%}%>            
+
+        </div>
+    </div>
+    <div id="right_aside">
+        <div id="right_header"><h3>Related Topics</h3></div>
+        <%for(let topic of related){%>
+        <div id="related_topics">
+            <div id="topic_image"><img src="<%=assetPath(topic.image)%>"></div>
+            <div id="content">
+                <a href="/topic/<%=topic.name%>"><%=topic.name%></a>
+                <%if(locals.user){%>
+                    <%var flag = false;for(u of user1.topic_follow){%>
+
+                        <%if(u == topic.id){%>
+                           
+                          <%flag=true}%>
+                          <%}%>
+                        <%if(!flag){%>
+                        <a href="/follow/topic/<%=topic.name%>" class="toggle-topic-follow-button" data-follows="<%=topic.follower.length%>"><button class="c_grey c_blue" id="follow_btn"><i class="fas fa-rss"></i>  Follow <%=topic.follower.length%></button></a>
+                        <%}else{%>
+                          <a href="/follow/topic/<%=topic.name%>" class="toggle-topic-follow-button" data-follows="<%=topic.follower.length%>"><button class="c_grey" id="follow_btn"><i class="fas fa-check-square"></i> Following <%=topic.follower.length%></button></a>
+                          <%}%>
+                    <%}%>
+            </div>
+        </div>
+        <%}%>
+    </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+<script src="<%=assetPath('js/post.js')%>"></script>
+<script src="<%=assetPath('js/comment.js')%>"></script>
+<script src="<%=assetPath('js/toggle_likes.js')%>"></script>
+<script src="<%=assetPath('js/toggle_follow.js')%>"></script>
+<script src="https://cdn.ckeditor.com/4.14.1/standard/ckeditor.js"></script> 
+<script type="text/javascript" src="<%=assetPath('js/answer.js')%>"></script>
+<script src="<%=assetPath('js/topic.js')%>"></script>
+<script>
+       $('.toggle-like-button').each(function()
+       {
+           let self= this;
+           let toggleLike = new ToggleLike(self);
+       });
+
+       $('.toggle-topic-follow-button').each(function()
+            {
+                let self= this;
+                let togglefollow = new ToggleTopicFollow(self);
+            });
+  
+
+</script>
+

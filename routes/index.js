@@ -18,6 +18,7 @@ router.use('/follow',require('./follow'));
 const setController = require('../controllers/home_controller');
 router.get('/',passport.checkAuthentication,setController.home);
 router.get('/blog',passport.checkAuthentication,setController.blog);
+router.get('/topic/:id',passport.checkAuthentication,setController.topic);
 router.get('/reset/:token',setController.resetPage);
 router.post('/reset/:token',setController.resetPassword);
 router.get('/contact_us',setController.contact);

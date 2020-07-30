@@ -1,5 +1,6 @@
 const User = require('../models/users');
 const Follower = require('../models/follower');
+const Topic = require('../models/topic');
 
 
 module.exports.toggleFollow = async function(req,res) {
@@ -54,4 +55,60 @@ module.exports.toggleFollow = async function(req,res) {
         return;
     }
 
+}
+
+module.exports.topicFollow = async function(req,res) {
+ 
+    try{
+        let deleted = false;
+        let topic = await Topic.findOne({name:req.params.id});
+        let user = await User.findById(req.user._id);
+        // console.log(user);
+
+        // if(!topic)
+        // {
+        //     let new_topic = await Topic.create({
+        //         name:'History'
+        //     });
+        //     console.log('Db created');
+        //     return res.redirect('back');
+        // }
+        let existingFollow = await Topic.findOne({
+            name:req.params.id,
+            follower:req.user.id
+        });
+
+        // console.log(existingFollow);
+
+        if(existingFollow)
+            {
+                topic.follower.pull(req.user._id);
+                user.topic_follow.pull(topic._id);
+                topic.save();
+                user.save();
+                deleted  = true;
+            }
+        else{
+            topic.follower.push(req.user._id);
+            user.topic_follow.push(topic._id);
+            topic.save();
+            user.save();
+          }
+
+          return res.json(200,{
+            message:'Request successful',
+            data:{
+                deleted:deleted
+            }
+        });
+
+        }
+
+        
+
+    catch(err)
+    {
+        console.log(err);
+        return;
+    }
 }

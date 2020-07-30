@@ -33,7 +33,9 @@
       #home-container #left_aside #feed #feed_lists a {
         cursor: pointer;
         padding: 10px;
-        border-radius: 5px; }
+        border-radius: 5px;
+        text-decoration: none;
+        color: black; }
       #home-container #left_aside #feed #feed_lists a:hover {
         background-color: rgba(128, 128, 128, 0.445); }
       #home-container #left_aside #feed #feed_lists #subject {

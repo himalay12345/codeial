@@ -1,10 +1,86 @@
 const Answer = require('../models/answers');
 const Post = require('../models/posts');
 const User = require('../models/users');
+const Topic = require('../models/topic');
 var async = require("async");
 // var nodemailer = require("nodemailer");
 const nodeMailer = require('../config/nodemailer');
 var crypto = require("crypto");
+
+
+module.exports.topic = async function(req,res)
+{
+  try{
+    let allTopics = await Topic.find({});
+    let topics = await Topic.findOne({name:req.params.id});
+    let user1 = await User.findById(req.user.id).populate('user');
+    let posts = await Post.find({topic:req.params.id})
+    .populate({
+      path:'answers',
+      populate: {
+          path:'question',
+          populate: {
+              path:'user'
+          }
+         }
+  }
+  )
+.populate({
+    path:'answers',
+    populate: {
+        path:'comments',
+        populate: {
+            path:'user',
+            populate:{
+              path:'likes'
+            }
+        }
+    }
+}
+)
+.populate({
+    path:'answers',
+    populate: {
+        path:'user'
+       }
+}
+).populate('likes').populate('user');
+let user = await User.findById(req.user._id).populate({path: 'questions'})
+.populate({
+    path:'answers'
+    
+}
+)
+.populate({
+    path:'answers',
+    populate: {
+        path:'question',
+        populate: {
+            path:'user'
+        }
+       }
+}
+);
+
+        return res.render('topic',{
+          temp:user,
+          posts:posts,
+          related:allTopics,
+          topic:topics,
+          title:"Topic |"+ req.params.id,
+          user1:user1,
+
+});
+
+  }
+
+  catch(err)
+  {
+    console.log('Error',err);
+    return;
+  }
+
+}
 
 module.exports.blog = function(req,res)
 {

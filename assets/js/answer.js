@@ -1,4 +1,4 @@
-var answer = document.querySelectorAll('#ans');
+var answer = document.querySelectorAll('#ans_btn');
 var button = document.querySelectorAll('#editor_submit');
 var cancel = document.querySelectorAll('.cancel');
 
@@ -9,7 +9,7 @@ answer[i].addEventListener('click',function()
 {
     var editor = document.querySelectorAll('#editor');
    
-    
+    console.log(editor[i]);
     editor[i].classList.remove('display');
 
     button[i].addEventListener('click',function()
